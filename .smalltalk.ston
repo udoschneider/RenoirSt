@@ -8,12 +8,13 @@ SmalltalkCISpec {
     }
   ],
   #testing : {
-    #include : { 
-      #packages : [ 'RenoirSt-Tests.*' ]
-    },
     #coverage : {
-      #packages : [ 'RenoirSt.*' ],
+      #categories : [ 'RenoirSt*' ],
+    },
+    #include : { 
+      #categories : [ 'RenoirSt-Tests*' ]
     }
+   
   }
 } 
 
