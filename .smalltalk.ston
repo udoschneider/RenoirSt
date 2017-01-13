@@ -9,7 +9,7 @@ SmalltalkCISpec {
   ],
   #testing : {
     #coverage : {
-      #categories : [ 'RenoirSt*' ],
+      #categories : [ 'RenoirSt*' ]
     },
     #include : { 
       #categories : [ 'RenoirSt-Tests*' ]
