@@ -2,7 +2,8 @@ Renoir.St
 =========
 
 [![Build Status](https://ci.inria.fr/pharo-contribution/buildStatus/icon?job=RenoirSt)](https://ci.inria.fr/pharo-contribution/job/RenoirSt/)
-[![Build Status][travis_b]][travis_url] [![Coverage Status][coveralls_b]][coveralls_url]
+[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=master)](https://travis-ci.org/ba-st/RenoirSt)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=master)](https://coveralls.io/github/ba-st/RenoirSt?branch=master)
 
 *A DSL enabling programmatic cascading style sheet generation for Pharo Smalltalk*
 
