@@ -21,10 +21,22 @@ The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4
 - Use your favorite browsing and refactoring tools inside the same Pharo image to handle CSS  
 
 ### Highlights:
-- **Supported Platforms**: [Pharo 3 / Pharo 4 / Pharo 5](http://www.pharo.org/)
+- **Supported Platforms**: [Pharo 3 / Pharo 4 / Pharo 5 / Pharo 6](http://www.pharo.org/)
 - **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
 
 ### Get started!
+
+#### Pharo 6
+
+- Open a Playground and evaluate:
+
+```smalltalk
+Metacello new
+  baseline: 'RenoirSt';
+  repository: 'github://ba-st/RenoirSt:master/source';
+  load
+```
+
 
 #### Pharo 5
 
@@ -33,7 +45,7 @@ The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:stable-pharo-50/source';
+  repository: 'github://ba-st/RenoirSt:stable-pharo-50/source';
   load
 ```
 
@@ -48,7 +60,7 @@ or
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:stable-pharo-40/source';
+  repository: 'github://ba-st/RenoirSt:stable-pharo-40/source';
   load
 ```
 
