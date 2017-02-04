@@ -1,4 +1,4 @@
-Renoir.St 
+Renoir.St
 =========
 
 [![Build Status](https://ci.inria.fr/pharo-contribution/buildStatus/icon?job=RenoirSt)](https://ci.inria.fr/pharo-contribution/job/RenoirSt/)
@@ -102,4 +102,4 @@ body::before
 }
 ```
 ### Contributing
-If you want to help check the ["How to contribute" doc](docs/How to contribute.md)
+If you want to help check the ["How to contribute" doc](CONTRIBUTING.md)
