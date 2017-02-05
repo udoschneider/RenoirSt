@@ -1,7 +1,9 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 3/6/2014 13:50",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-Colors",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"AliceBlue",
 		"AntiqueWhite",
@@ -149,12 +151,9 @@
 		"White",
 		"WhiteSmoke",
 		"Yellow",
-		"YellowGreen" ],
-	"commentStamp" : "GabrielOmarCotelli 3/6/2014 13:50",
-	"instvars" : [
-		 ],
+		"YellowGreen"
+	],
+	"instvars" : [ ],
 	"name" : "CssSVGColors",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

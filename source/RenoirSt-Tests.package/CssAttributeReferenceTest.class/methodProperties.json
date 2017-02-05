@@ -1,8 +1,9 @@
 {
-	"class" : {
-		 },
 	"instance" : {
+		"testSimplestAttributeReference" : "GabrielOmarCotelli 3/25/2014 11:42",
 		"testAttributeReferenceWithStringTypeAndFallback" : "GabrielOmarCotelli 10/28/2015 16:02",
 		"testAttributeReferenceWithType" : "GabrielOmarCotelli 3/25/2014 11:32",
-		"testAttributeReferenceWithTypeAndFallback" : "GabrielOmarCotelli 3/25/2014 11:33",
-		"testSimplestAttributeReference" : "GabrielOmarCotelli 3/25/2014 11:42" } }
+		"testAttributeReferenceWithTypeAndFallback" : "GabrielOmarCotelli 3/25/2014 11:33"
+	},
+	"class" : { }
+}

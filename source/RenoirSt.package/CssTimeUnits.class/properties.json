@@ -1,15 +1,14 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 3/18/2014 22:55",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"Millisecond",
-		"Second" ],
-	"commentStamp" : "GabrielOmarCotelli 3/18/2014 22:55",
-	"instvars" : [
-		 ],
+		"Second"
+	],
+	"instvars" : [ ],
 	"name" : "CssTimeUnits",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

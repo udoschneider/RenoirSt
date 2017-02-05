@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
 		"testBuildingShortcut" : "GabrielOmarCotelli 2/25/2014 10:48",
-		"testPrintString" : "GabrielOmarCotelli 2/24/2014 20:12" } }
+		"testPrintString" : "GabrielOmarCotelli 2/24/2014 20:12"
+	},
+	"class" : { }
+}

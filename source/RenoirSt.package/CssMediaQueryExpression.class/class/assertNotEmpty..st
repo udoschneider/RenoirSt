@@ -1,5 +1,4 @@
 private
 assertNotEmpty: aString
 
-	aString isEmpty
-		ifTrue: [ CssInstanceCreationFailed signal: 'A media feature name can''t be empty' ]
+	AssertionChecker refuse: [ aString isEmpty ] because: 'A media feature name can''t be empty' raising: InstanceCreationFailed

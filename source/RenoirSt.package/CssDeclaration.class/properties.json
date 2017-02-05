@@ -1,15 +1,14 @@
 {
-	"category" : "RenoirSt",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
+	"super" : "CssAbstractDeclaration",
+	"category" : "RenoirSt",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"property",
-		"value" ],
+		"value"
+	],
 	"name" : "CssDeclaration",
-	"pools" : [
-		 ],
-	"super" : "CssAbstractDeclaration",
-	"type" : "normal" }
+	"type" : "normal"
+}

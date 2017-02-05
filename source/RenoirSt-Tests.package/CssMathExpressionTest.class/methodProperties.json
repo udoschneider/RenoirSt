@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testChainedCalc" : "GabrielOmarCotelli 3/25/2014 12:12",
-		"testSimpleCalc" : "GabrielOmarCotelli 3/25/2014 12:00" } }
+		"testSimpleCalc" : "GabrielOmarCotelli 3/25/2014 12:00",
+		"testChainedCalc" : "GabrielOmarCotelli 3/25/2014 12:12"
+	},
+	"class" : { }
+}

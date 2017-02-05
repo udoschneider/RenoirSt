@@ -1,16 +1,15 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 3/18/2014 23:05",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"DotsPerCentimeter",
 		"DotsPerInch",
-		"DotsPerPixelUnit" ],
-	"commentStamp" : "GabrielOmarCotelli 3/18/2014 23:05",
-	"instvars" : [
-		 ],
+		"DotsPerPixelUnit"
+	],
+	"instvars" : [ ],
 	"name" : "CssResolutionUnits",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

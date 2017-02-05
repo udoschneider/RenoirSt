@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Colors",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/5/2014 23:52",
-	"instvars" : [
-		 ],
-	"name" : "CssAlphaChannel",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "RenoirSt-Colors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssAlphaChannel",
+	"type" : "normal"
+}

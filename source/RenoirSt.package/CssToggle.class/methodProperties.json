@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"cyclingOver:" : "GabrielOmarCotelli 3/25/2014 12:29" },
 	"instance" : {
+		"initializeCyclingOver:" : "GabrielOmarCotelli 3/25/2014 12:30",
 		"cssFunctionParametersContentOn:" : "GabrielOmarCotelli 3/25/2014 12:33",
-		"functionName" : "GabrielOmarCotelli 3/25/2014 12:36",
-		"initializeCyclingOver:" : "GabrielOmarCotelli 3/25/2014 12:30" } }
+		"functionName" : "GabrielOmarCotelli 3/25/2014 12:36"
+	},
+	"class" : {
+		"cyclingOver:" : "GabrielOmarCotelli 3/25/2014 12:29"
+	}
+}

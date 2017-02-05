@@ -1,5 +1,4 @@
 Preconditions
 assertNotEmpty: aString
-	
-	aString isEmpty
-		ifTrue: [ CssInstanceCreationFailed signal: 'A unit identifier can''t be empty' ]
+
+	AssertionChecker refuse: [ aString isEmpty ] because: 'A unit identifier can''t be empty' raising: InstanceCreationFailed

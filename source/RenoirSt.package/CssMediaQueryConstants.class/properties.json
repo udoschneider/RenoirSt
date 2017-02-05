@@ -1,7 +1,9 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 2/26/2014 11:48",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-MediaQueries",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"Braille",
 		"Embossed",
@@ -15,12 +17,9 @@
 		"Screen",
 		"Speech",
 		"TTY",
-		"Tv" ],
-	"commentStamp" : "GabrielOmarCotelli 2/26/2014 11:48",
-	"instvars" : [
-		 ],
+		"Tv"
+	],
+	"instvars" : [ ],
 	"name" : "CssMediaQueryConstants",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

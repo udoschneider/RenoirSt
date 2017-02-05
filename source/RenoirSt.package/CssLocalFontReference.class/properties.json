@@ -1,14 +1,13 @@
 {
-	"category" : "RenoirSt-Fonts",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 10/28/2015 18:27",
-	"instvars" : [
-		"fontName" ],
-	"name" : "CssLocalFontReference",
-	"pools" : [
-		 ],
 	"super" : "CssFontReference",
-	"type" : "normal" }
+	"category" : "RenoirSt-Fonts",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"fontName"
+	],
+	"name" : "CssLocalFontReference",
+	"type" : "normal"
+}

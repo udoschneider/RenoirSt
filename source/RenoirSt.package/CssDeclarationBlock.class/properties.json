@@ -1,15 +1,14 @@
 {
-	"category" : "RenoirSt",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 2/25/2014 15:26",
+	"super" : "CssObject",
+	"category" : "RenoirSt",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"declarations",
-		"rulePrecedencePolicy" ],
+		"rulePrecedencePolicy"
+	],
 	"name" : "CssDeclarationBlock",
-	"pools" : [
-		 ],
-	"super" : "CssObject",
-	"type" : "normal" }
+	"type" : "normal"
+}

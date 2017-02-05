@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/25/2014 11:53",
-	"instvars" : [
-		 ],
-	"name" : "CssNoFallbackSpecified",
-	"pools" : [
-		 ],
 	"super" : "CssObject",
-	"type" : "normal" }
+	"category" : "RenoirSt-Units",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssNoFallbackSpecified",
+	"type" : "normal"
+}

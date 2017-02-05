@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testCantCreateWithInvalidAlphaValues" : "GabrielOmarCotelli 3/6/2014 08:20",
-		"testInstanceCreationEdgeCases" : "GabrielOmarCotelli 3/6/2014 08:21" } }
+		"testCantCreateWithInvalidAlphaValues" : "GabrielOmarCotelli 2/4/2017 21:09",
+		"testInstanceCreationEdgeCases" : "GabrielOmarCotelli 2/4/2017 22:00"
+	},
+	"class" : { }
+}

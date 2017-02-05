@@ -1,15 +1,14 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 3/18/2014 23:08",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"Hertz",
-		"KiloHertz" ],
-	"commentStamp" : "GabrielOmarCotelli 3/18/2014 23:08",
-	"instvars" : [
-		 ],
+		"KiloHertz"
+	],
+	"instvars" : [ ],
 	"name" : "CssFrequencyUnits",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

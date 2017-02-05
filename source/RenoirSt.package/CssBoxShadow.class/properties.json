@@ -1,14 +1,13 @@
 {
-	"category" : "RenoirSt-Common",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 10/28/2015 14:01",
-	"instvars" : [
-		"components" ],
-	"name" : "CssBoxShadow",
-	"pools" : [
-		 ],
 	"super" : "CssObject",
-	"type" : "normal" }
+	"category" : "RenoirSt-Common",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"components"
+	],
+	"name" : "CssBoxShadow",
+	"type" : "normal"
+}

@@ -1,15 +1,14 @@
 {
-	"category" : "RenoirSt-Selectors",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 2/22/2014 19:45",
+	"super" : "CssSelector",
+	"category" : "RenoirSt-Selectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"cssClass",
-		"parentSelector" ],
+		"parentSelector"
+	],
 	"name" : "CssClassSelector",
-	"pools" : [
-		 ],
-	"super" : "CssSelector",
-	"type" : "normal" }
+	"type" : "normal"
+}

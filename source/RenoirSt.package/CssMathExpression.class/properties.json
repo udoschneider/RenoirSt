@@ -1,15 +1,14 @@
 {
-	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/25/2014 11:57",
+	"super" : "CssFunction",
+	"category" : "RenoirSt-Units",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"operands",
-		"operators" ],
+		"operators"
+	],
 	"name" : "CssMathExpression",
-	"pools" : [
-		 ],
-	"super" : "CssFunction",
-	"type" : "normal" }
+	"type" : "normal"
+}
