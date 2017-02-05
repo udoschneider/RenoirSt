@@ -1,9 +1,10 @@
 {
 	"instance" : {
+		"testInstanceCreationFromHexaNotation" : "GabrielOmarCotelli 3/6/2014 08:54",
 		"testNewWithAlpha" : "GabrielOmarCotelli 10/28/2015 19:02",
 		"testInstanceCreationWithName" : "GabrielOmarCotelli 10/28/2015 19:02",
 		"testInvalidInstanceCreationFromHexaNotation" : "GabrielOmarCotelli 2/4/2017 22:01",
-		"testInstanceCreationFromHexaNotation" : "GabrielOmarCotelli 3/6/2014 08:54"
+		"testIdentifiedBy" : "GabrielOmarCotelli 2/5/2017 09:59"
 	},
 	"class" : { }
 }
