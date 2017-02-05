@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		 ],
-	"name" : "ManifestRenoirSt",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "RenoirSt",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ManifestRenoirSt",
+	"type" : "normal"
+}

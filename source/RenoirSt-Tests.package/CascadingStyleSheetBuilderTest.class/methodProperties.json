@@ -1,8 +1,9 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testBuildingOnlyWithComments" : "GabrielOmarCotelli 10/28/2015 18:51",
-		"testBuildingSimpleStyleSheet" : "GabrielOmarCotelli 10/28/2015 18:53",
 		"testBuildingSimpleStyleSheetWithSomeComments" : "GabrielOmarCotelli 10/28/2015 18:54",
-		"testBuildingStyleSheetWithMediaQuery" : "GabrielOmarCotelli 10/28/2015 18:54" } }
+		"testBuildingStyleSheetWithMediaQuery" : "GabrielOmarCotelli 10/28/2015 18:54",
+		"testBuildingOnlyWithComments" : "GabrielOmarCotelli 10/28/2015 18:51",
+		"testBuildingSimpleStyleSheet" : "GabrielOmarCotelli 10/28/2015 18:53"
+	},
+	"class" : { }
+}

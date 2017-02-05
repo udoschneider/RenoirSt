@@ -1,6 +1,9 @@
 {
-	"class" : {
-		"between:and:" : "GabrielOmarCotelli 2/25/2014 08:31" },
 	"instance" : {
 		"cssContentOn:" : "GabrielOmarCotelli 2/24/2014 17:37",
-		"initializeBetween:and:" : "GabrielOmarCotelli 2/24/2014 17:36" } }
+		"initializeBetween:and:" : "GabrielOmarCotelli 2/24/2014 17:36"
+	},
+	"class" : {
+		"between:and:" : "GabrielOmarCotelli 2/25/2014 08:31"
+	}
+}

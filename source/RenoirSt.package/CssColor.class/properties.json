@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Colors",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/5/2014 17:29",
-	"instvars" : [
-		 ],
-	"name" : "CssColor",
-	"pools" : [
-		 ],
 	"super" : "CssColorUnit",
-	"type" : "normal" }
+	"category" : "RenoirSt-Colors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssColor",
+	"type" : "normal"
+}

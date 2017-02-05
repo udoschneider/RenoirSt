@@ -1,17 +1,16 @@
 {
+	"commentStamp" : "GabrielOmarCotelli 3/18/2014 19:29",
+	"super" : "SharedPool",
 	"category" : "RenoirSt-Units",
-	"classinstvars" : [
-		 ],
+	"classinstvars" : [ ],
+	"pools" : [ ],
 	"classvars" : [
 		"Degree",
 		"Gradian",
 		"Radian",
-		"Turn" ],
-	"commentStamp" : "GabrielOmarCotelli 3/18/2014 19:29",
-	"instvars" : [
-		 ],
+		"Turn"
+	],
+	"instvars" : [ ],
 	"name" : "CssAngleUnits",
-	"pools" : [
-		 ],
-	"super" : "SharedPool",
-	"type" : "normal" }
+	"type" : "normal"
+}

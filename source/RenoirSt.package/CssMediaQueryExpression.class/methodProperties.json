@@ -1,9 +1,12 @@
 {
-	"class" : {
-		"assertNotEmpty:" : "GabrielOmarCotelli 2/26/2014 11:27",
-		"forFeatureNamed:" : "GabrielOmarCotelli 2/26/2014 11:32",
-		"forFeatureNamed:withValue:" : "GabrielOmarCotelli 2/26/2014 11:35",
-		"forFeatureNamed:withValues:" : "GabrielOmarCotelli 2/26/2014 11:29" },
 	"instance" : {
 		"cssContentOn:" : "GabrielOmarCotelli 2/26/2014 11:31",
-		"initializeForFeatureNamed:withValues:" : "GabrielOmarCotelli 2/26/2014 11:30" } }
+		"initializeForFeatureNamed:withValues:" : "GabrielOmarCotelli 2/26/2014 11:30"
+	},
+	"class" : {
+		"assertNotEmpty:" : "GabrielOmarCotelli 2/4/2017 22:04",
+		"forFeatureNamed:" : "GabrielOmarCotelli 2/26/2014 11:32",
+		"forFeatureNamed:withValue:" : "GabrielOmarCotelli 2/26/2014 11:35",
+		"forFeatureNamed:withValues:" : "GabrielOmarCotelli 2/26/2014 11:29"
+	}
+}

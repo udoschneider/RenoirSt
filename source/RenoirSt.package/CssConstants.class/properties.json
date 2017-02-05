@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Common",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/6/2014 23:50",
-	"instvars" : [
-		 ],
-	"name" : "CssConstants",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "RenoirSt-Common",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssConstants",
+	"type" : "normal"
+}

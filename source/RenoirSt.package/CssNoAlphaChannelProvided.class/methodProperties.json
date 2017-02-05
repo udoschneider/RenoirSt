@@ -1,6 +1,7 @@
 {
-	"class" : {
-		 },
 	"instance" : {
 		"componentsDo:separatedBy:" : "GabrielOmarCotelli 3/6/2014 08:16",
-		"functionNameFor:" : "GabrielOmarCotelli 3/5/2014 23:39" } }
+		"functionNameFor:" : "GabrielOmarCotelli 3/5/2014 23:39"
+	},
+	"class" : { }
+}

@@ -1,16 +1,15 @@
 {
-	"category" : "RenoirSt-Colors",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 4/14/2014 10:28",
+	"super" : "CssGradient",
+	"category" : "RenoirSt-Colors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"shape",
 		"colorStops",
-		"functionName" ],
+		"functionName"
+	],
 	"name" : "CssRadialGradient",
-	"pools" : [
-		 ],
-	"super" : "CssGradient",
-	"type" : "normal" }
+	"type" : "normal"
+}

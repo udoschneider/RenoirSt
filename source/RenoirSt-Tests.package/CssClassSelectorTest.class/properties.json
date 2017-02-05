@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Tests-Selectors",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		 ],
-	"name" : "CssClassSelectorTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "RenoirSt-Tests-Selectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssClassSelectorTest",
+	"type" : "normal"
+}

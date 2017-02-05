@@ -1,7 +1,10 @@
 {
-	"class" : {
-		"property:value:" : "GabrielOmarCotelli 2/25/2014 15:16" },
 	"instance" : {
-		"initializeProperty:value:" : "GabrielOmarCotelli 2/25/2014 15:17",
 		"property" : "GabrielOmarCotelli 3/3/2014 22:46",
-		"value" : "GabrielOmarCotelli 3/3/2014 22:47" } }
+		"initializeProperty:value:" : "GabrielOmarCotelli 2/25/2014 15:17",
+		"value" : "GabrielOmarCotelli 3/3/2014 22:47"
+	},
+	"class" : {
+		"property:value:" : "GabrielOmarCotelli 2/25/2014 15:16"
+	}
+}

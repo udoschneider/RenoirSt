@@ -1,5 +1,4 @@
 private
 assertIsOfSizeSix: aString
-	
-	aString size = 6
-		ifFalse: [ CssInstanceCreationFailed signal: 'Invalid hexadecimal notation for a color.' ]
+
+	AssertionChecker enforce: [ aString size = 6 ] because: 'Invalid hexadecimal notation for a color.' raising: InstanceCreationFailed

@@ -1,10 +1,13 @@
 {
+	"instance" : {
+		"componentsDo:separatedBy:" : "GabrielOmarCotelli 3/6/2014 00:04",
+		"initializeHue:saturation:lightness:alphaChannel:" : "GabrielOmarCotelli 3/6/2014 00:01",
+		"newWithAlpha:" : "GabrielOmarCotelli 10/28/2015 15:20",
+		"functionName" : "GabrielOmarCotelli 10/28/2015 15:38"
+	},
 	"class" : {
 		"hue:saturation:lightness:" : "GabrielOmarCotelli 3/5/2014 23:59",
 		"hue:saturation:lightness:alpha:" : "GabrielOmarCotelli 3/6/2014 00:06",
-		"hue:saturation:lightness:alphaChannel:" : "GabrielOmarCotelli 3/6/2014 00:00" },
-	"instance" : {
-		"componentsDo:separatedBy:" : "GabrielOmarCotelli 3/6/2014 00:04",
-		"functionName" : "GabrielOmarCotelli 10/28/2015 15:38",
-		"initializeHue:saturation:lightness:alphaChannel:" : "GabrielOmarCotelli 3/6/2014 00:01",
-		"newWithAlpha:" : "GabrielOmarCotelli 10/28/2015 15:20" } }
+		"hue:saturation:lightness:alphaChannel:" : "GabrielOmarCotelli 3/6/2014 00:00"
+	}
+}

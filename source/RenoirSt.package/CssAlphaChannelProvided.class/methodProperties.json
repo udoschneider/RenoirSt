@@ -1,8 +1,11 @@
 {
-	"class" : {
-		"assertBetweenZeroAndOne:" : "GabrielOmarCotelli 3/5/2014 23:45",
-		"withValue:" : "GabrielOmarCotelli 3/5/2014 23:41" },
 	"instance" : {
 		"componentsDo:separatedBy:" : "GabrielOmarCotelli 3/5/2014 23:46",
-		"functionNameFor:" : "GabrielOmarCotelli 3/5/2014 23:45",
-		"initializeWithValue:" : "GabrielOmarCotelli 3/5/2014 23:45" } }
+		"initializeWithValue:" : "GabrielOmarCotelli 3/5/2014 23:45",
+		"functionNameFor:" : "GabrielOmarCotelli 3/5/2014 23:45"
+	},
+	"class" : {
+		"withValue:" : "GabrielOmarCotelli 3/5/2014 23:41",
+		"assertBetweenZeroAndOne:" : "GabrielOmarCotelli 2/4/2017 21:08"
+	}
+}

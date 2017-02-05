@@ -1,7 +1,7 @@
 private
 assertBetweenZeroAndOne: aNumber
-	
-	(aNumber between: 0 and: aNumber class one)
-		ifFalse: [ 
-			CssInstanceCreationFailed
-				signal: ('The alpha value (<1s>) must be between zero and one.' expandMacrosWith: aNumber printString) ]
+
+	AssertionChecker
+		enforce: [ aNumber between: 0 and: aNumber class one ]
+		because: [ 'The alpha value (<1s>) must be between zero and one.' expandMacrosWith: aNumber printString ]
+		raising: InstanceCreationFailed

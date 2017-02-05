@@ -1,7 +1,8 @@
 {
-	"class" : {
-		 },
 	"instance" : {
 		"testNewWithAlpha" : "GabrielOmarCotelli 10/28/2015 15:35",
-		"testPrintString" : "GabrielOmarCotelli 3/5/2014 23:58",
-		"testPrintStringWithAlpha" : "GabrielOmarCotelli 10/28/2015 15:37" } }
+		"testPrintStringWithAlpha" : "GabrielOmarCotelli 10/28/2015 15:37",
+		"testPrintString" : "GabrielOmarCotelli 3/5/2014 23:58"
+	},
+	"class" : { }
+}

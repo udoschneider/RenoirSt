@@ -1,8 +1,9 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testNewWithAlpha" : "GabrielOmarCotelli 10/28/2015 19:06",
-		"testPrintString" : "GabrielOmarCotelli 3/5/2014 18:14",
 		"testPrintStringUsingPercentageNotation" : "GabrielOmarCotelli 3/5/2014 23:28",
-		"testPrintStringWithAlpha" : "GabrielOmarCotelli 3/5/2014 23:30" } }
+		"testNewWithAlpha" : "GabrielOmarCotelli 10/28/2015 19:06",
+		"testPrintStringWithAlpha" : "GabrielOmarCotelli 3/5/2014 23:30",
+		"testPrintString" : "GabrielOmarCotelli 3/5/2014 18:14"
+	},
+	"class" : { }
+}

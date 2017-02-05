@@ -1,12 +1,15 @@
 {
+	"instance" : {
+		"initializeRepresenting:identifiedBy:" : "GabrielOmarCotelli 3/6/2014 08:39",
+		"cssContentOn:" : "GabrielOmarCotelli 3/6/2014 08:39",
+		"color" : "GabrielOmarCotelli 3/6/2014 08:54",
+		"newWithAlpha:" : "GabrielOmarCotelli 10/28/2015 15:22",
+		"identifiedBy:" : "GabrielOmarCotelli 3/6/2014 09:04"
+	},
 	"class" : {
-		"assertIsOfSizeSix:" : "GabrielOmarCotelli 3/6/2014 08:56",
 		"expandToExtendedHexaNotation:" : "GabrielOmarCotelli 3/6/2014 08:56",
 		"fromHexadecimalNotation:" : "GabrielOmarCotelli 3/6/2014 08:57",
-		"representing:identifiedBy:" : "GabrielOmarCotelli 3/6/2014 08:38" },
-	"instance" : {
-		"color" : "GabrielOmarCotelli 3/6/2014 08:54",
-		"cssContentOn:" : "GabrielOmarCotelli 3/6/2014 08:39",
-		"identifiedBy:" : "GabrielOmarCotelli 3/6/2014 09:04",
-		"initializeRepresenting:identifiedBy:" : "GabrielOmarCotelli 3/6/2014 08:39",
-		"newWithAlpha:" : "GabrielOmarCotelli 10/28/2015 15:22" } }
+		"representing:identifiedBy:" : "GabrielOmarCotelli 3/6/2014 08:38",
+		"assertIsOfSizeSix:" : "GabrielOmarCotelli 2/4/2017 22:01"
+	}
+}

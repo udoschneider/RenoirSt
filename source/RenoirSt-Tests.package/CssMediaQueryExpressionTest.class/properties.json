@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Tests-MediaQueries",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		 ],
-	"name" : "CssMediaQueryExpressionTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "RenoirSt-Tests-MediaQueries",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssMediaQueryExpressionTest",
+	"type" : "normal"
+}

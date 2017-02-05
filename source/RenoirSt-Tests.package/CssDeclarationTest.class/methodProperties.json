@@ -1,5 +1,6 @@
 {
-	"class" : {
-		 },
 	"instance" : {
-		"testPrintString" : "GabrielOmarCotelli 2/25/2014 15:15" } }
+		"testPrintString" : "GabrielOmarCotelli 2/25/2014 15:15"
+	},
+	"class" : { }
+}

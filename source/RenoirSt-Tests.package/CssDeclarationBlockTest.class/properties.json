@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "<historical>",
-	"instvars" : [
-		 ],
-	"name" : "CssDeclarationBlockTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "RenoirSt-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssDeclarationBlockTest",
+	"type" : "normal"
+}
