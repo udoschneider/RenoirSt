@@ -1,5 +1,5 @@
-Printing
+*RenoirSt
 cssContentOn: aStream 
 	
-	number cssContentOn: aStream.
+	self value cssContentOn: aStream.
 	aStream nextPut: $%
