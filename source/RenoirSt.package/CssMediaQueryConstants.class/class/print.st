@@ -1,4 +1,4 @@
 Accessing - Media Types
 print
 
-	^Print
+	^ 'print'

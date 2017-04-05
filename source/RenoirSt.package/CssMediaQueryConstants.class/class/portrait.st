@@ -1,4 +1,4 @@
 Accessing - Orientation
 portrait
 
-	^Portrait 
+	^ 'portrait' 
