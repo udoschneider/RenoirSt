@@ -1,5 +1,5 @@
 Tests
-testBasicConstantws
+testBasicConstants
 
 	self
 		assert: CssConstants auto equals: 'auto';
@@ -9,4 +9,5 @@ testBasicConstantws
 		assert: CssConstants none equals: 'none';
 		assert: CssConstants odd equals: 'odd';
 		assert: CssConstants show equals: 'show';
-		assert: CssConstants vertical equals: 'vertical'
+		assert: CssConstants vertical equals: 'vertical';
+		assert: CssConstants initial equals: 'initial'
