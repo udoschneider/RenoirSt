@@ -1,4 +1,4 @@
 Accessing - Scan
 interlace
 	
-	^Interlace
+	^'interlace'

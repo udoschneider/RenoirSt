@@ -1,4 +1,4 @@
 Accessing - Media Types
 tty
 
-	^TTY
+	^ 'tty'

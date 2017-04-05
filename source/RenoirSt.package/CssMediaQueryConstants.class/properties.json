@@ -1,24 +1,10 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 2/26/2014 11:48",
-	"super" : "SharedPool",
+	"super" : "Object",
 	"category" : "RenoirSt-MediaQueries",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"Braille",
-		"Embossed",
-		"Handheld",
-		"Interlace",
-		"Landscape",
-		"Portrait",
-		"Print",
-		"Progressive",
-		"Projection",
-		"Screen",
-		"Speech",
-		"TTY",
-		"Tv"
-	],
+	"classvars" : [ ],
 	"instvars" : [ ],
 	"name" : "CssMediaQueryConstants",
 	"type" : "normal"

@@ -1,4 +1,4 @@
 Accessing - Orientation
 landscape
 
-	^Landscape 
+	^ 'landscape' 

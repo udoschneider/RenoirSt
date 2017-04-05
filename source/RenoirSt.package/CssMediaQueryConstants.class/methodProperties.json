@@ -1,21 +1,18 @@
 {
 	"instance" : { },
 	"class" : {
-		"braille" : "GabrielOmarCotelli 2/26/2014 11:51",
-		"initializeMediaFeatureValues" : "GabrielOmarCotelli 2/26/2014 12:23",
-		"print" : "GabrielOmarCotelli 2/26/2014 11:51",
-		"embossed" : "GabrielOmarCotelli 2/26/2014 11:52",
-		"screen" : "GabrielOmarCotelli 2/26/2014 11:51",
-		"landscape" : "GabrielOmarCotelli 2/26/2014 12:24",
-		"projection" : "GabrielOmarCotelli 2/26/2014 11:51",
-		"speech" : "GabrielOmarCotelli 2/26/2014 11:52",
-		"tv" : "GabrielOmarCotelli 2/26/2014 11:52",
-		"initialize" : "GabrielOmarCotelli 2/26/2014 12:21",
-		"portrait" : "GabrielOmarCotelli 2/26/2014 12:24",
-		"interlace" : "GabrielOmarCotelli 2/26/2014 12:25",
-		"handheld" : "GabrielOmarCotelli 2/26/2014 11:51",
-		"tty" : "GabrielOmarCotelli 2/26/2014 11:52",
-		"progressive" : "GabrielOmarCotelli 2/26/2014 12:24",
-		"initializeMediaTypes" : "GabrielOmarCotelli 2/26/2014 12:21"
+		"braille" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"print" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"screen" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"embossed" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"landscape" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"projection" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"speech" : "GabrielOmarCotelli 4/5/2017 10:37",
+		"tv" : "GabrielOmarCotelli 4/5/2017 10:37",
+		"portrait" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"interlace" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"handheld" : "GabrielOmarCotelli 4/5/2017 10:36",
+		"tty" : "GabrielOmarCotelli 4/5/2017 10:37",
+		"progressive" : "GabrielOmarCotelli 4/5/2017 10:36"
 	}
 }

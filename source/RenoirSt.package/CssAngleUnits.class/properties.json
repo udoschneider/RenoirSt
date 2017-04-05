@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "GabrielOmarCotelli 3/18/2014 19:29",
-	"super" : "SharedPool",
+	"super" : "Object",
 	"category" : "RenoirSt-Units",
 	"classinstvars" : [ ],
 	"pools" : [ ],

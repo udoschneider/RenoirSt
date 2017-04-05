@@ -1,4 +1,4 @@
 Accessing - Scan
 progressive
 
-	^Progressive 
+	^ 'progressive'
