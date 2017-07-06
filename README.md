@@ -21,12 +21,12 @@ The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4
 - Use your favorite browsing and refactoring tools inside the same Pharo image to handle CSS  
 
 ### Highlights:
-- **Supported Platforms**: [Pharo 3 / Pharo 4 / Pharo 5 / Pharo 6](http://www.pharo.org/)
+- **Supported Platforms**: [Pharo 3 / Pharo 4 / Pharo 5 / Pharo 6 / Pharo 7](http://www.pharo.org/)
 - **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
 
 ### Get started!
 
-#### Pharo 6
+#### Pharo 6/7
 
 - Open a Playground and evaluate:
 
