@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Seaside-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "CssDeclarationBlockJavascriptTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "RenoirSt-Seaside-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssDeclarationBlockJavascriptTest",
+	"type" : "normal"
+}

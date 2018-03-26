@@ -1,6 +1,6 @@
 *RenoirSt-Seaside
 javascriptOn: aStream
-	
+
 	aStream nextPut: $".
 	self property cssContentOn: aStream.
 	aStream

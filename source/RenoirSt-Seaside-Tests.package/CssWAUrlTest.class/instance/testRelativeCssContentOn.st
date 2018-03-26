@@ -2,6 +2,7 @@ Tests
 testRelativeCssContentOn
 
 	| url |
+
 	url := 'images/logo.png' seasideUrl.
 
 	"By default URLs are considered relative to the site root"

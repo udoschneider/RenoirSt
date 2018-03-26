@@ -2,6 +2,7 @@ Tests
 testRelativeCssContentOn
 
 	| url |
+
 	url := 'images/logo.png' asZnUrl.
 	self assert: url isRelative.
 

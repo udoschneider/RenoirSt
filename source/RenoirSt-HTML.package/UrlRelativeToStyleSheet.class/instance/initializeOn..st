@@ -1,4 +1,4 @@
 initialize-release
 initializeOn: aRelativeUrl
 
-	url := aRelativeUrl 
+	url := aRelativeUrl
