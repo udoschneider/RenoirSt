@@ -10,7 +10,7 @@ So far our focus was on the *style* part of the rule. Let's focus now on the ava
 These selectors match a specific element type in the DOM. The library provides out-of-the-box support for HTML elements. One example is the `div` selector used in the previous chapter. Another is the following:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector orderedList ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -28,7 +28,7 @@ To get a list of the supported type selectors inspect `CssSelector selectorsInPr
 
 One of the most common use cases is the **descendant combinator**.
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div orderedList ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -40,9 +40,23 @@ div ol
 }
 ```
 
+In case you need to use parenthesis in the right part of the expression, use `/`.
+```smalltalk
+CascadingStyleSheetBuilder new
+  declareRuleSetFor: [:selector | selector div / (selector class: 'custom') ]
+  with: [:style | style listStyleType: CssConstants lowerRoman ];
+  build
+```
+```css
+div .custom
+{
+	list-style-type: lower-roman;
+}
+```
+
 #### Child combinator
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div > selector orderedList ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -56,7 +70,7 @@ div > ol
 
 #### Adjacent & General Siblings combinators
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div + selector orderedList ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -68,7 +82,7 @@ div + ol
 }
 ```
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ~ selector orderedList ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -82,7 +96,7 @@ div ~ ol
 
 ### Class and Id Selectors
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | (selector div class: 'pastoral') id: #account5 ]
   with: [:style | style listStyleType: CssConstants lowerRoman ];
   build
@@ -103,7 +117,7 @@ Attribute selectors are useful to match an element if that element has an attrib
 
 Attribute presence:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector h1 havingAttribute: 'title' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -117,7 +131,7 @@ h1[title]
 
 exact attribute value matching:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector span withAttribute: 'class' equalTo: 'example' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -132,7 +146,7 @@ span[class="example"]
 inclusion:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'rel' includes: 'copyright' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -146,7 +160,7 @@ a[rel~="copyright"]
 and:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor firstValueOfAttribute: 'hreflang' beginsWith: 'en' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -160,13 +174,13 @@ a[hreflang|="en"]
 
 #### Substring matching attribute selectors
 
-This selectors are provided for matching substrings in the value of an attribute: 
-- `attribute:beginsWith:` 
-- `attribute:endsWith:` 
+This selectors are provided for matching substrings in the value of an attribute:
+- `attribute:beginsWith:`
+- `attribute:endsWith:`
 - `attribute:includesSubstring:`
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'type' beginsWith: 'image/' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -179,7 +193,7 @@ a[type^="image/"]
 ```
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'type' endsWith: '.html' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -192,7 +206,7 @@ a[type$=".html"]
 ```
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph attribute: 'title' includesSubstring: 'hello' ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -209,7 +223,7 @@ The pseudo-class concept is introduced to allow selection based on information t
 
 Here is a small example that uses the pseudo-classes:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor link ]
   with: [:style | style color: CssSVGColors blue ];
   declareRuleSetFor: [:selector | selector anchor visited active]
@@ -251,7 +265,7 @@ input:checked
 
 #### Language Pseudo-class:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | (selector lang: 'es') > selector div ]
   with: [:style | style quotes: { '"«"'. '"»"' }  ];
   build
@@ -269,7 +283,7 @@ The negation pseudo-class, `:not(X)`, is a functional notation taking a simple s
 
 This selector is supported sending the message `not:`. Lets see an example:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector button not: (selector havingAttribute: 'DISABLED') ]
   with: [:style | style color: CssSVGColors blue ];
   build
@@ -283,12 +297,12 @@ button:not([DISABLED])
 #### Structural Pseudo-classes
 These selectors allow selection based on extra information that lies in the document tree but cannot be represented by other simpler selectors nor combinators.
 
-Standalone text and other non-element nodes are not counted when calculating the position of an element in the list of children of its parent. When calculating the position of an element in the list of children of its parent, the index numbering starts at 1. 
+Standalone text and other non-element nodes are not counted when calculating the position of an element in the list of children of its parent. When calculating the position of an element in the list of children of its parent, the index numbering starts at 1.
 
 ##### Root Pseudo-class
 The :root pseudo-class represents an element that is the root of the document. To build this kind of selector just send the message `root` to another selector:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector root ]
   with: [:style | style color: CssSVGColors grey ];
   build
@@ -303,7 +317,7 @@ In addition to this, `:nth-child()` can take ‘odd’ and ‘even’ as argumen
 Since version 1.1.0 the library supports an abstraction for this kind of formulae (`CssLinealPolynomial`), or just an integer if `n` is not required.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector childAt: 3 n + 1 ]
   with: [:style | style color: CssSVGColors blue ];
   declareRuleSetFor: [:selector | selector childAt: 5 ]
@@ -339,7 +353,7 @@ Some examples:
 ```
 
 The rest of the selectors in this category are modeled using the following messsages:
-- `nth-last-child()` -> `childFromLastAt:` 
+- `nth-last-child()` -> `childFromLastAt:`
 - `nth-of-type()` -> `siblingOfTypeAt:`
 - `nth-last-of-type()` -> `siblingOfTypeFromLastAt:`
 - `first-child` -> `firstChild`
@@ -358,7 +372,7 @@ Pseudo-elements create abstractions about the document tree beyond those specifi
 This selector describes the contents of the first formatted line of an element.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph firstLine ]
   with: [:style | style textTransform: CssConstants uppercase ];
   build
@@ -375,7 +389,7 @@ p::first-line
 This pseudo-element represents the first letter of an element, if it is not preceded by any other content (such as images or inline tables) on its line.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph firstLetter ]
   with: [:style | style fontSize: 200 percent ];
   build
@@ -392,7 +406,7 @@ p::first-letter
 These pseudo-elements can be used to describe generated content before or after an element's content. The `content` property, in conjunction with these pseudo-elements, specifies what is inserted.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | (selector paragraph class: 'note') before ]
   with: [:style | style content: '"Note: "' ];
   declareRuleSetFor: [:selector | (selector paragraph class: 'note') after ]
@@ -408,15 +422,15 @@ p.note::before
 p.note::after
 {
 	content: "[*]";
-} 
+}
 ```
 
 ### Selector Groups
 
-A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list. 
+A comma-separated list of selectors represents the union of all elements selected by each of the individual selectors in the list. For example, in CSS when several selectors share the same declarations, they may be grouped into a comma-separated list.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | (selector div class: 'note') after , (selector paragraph class: 'note') before ]
   with: [:style | style content: '"Note: "' ];
   build
