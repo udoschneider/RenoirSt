@@ -1,14 +1,11 @@
 {
-	"category" : "RenoirSt-Seaside-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "GabrielOmarCotelli 3/14/2014 21:46",
-	"instvars" : [
-		 ],
-	"name" : "CssWAUrlTest",
-	"pools" : [
-		 ],
 	"super" : "TestCase",
-	"type" : "normal" }
+	"category" : "RenoirSt-Seaside-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CssWAUrlTest",
+	"type" : "normal"
+}
