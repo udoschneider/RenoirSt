@@ -29,7 +29,7 @@ BaselineOfRenoirSt >> customProjectAttributes [
 BaselineOfRenoirSt >> setUpDependencies: spec [
 
 	spec
-		baseline: 'Buoy' with: [ spec repository: 'github://ba-st/Buoy:v3.1.0/source' ];
+		baseline: 'Buoy' with: [ spec repository: 'github://ba-st/Buoy:v4/source' ];
 		import: 'Buoy'.
 	spec
 		baseline: 'Seaside3'
@@ -49,7 +49,7 @@ BaselineOfRenoirSt >> setUpGroups: spec [
 		package: 'RenoirSt-Tests' with: [ spec requires: 'RenoirSt' ];
 		package: 'RenoirSt-HTML-Tests' with: [ spec requires: #('RenoirSt-HTML' 'RenoirSt-Tests') ];
 		package: 'RenoirSt-UnitsCompatibility' with: [ spec requires: 'RenoirSt' ].
-		
+
 	spec for: #UnitsIsLoaded do: [ spec group: 'Deployment' with: #('RenoirSt' 'RenoirSt-HTML' 'RenoirSt-UnitsCompatibility') ].
 	spec for: #UnitsIsAbsent do: [ spec group: 'Deployment' with: #('RenoirSt' 'RenoirSt-HTML') ].
 	spec group: 'Development' with: #('Deployment' 'RenoirSt-Tests' 'RenoirSt-HTML-Tests')
