@@ -4,7 +4,7 @@ A CssAlphaChannelProvidedTest is a test class for testing the behavior of CssAlp
 Class {
 	#name : #CssAlphaChannelProvidedTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
 
 { #category : #Tests }

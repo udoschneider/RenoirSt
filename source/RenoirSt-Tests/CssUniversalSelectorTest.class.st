@@ -4,7 +4,7 @@ An UniversalSelectorTest is a test class for testing the behavior of UniversalSe
 Class {
 	#name : #CssUniversalSelectorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #tests }

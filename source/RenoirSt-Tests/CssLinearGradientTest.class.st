@@ -4,7 +4,7 @@ A CssLinearGradientTest is a test class for testing the behavior of CssLinearGra
 Class {
 	#name : #CssLinearGradientTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
 
 { #category : #Tests }

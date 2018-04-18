@@ -8,7 +8,7 @@ Class {
 		'mediaFeature',
 		'values'
 	],
-	#category : 'RenoirSt-MediaQueries'
+	#category : #'RenoirSt-MediaQueries'
 }
 
 { #category : #private }

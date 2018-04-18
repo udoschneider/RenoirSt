@@ -4,7 +4,7 @@ A CssDeclarationBlockTest is a test class for testing the behavior of CssDeclara
 Class {
 	#name : #CssDeclarationBlockTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #private }

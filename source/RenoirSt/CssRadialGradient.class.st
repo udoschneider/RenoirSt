@@ -9,7 +9,7 @@ Class {
 		'colorStops',
 		'functionName'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #'Instance Creation' }

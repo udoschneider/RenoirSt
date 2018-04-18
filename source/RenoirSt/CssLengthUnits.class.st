@@ -20,7 +20,7 @@ Class {
 		'XHeight',
 		'ZeroWidth'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #'Accessing - Absolute' }
@@ -49,6 +49,8 @@ CssLengthUnits class >> inch [
 
 { #category : #'initialize-release' }
 CssLengthUnits class >> initialize [
+
+	<ignoreForCoverage>
 	self initializeAbsoluteUnits.
 	self initializeRelativeUnits
 ]

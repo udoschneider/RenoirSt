@@ -4,7 +4,7 @@ A CssFontConstantsTest is a test class for testing the behavior of CssFontConsta
 Class {
 	#name : #CssFontConstantsTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Fonts'
+	#category : #'RenoirSt-Tests-Fonts'
 }
 
 { #category : #Tests }

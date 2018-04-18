@@ -154,7 +154,7 @@ Class {
 		'Yellow',
 		'YellowGreen'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #accessing }
@@ -464,7 +464,8 @@ CssSVGColors class >> indigo [
 
 { #category : #'initialize-release' }
 CssSVGColors class >> initialize [
-	
+
+	<ignoreForCoverage>
 	self
 		initializeAtoF;
 		initializeGtoL;
@@ -473,6 +474,8 @@ CssSVGColors class >> initialize [
 
 { #category : #private }
 CssSVGColors class >> initializeAtoF [
+
+	<ignoreForCoverage>
 	AliceBlue := (CssRGBColor red: 240 green: 248 blue: 255) identifiedBy: 'aliceblue'.
 	AntiqueWhite := (CssRGBColor red: 250 green: 235 blue: 215) identifiedBy: 'antiquewhite'.
 	Aqua := (CssRGBColor red: 0 green: 255 blue: 255) identifiedBy: 'aqua'.
@@ -526,7 +529,8 @@ CssSVGColors class >> initializeAtoF [
 
 { #category : #private }
 CssSVGColors class >> initializeGtoL [
-	
+
+	<ignoreForCoverage>
 	Gainsboro := (CssRGBColor red: 220 green: 220 blue: 220) identifiedBy: 'gainsboro'.
 	GhostWhite := (CssRGBColor red: 248 green: 248 blue: 255) identifiedBy: 'ghostwhite'.
 	Gold := (CssRGBColor red: 255 green: 215 blue: 0) identifiedBy: 'gold'.
@@ -562,13 +566,13 @@ CssSVGColors class >> initializeGtoL [
 	LightYellow := (CssRGBColor red: 255 green: 255 blue: 224) identifiedBy: 'lightyellow'.
 	Lime := (CssRGBColor red: 0 green: 255 blue: 0) identifiedBy: 'lime'.
 	LimeGreen := (CssRGBColor red: 50 green: 205 blue: 50) identifiedBy: 'limegreen'.
-	Linen := (CssRGBColor red: 250 green: 240 blue: 230) identifiedBy: 'linen'.
-
+	Linen := (CssRGBColor red: 250 green: 240 blue: 230) identifiedBy: 'linen'
 ]
 
 { #category : #private }
 CssSVGColors class >> initializeMtoZ [
-	
+
+	<ignoreForCoverage>
 	Magenta := (CssRGBColor red: 255 green: 0 blue: 255) identifiedBy: 'magenta'.
 	Maroon := (CssRGBColor red: 128 green: 0 blue: 0) identifiedBy: 'maroon'.
 	MediumAquamarine := (CssRGBColor red: 102 green: 205 blue: 170) identifiedBy: 'mediumaquamarine'.
@@ -630,7 +634,7 @@ CssSVGColors class >> initializeMtoZ [
 	White := (CssRGBColor red: 255 green: 255 blue: 255) identifiedBy: 'white'.
 	WhiteSmoke := (CssRGBColor red: 245 green: 245 blue: 245) identifiedBy: 'whitesmoke'.
 	Yellow := (CssRGBColor red: 255 green: 255 blue: 0) identifiedBy: 'yellow'.
-	YellowGreen := (CssRGBColor red: 154 green: 205 blue: 50) identifiedBy: 'yellowgreen'.
+	YellowGreen := (CssRGBColor red: 154 green: 205 blue: 50) identifiedBy: 'yellowgreen'
 ]
 
 { #category : #accessing }

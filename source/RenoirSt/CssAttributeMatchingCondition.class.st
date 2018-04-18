@@ -8,7 +8,7 @@ Class {
 		'attributeValue',
 		'condition'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'Instance Creation' }

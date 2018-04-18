@@ -10,7 +10,7 @@ Class {
 		'id',
 		'selector'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #private }

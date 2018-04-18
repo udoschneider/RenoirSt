@@ -1,7 +1,7 @@
 Class {
 	#name : #CssBoxShadowTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #Tests }

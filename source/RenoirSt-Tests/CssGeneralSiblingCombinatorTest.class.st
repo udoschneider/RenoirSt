@@ -4,7 +4,7 @@ A CssGeneralSiblingCombinatorTest is a test class for testing the behavior of Cs
 Class {
 	#name : #CssGeneralSiblingCombinatorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

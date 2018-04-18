@@ -1,7 +1,7 @@
 Class {
 	#name : #CssFontFaceRuleTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Fonts'
+	#category : #'RenoirSt-Tests-Fonts'
 }
 
 { #category : #Tests }

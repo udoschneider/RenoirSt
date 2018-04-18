@@ -4,7 +4,7 @@ A CssAttributeSelectorTest is a test class for testing the behavior of CssAttrib
 Class {
 	#name : #CssAttributeSelectorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

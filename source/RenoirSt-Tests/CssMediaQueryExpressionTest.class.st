@@ -4,7 +4,7 @@ A CssMediaQueryExpressionTest is a test class for testing the behavior of CssMed
 Class {
 	#name : #CssMediaQueryExpressionTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-MediaQueries'
+	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
 { #category : #Tests }

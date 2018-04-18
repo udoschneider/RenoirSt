@@ -4,7 +4,7 @@ I stores metadata on true and false positive critics. These meta data are used b
 Class {
 	#name : #ManifestRenoirSt,
 	#superclass : #Object,
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #'meta data' }

@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'elementType'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'Instance Creation' }

@@ -9,11 +9,13 @@ Class {
 		'Millisecond',
 		'Second'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #'initialize-release' }
 CssTimeUnits class >> initialize [
+
+	<ignoreForCoverage>
 	Second := CssUnit identifiedBy: 's'.
 	Millisecond := CssUnit identifiedBy: 'ms'
 ]

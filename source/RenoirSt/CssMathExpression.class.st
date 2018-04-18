@@ -8,7 +8,7 @@ Class {
 		'operands',
 		'operators'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #'Instance Creation' }
@@ -33,7 +33,8 @@ CssMathExpression >> - aCssValue [
 ]
 
 { #category : #'math functions' }
-CssMathExpression >> /aCssValue [
+CssMathExpression >> / aCssValue [
+
 	self addOperand: aCssValue andOperator: '/'
 ]
 

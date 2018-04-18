@@ -4,7 +4,7 @@ A CssMediaQueryConstantsTest is a test class for testing the behavior of CssMedi
 Class {
 	#name : #CssMediaQueryConstantsTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-MediaQueries'
+	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
 { #category : #tests }
@@ -14,6 +14,7 @@ CssMediaQueryConstantsTest >> testConstants [
 		assert: CssMediaQueryConstants braille equals: 'braille';
 		assert: CssMediaQueryConstants embossed equals: 'embossed';
 		assert: CssMediaQueryConstants handheld equals: 'handheld';
+		assert: CssMediaQueryConstants interlace equals: 'interlace';
 		assert: CssMediaQueryConstants projection equals: 'projection';
 		assert: CssMediaQueryConstants speech equals: 'speech';
 		assert: CssMediaQueryConstants tty equals: 'tty';

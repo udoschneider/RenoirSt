@@ -4,7 +4,7 @@ I'm here helping to create stylesheets but without having to manually add every 
 Class {
 	#name : #ReflectiveCascadingStyleSheetBuilder,
 	#superclass : #Object,
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #building }

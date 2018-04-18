@@ -4,7 +4,7 @@ A CssIdSelectorTest is a test class for testing the behavior of CssIdSelector
 Class {
 	#name : #CssIdSelectorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

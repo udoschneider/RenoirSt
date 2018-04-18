@@ -4,7 +4,7 @@ A CssDescendantCombinatorTest is a test class for testing the behavior of CssDes
 Class {
 	#name : #CssDescendantCombinatorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

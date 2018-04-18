@@ -4,7 +4,7 @@ A CascadingStyleSheetBuilderTest is a test class for testing the behavior of Cas
 Class {
 	#name : #CascadingStyleSheetBuilderTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #Tests }

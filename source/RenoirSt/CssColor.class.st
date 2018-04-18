@@ -5,7 +5,7 @@ A CssColor is a color suitable for use in CSS
 Class {
 	#name : #CssColor,
 	#superclass : #CssColorUnit,
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #private }

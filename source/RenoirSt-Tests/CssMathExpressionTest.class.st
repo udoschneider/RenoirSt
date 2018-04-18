@@ -4,7 +4,7 @@ A CssMathExpressionTest is a test class for testing the behavior of CssMathExpre
 Class {
 	#name : #CssMathExpressionTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Units'
+	#category : #'RenoirSt-Tests-Units'
 }
 
 { #category : #Tests }

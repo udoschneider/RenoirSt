@@ -9,7 +9,7 @@ Class {
 		'expressions',
 		'styleSheet'
 	],
-	#category : 'RenoirSt-MediaQueries'
+	#category : #'RenoirSt-MediaQueries'
 }
 
 { #category : #'Instance Creation' }

@@ -9,7 +9,7 @@ Class {
 		'color',
 		'identification'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #private }

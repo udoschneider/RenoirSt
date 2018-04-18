@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'value'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #private }

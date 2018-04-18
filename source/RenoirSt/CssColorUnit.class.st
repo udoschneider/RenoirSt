@@ -4,7 +4,7 @@ A CssColorUnit is an abstract color unit for CSS
 Class {
 	#name : #CssColorUnit,
 	#superclass : #CssObject,
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #Converting }

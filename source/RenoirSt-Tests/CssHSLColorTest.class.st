@@ -4,7 +4,7 @@ A CssHSLColorTest is a test class for testing the behavior of CssHSLColor
 Class {
 	#name : #CssHSLColorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
 
 { #category : #Tests }

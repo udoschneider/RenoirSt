@@ -5,7 +5,7 @@ A CssRulePrecedencePolicy determines the precedence policy of css declarations.
 Class {
 	#name : #CssRulePrecedencePolicy,
 	#superclass : #Object,
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #Applying }

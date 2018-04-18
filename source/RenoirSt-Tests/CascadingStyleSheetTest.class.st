@@ -4,7 +4,7 @@ A CascadingStyleSheetTest is a test class for testing the behavior of CascadingS
 Class {
 	#name : #CascadingStyleSheetTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #Tests }

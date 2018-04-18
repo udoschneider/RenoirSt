@@ -4,7 +4,7 @@ A CssRadialGradientTest is a test class for testing the behavior of CssRadialGra
 Class {
 	#name : #CssRadialGradientTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
 
 { #category : #Tests }

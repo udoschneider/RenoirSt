@@ -8,7 +8,7 @@ Class {
 		'quantity',
 		'unit'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #'Instance Creation' }

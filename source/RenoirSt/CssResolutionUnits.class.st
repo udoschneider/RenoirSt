@@ -9,7 +9,7 @@ Class {
 		'DotsPerInch',
 		'DotsPerPixelUnit'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #Accessing }
@@ -32,7 +32,8 @@ CssResolutionUnits class >> dotsPerPixelUnit [
 
 { #category : #'initialize-release' }
 CssResolutionUnits class >> initialize [
-	
+
+	<ignoreForCoverage>
 	DotsPerCentimeter := 'dpcm'.
 	DotsPerInch := 'dpi'.
 	DotsPerPixelUnit := 'dppx'

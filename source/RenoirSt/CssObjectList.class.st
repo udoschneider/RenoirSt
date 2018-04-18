@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'components'
 	],
-	#category : 'RenoirSt-Common'
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'instance creation' }

@@ -9,7 +9,7 @@ Class {
 		'Hertz',
 		'KiloHertz'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #Accessing }
@@ -20,8 +20,10 @@ CssFrequencyUnits class >> hertz [
 
 { #category : #'initialize-release' }
 CssFrequencyUnits class >> initialize [
+
+	<ignoreForCoverage>
 	Hertz := CssUnit identifiedBy: 'Hz'.
-	KiloHertz  := CssUnit identifiedBy: 'kHz'
+	KiloHertz := CssUnit identifiedBy: 'kHz'
 ]
 
 { #category : #Accessing }

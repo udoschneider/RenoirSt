@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'stream'
 	],
-	#category : 'RenoirSt-Common'
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'Instance Creation' }

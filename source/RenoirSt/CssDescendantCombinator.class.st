@@ -8,7 +8,7 @@ Class {
 		'ancestor',
 		'descendant'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'Instance Creation' }

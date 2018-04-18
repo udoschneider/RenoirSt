@@ -11,7 +11,7 @@ Class {
 		'cssClass',
 		'parentSelector'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'instance creation' }

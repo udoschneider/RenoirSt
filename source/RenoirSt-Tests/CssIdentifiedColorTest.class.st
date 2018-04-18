@@ -4,7 +4,7 @@ A CssIdentifiedColorTest is a test class for testing the behavior of CssIdentifi
 Class {
 	#name : #CssIdentifiedColorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
 
 { #category : #Tests }

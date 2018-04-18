@@ -4,7 +4,7 @@ A CssLenghtUnitTest is a test class for testing the behavior of CssLenghtUnit
 Class {
 	#name : #CssUnitTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Units'
+	#category : #'RenoirSt-Tests-Units'
 }
 
 { #category : #Tests }

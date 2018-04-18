@@ -9,7 +9,7 @@ Class {
 		'declarationBlock',
 		'comment'
 	],
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #'Instance Creation' }

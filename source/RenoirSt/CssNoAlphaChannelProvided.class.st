@@ -5,7 +5,7 @@ A CssNoAlphaChannelProvided represents the absence of an alpha channel. So this 
 Class {
 	#name : #CssNoAlphaChannelProvided,
 	#superclass : #CssAlphaChannel,
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #Enumerating }

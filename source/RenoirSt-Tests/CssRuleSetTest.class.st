@@ -4,7 +4,7 @@ A CssRuleSetTest is a test class for testing the behavior of CssRuleSet
 Class {
 	#name : #CssRuleSetTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #Tests }

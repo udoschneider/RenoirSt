@@ -4,7 +4,7 @@ A CssAttributeReferenceTest is a test class for testing the behavior of CssAttri
 Class {
 	#name : #CssAttributeReferenceTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Units'
+	#category : #'RenoirSt-Tests-Units'
 }
 
 { #category : #Tests }

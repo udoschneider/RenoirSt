@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'identifier'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #Preconditions }

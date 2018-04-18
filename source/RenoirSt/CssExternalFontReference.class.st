@@ -8,7 +8,7 @@ Class {
 		'url',
 		'format'
 	],
-	#category : 'RenoirSt-Fonts'
+	#category : #'RenoirSt-Fonts'
 }
 
 { #category : #'Instance Creation' }

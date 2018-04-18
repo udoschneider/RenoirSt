@@ -4,7 +4,7 @@ A gradient is an image that smoothly fades from one color to another.
 Class {
 	#name : #CssGradient,
 	#superclass : #CssObject,
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #private }

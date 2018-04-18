@@ -5,7 +5,7 @@ A CssAbstractDeclaration defines the common behavior for the declarations.
 Class {
 	#name : #CssAbstractDeclaration,
 	#superclass : #CssObject,
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #private }

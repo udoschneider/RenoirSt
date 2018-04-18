@@ -4,7 +4,7 @@ A CssClassSelectorTest is a test class for testing the behavior of CssClassSelec
 Class {
 	#name : #CssClassSelectorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

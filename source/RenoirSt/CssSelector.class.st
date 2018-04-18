@@ -5,7 +5,7 @@ In CSS, pattern matching rules determine which style rules apply to elements in 
 Class {
 	#name : #CssSelector,
 	#superclass : #CssObject,
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'building-combinators' }

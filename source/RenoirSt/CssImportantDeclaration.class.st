@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'declaration'
 	],
-	#category : 'RenoirSt'
+	#category : #RenoirSt
 }
 
 { #category : #'instance creation' }

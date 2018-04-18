@@ -11,7 +11,7 @@ Class {
 		'Radian',
 		'Turn'
 	],
-	#category : 'RenoirSt-Units'
+	#category : #'RenoirSt-Units'
 }
 
 { #category : #Accessing }
@@ -29,10 +29,11 @@ CssAngleUnits class >> gradian [
 { #category : #'initialize-release' }
 CssAngleUnits class >> initialize [
 
+	<ignoreForCoverage>
 	Degree := CssUnit identifiedBy: 'deg'.
 	Radian := CssUnit identifiedBy: 'rad'.
 	Gradian := CssUnit identifiedBy: 'grad'.
-	Turn := CssUnit identifiedBy: 'turn'.
+	Turn := CssUnit identifiedBy: 'turn'
 ]
 
 { #category : #Accessing }

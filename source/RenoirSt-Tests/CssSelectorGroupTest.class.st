@@ -4,7 +4,7 @@ A CssSelectorGroupTest is a test class for testing the behavior of CssSelectorGr
 Class {
 	#name : #CssSelectorGroupTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

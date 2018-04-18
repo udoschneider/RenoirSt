@@ -4,7 +4,7 @@ A CssImportantDeclarationTest is a test class for testing the behavior of CssImp
 Class {
 	#name : #CssImportantDeclarationTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests'
 }
 
 { #category : #Tests }

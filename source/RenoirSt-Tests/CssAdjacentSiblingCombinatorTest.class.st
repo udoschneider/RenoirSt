@@ -4,7 +4,7 @@ A CssAdjacentSiblingCombinatorTest is a test class for testing the behavior of C
 Class {
 	#name : #CssAdjacentSiblingCombinatorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }

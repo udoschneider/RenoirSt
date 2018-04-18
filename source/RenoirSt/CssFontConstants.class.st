@@ -5,7 +5,7 @@ A CssFontConstants is a shared pool providing access to common constants for fon
 Class {
 	#name : #CssFontConstants,
 	#superclass : #Object,
-	#category : 'RenoirSt-Fonts'
+	#category : #'RenoirSt-Fonts'
 }
 
 { #category : #'Font Variant' }

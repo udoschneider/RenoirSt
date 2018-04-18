@@ -10,7 +10,7 @@ Class {
 		'mediaType',
 		'expressions'
 	],
-	#category : 'RenoirSt-MediaQueries'
+	#category : #'RenoirSt-MediaQueries'
 }
 
 { #category : #private }

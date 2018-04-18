@@ -8,7 +8,7 @@ Class {
 		'dependentCoefficient',
 		'independentCoefficient'
 	],
-	#category : 'RenoirSt-Selectors'
+	#category : #'RenoirSt-Selectors'
 }
 
 { #category : #'Instance Creation' }

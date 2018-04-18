@@ -4,8 +4,18 @@ A CssRGBColorTest is a test class for testing the behavior of CssRGBColor
 Class {
 	#name : #CssRGBColorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Colors'
+	#category : #'RenoirSt-Tests-Colors'
 }
+
+{ #category : #Tests }
+CssRGBColorTest >> testIdentifiedBy [
+
+	| color |
+
+	color := (CssRGBColor red: 255 green: 0 blue: 0) identifiedBy: 'red'.
+
+	self assert: color printString equals: 'red'
+]
 
 { #category : #Tests }
 CssRGBColorTest >> testNewWithAlpha [

@@ -4,7 +4,7 @@ A CssMediaQueryRuleBuilderTest is a test class for testing the behavior of CssMe
 Class {
 	#name : #CssMediaQueryRuleBuilderTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-MediaQueries'
+	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
 { #category : #Tests }

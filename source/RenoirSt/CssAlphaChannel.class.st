@@ -5,7 +5,7 @@ A CssAlphaChannelComponent is the abstract class of the alpha channel provision
 Class {
 	#name : #CssAlphaChannel,
 	#superclass : #Object,
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #Enumerating }

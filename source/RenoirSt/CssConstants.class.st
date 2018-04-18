@@ -5,7 +5,7 @@ A CssConstants is shared place providing easy access to property constants value
 Class {
 	#name : #CssConstants,
 	#superclass : #Object,
-	#category : 'RenoirSt-Common'
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'Accessing - Positioning' }
@@ -532,9 +532,9 @@ CssConstants class >> pre [
 ]
 
 { #category : #'Accessing - Text' }
-CssConstants class >> preLine [ 
+CssConstants class >> preLine [
 
-	^'pre-line '
+	^ 'pre-line'
 ]
 
 { #category : #'Accessing - Text' }

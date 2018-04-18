@@ -9,7 +9,7 @@ Class {
 		'color',
 		'stop'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #'Instance Creation' }

@@ -4,7 +4,7 @@ A CssMediaQueryRuleTest is a test class for testing the behavior of CssMediaQuer
 Class {
 	#name : #CssMediaQueryRuleTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-MediaQueries'
+	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
 { #category : #Tests }

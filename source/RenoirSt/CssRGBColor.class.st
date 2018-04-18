@@ -10,7 +10,7 @@ Class {
 		'blueComponent',
 		'alphaChannel'
 	],
-	#category : 'RenoirSt-Colors'
+	#category : #'RenoirSt-Colors'
 }
 
 { #category : #'Instance Creation' }

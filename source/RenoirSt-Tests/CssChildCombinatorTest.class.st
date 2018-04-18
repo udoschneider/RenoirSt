@@ -4,7 +4,7 @@ A CssChildCombinatorTest is a test class for testing the behavior of CssChildCom
 Class {
 	#name : #CssChildCombinatorTest,
 	#superclass : #TestCase,
-	#category : 'RenoirSt-Tests-Selectors'
+	#category : #'RenoirSt-Tests-Selectors'
 }
 
 { #category : #Tests }
