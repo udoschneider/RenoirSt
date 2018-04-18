@@ -1,4 +1,0 @@
-Font Size
-large
-	
-	^'large'

@@ -1,4 +1,0 @@
-Accessing - Borders
-stretch
-
-	 ^'stretch'

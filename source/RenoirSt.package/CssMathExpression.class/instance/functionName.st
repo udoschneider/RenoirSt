@@ -1,4 +1,0 @@
-private
-functionName
-
-	^'calc'

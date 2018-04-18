@@ -1,4 +1,0 @@
-Accessing - Text
-overline
-
-	^'overline'

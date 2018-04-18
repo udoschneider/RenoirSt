@@ -1,4 +1,0 @@
-Instance Creation
-ofType: aMediaType conforming: anExpressionCollection enabling: aCascadingStyleSheet 
-	
-	^self new initializeOfType: aMediaType conforming: anExpressionCollection enabling: aCascadingStyleSheet 

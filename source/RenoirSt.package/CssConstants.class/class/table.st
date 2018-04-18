@@ -1,4 +1,0 @@
-Accessing - Display
-table
-	
-	^ 'table'

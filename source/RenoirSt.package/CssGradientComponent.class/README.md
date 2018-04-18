@@ -1,1 +1,0 @@
-A CssGradientComponent represents a part of a gradient

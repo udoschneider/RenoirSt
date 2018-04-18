@@ -1,5 +1,0 @@
-Accessing - Display
-block
-	"This value causes an element to generate a block box."
-
-	^ 'block'

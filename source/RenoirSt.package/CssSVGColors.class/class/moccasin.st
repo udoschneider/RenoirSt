@@ -1,3 +1,0 @@
-accessing
-moccasin
-	^ Moccasin

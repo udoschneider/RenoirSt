@@ -1,4 +1,0 @@
-Accessing
-functionNameFor: aString 
-	
-	^aString 

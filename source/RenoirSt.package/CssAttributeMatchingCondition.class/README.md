@@ -1,1 +1,0 @@
-A CssAttributeMatchingOperation is a matching operation over the value of an attribute. Common examples are: = , += , ^=. See references for the whole list.

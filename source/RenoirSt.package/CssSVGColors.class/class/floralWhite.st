@@ -1,3 +1,0 @@
-accessing
-floralWhite
-	^ FloralWhite

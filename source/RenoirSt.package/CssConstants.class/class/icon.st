@@ -1,4 +1,0 @@
-Accessing - Fonts
-icon 
-
-	^'icon'

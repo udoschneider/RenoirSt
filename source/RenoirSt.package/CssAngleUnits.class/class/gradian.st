@@ -1,4 +1,0 @@
-Accessing
-gradian
-
-	^Gradian   

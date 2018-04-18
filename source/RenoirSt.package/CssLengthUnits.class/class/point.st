@@ -1,4 +1,0 @@
-Accessing - Absolute
-point
-
-	^Point 

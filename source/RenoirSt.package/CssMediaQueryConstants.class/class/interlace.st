@@ -1,4 +1,0 @@
-Accessing - Scan
-interlace
-	
-	^'interlace'

@@ -1,4 +1,0 @@
-private
-named: aPseudoClassName over: aSelector 
-	
-	^self named: aPseudoClassName withArguments: #() over: aSelector 

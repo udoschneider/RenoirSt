@@ -1,1 +1,0 @@
-A CssToggle represents a CSS expression allowing descendant elements to cycle over a list of values instead of inheriting the same value.

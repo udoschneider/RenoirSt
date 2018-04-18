@@ -1,4 +1,0 @@
-Font Variant
-ordinal
-	
-	^'ordinal'

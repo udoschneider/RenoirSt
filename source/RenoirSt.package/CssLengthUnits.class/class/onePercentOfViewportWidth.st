@@ -1,4 +1,0 @@
-Accessing - Relative
-onePercentOfViewportWidth
-
-	^OnePercentOfViewportWidth 

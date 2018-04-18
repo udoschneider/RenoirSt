@@ -1,7 +1,0 @@
-Printing
-cssContentOn: aWriteStream
-	aWriteStream
-		nextPutAll: self functionName;
-		nextPut: $(.
-	self componentsDo: [ :component | component cssContentOn: aWriteStream ] separatedBy: [ aWriteStream nextPut: $, ].
-	aWriteStream nextPut: $)

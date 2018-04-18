@@ -1,1 +1,0 @@
-A CssLinearGradientTest is a test class for testing the behavior of CssLinearGradient

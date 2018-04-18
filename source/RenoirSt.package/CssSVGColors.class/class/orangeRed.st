@@ -1,3 +1,0 @@
-accessing
-orangeRed
-	^ OrangeRed

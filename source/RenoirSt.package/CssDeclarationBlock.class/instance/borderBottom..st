@@ -1,4 +1,0 @@
-border properties
-borderBottom: aCssValue
-
-	self propertyAt: 'border-bottom' put: aCssValue  

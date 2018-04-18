@@ -1,1 +1,0 @@
-A child combinator describes a childhood relationship between two elements. A child combinator is made of the "greater-than sign" (U+003E, >) character and separates two sequences of simple selectors.

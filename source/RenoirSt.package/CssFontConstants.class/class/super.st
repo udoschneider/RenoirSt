@@ -1,4 +1,0 @@
-Font Variant
-super
-	
-	^'super'

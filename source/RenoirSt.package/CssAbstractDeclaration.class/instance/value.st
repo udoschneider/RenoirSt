@@ -1,4 +1,0 @@
-private
-value
-
-	self subclassResponsibility 

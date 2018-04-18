@@ -1,9 +1,0 @@
-Printing
-cssContentOn: aStream
-
-	parent cssContentOn: aStream.
-	aStream
-		space;
-		nextPut: $>;
-		space.
-	child cssContentOn: aStream

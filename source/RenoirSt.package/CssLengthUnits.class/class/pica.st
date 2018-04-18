@@ -1,4 +1,0 @@
-Accessing - Absolute
-pica
-
-	^Pica

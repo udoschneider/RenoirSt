@@ -1,4 +1,0 @@
-Accessing - Lists
-decimal  
-
-	^'decimal'

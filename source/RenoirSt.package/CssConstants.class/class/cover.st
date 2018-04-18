@@ -1,4 +1,0 @@
-Accessing - Size
-cover
-
-	^'cover'

@@ -1,4 +1,0 @@
-Accessing - Text
-capitalize
-
-	^'capitalize'

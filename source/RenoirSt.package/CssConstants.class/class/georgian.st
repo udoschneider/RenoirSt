@@ -1,4 +1,0 @@
-Accessing - Lists
-georgian   
-
-	^'georgian'

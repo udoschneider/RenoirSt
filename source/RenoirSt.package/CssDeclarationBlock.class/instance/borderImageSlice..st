@@ -1,4 +1,0 @@
-border properties
-borderImageSlice: aCssValue
-
-	self propertyAt: 'border-image-slice' put: aCssValue 

@@ -1,4 +1,0 @@
-Accessing
-dotsPerPixelUnit
-
-	^DotsPerPixelUnit 

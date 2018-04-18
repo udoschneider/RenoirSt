@@ -1,1 +1,0 @@
-A CssPseudoClassSelectorTest is a test class for testing the behavior of CssPseudoClassSelector
