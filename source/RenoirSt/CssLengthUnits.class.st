@@ -57,6 +57,8 @@ CssLengthUnits class >> initialize [
 
 { #category : #'initialize-release' }
 CssLengthUnits class >> initializeAbsoluteUnits [
+
+	<ignoreForCoverage>
 	Centimeter := CssUnit identifiedBy: 'cm'.
 	Inch := CssUnit identifiedBy: 'in'.
 	Millimeter := CssUnit identifiedBy: 'mm'.
@@ -67,6 +69,8 @@ CssLengthUnits class >> initializeAbsoluteUnits [
 
 { #category : #'initialize-release' }
 CssLengthUnits class >> initializeRelativeUnits [
+
+	<ignoreForCoverage>
 	FontSize := CssUnit identifiedBy: 'em'.
 	XHeight := CssUnit identifiedBy: 'ex'.
 	ZeroWidth := CssUnit identifiedBy: 'ch'.
