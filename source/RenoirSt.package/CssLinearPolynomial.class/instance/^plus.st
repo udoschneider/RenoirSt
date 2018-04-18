@@ -1,4 +1,0 @@
-Configuring
-+ aPositiveInteger
-
-	independentCoefficient := aPositiveInteger 

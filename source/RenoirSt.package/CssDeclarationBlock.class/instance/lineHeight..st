@@ -1,4 +1,0 @@
-box properties
-lineHeight: aCssValue
-
-	self propertyAt: 'line-height' put: aCssValue 

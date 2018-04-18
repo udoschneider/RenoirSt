@@ -1,3 +1,0 @@
-accessing
-lightSteelBlue
-	^ LightSteelBlue

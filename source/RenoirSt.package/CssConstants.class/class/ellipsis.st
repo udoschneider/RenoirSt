@@ -1,4 +1,0 @@
-Accessing - Text
-ellipsis
-
-	^'ellipsis'

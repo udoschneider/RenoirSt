@@ -1,8 +1,0 @@
-Printing
-cssContentOn: aWriteStream
-	
-	aWriteStream
-		nextPutAll: self functionName;
-		nextPut: $(.
-	self cssFunctionParametersContentOn: aWriteStream.
-	aWriteStream nextPut: $)

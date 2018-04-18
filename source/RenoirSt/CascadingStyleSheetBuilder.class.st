@@ -1,0 +1,76 @@
+"
+A CascadingStyleSheetBuilder is a builder to help creting style sheets.
+"
+Class {
+	#name : #CascadingStyleSheetBuilder,
+	#superclass : #Object,
+	#instVars : [
+		'statements'
+	],
+	#category : #RenoirSt
+}
+
+{ #category : #private }
+CascadingStyleSheetBuilder >> addStatement: aCssStatement [
+	"aCssStatement can be a Rule Set or some At-Rule"
+	statements add: aCssStatement
+]
+
+{ #category : #building }
+CascadingStyleSheetBuilder >> build [
+	
+	^CascadingStyleSheet withAll: statements 
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> comment: aCommentText [
+
+	self addStatement: (CssComment for: aCommentText)
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMediaQueryBlock [
+	
+	| styleSheetBuilder mediaQueryBuilder |
+	
+	styleSheetBuilder := self class new.
+	aSubStyleSheetBlock value: styleSheetBuilder.
+	
+	mediaQueryBuilder := CssMediaQueryRuleBuilder new.
+	aMediaQueryBlock value: mediaQueryBuilder.
+	
+	mediaQueryBuilder useStyleSheet: styleSheetBuilder build.
+	self addStatement: mediaQueryBuilder build
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> declareFontFaceRuleWith: aDeclarationAction [
+
+	|  declarationBlock |
+	declarationBlock := CssDeclarationBlock new.
+	aDeclarationAction value: declarationBlock.
+	self addStatement: (CssRuleSet selector: '@font-face' declarations: declarationBlock)
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarationAction [
+
+	self declareRuleSetFor: aSelectorBlock with: aDeclarationAction andComment: ''
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarationAction andComment: aComment [
+
+	| selector declarationBlock |
+	selector := aSelectorBlock cull: CssUniversalSelector implicit.
+	declarationBlock := CssDeclarationBlock new.
+	aDeclarationAction value: declarationBlock.
+	self addStatement: (CssRuleSet selector: selector declarations: declarationBlock comment: aComment)
+]
+
+{ #category : #'initialize-release' }
+CascadingStyleSheetBuilder >> initialize [
+
+	super initialize.
+	statements := OrderedCollection new
+]

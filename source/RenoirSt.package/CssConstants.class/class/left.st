@@ -1,4 +1,0 @@
-Accessing - Positioning
-left 
-
-	^'left'

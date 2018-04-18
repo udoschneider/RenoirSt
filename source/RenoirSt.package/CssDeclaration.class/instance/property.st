@@ -1,4 +1,0 @@
-private
-property
-
-	^ property

@@ -1,4 +1,0 @@
-Font Format
-truetype
-
-	^ 'truetype'

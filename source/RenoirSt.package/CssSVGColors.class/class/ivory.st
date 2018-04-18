@@ -1,3 +1,0 @@
-accessing
-ivory
-	^ Ivory

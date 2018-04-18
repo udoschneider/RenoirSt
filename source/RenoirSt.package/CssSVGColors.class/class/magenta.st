@@ -1,3 +1,0 @@
-accessing
-magenta
-	^ Magenta

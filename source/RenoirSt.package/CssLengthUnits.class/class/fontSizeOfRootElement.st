@@ -1,4 +1,0 @@
-Accessing - Relative
-fontSizeOfRootElement
-
-	^FontSizeOfRootElement 

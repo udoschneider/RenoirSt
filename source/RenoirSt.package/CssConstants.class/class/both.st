@@ -1,4 +1,0 @@
-Accessing - Positioning
-both 
-
-	^'both'

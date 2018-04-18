@@ -1,4 +1,0 @@
-border properties
-borderTopRightRadius: aCssLength 
-	
-	self propertyAt: 'border-top-right-radius' put: aCssLength 

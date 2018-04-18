@@ -1,4 +1,0 @@
-Instance Creation
-language: aLanguageId on: aSelector 
-	
-	^self named: 'lang' withArguments: { aLanguageId } over: aSelector 

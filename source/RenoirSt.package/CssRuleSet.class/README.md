@@ -1,1 +1,0 @@
-A rule set (also called "rule") consists of a selector followed by a declaration block.

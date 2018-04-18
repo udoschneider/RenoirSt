@@ -1,4 +1,0 @@
-Accessing - Absolute
-centimeter
-
-	^Centimeter 

@@ -1,3 +1,0 @@
-accessing
-snow
-	^ Snow

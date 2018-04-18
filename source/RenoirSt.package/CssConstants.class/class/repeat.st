@@ -1,4 +1,0 @@
-Accessing - Repeat
-repeat
-
-	^'repeat'

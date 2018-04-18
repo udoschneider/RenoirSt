@@ -1,3 +1,0 @@
-accessing
-salmon
-	^ Salmon

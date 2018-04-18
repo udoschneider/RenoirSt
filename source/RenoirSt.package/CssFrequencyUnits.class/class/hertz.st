@@ -1,4 +1,0 @@
-Accessing
-hertz
-
-	^Hertz 

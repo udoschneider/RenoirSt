@@ -1,4 +1,0 @@
-Configuring - Features
-minAspecRatio: aFraction
-
-	self addExpressionForFeatureNamed: 'min-aspect-ratio' withValue: aFraction 

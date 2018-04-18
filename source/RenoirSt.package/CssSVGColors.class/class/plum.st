@@ -1,3 +1,0 @@
-accessing
-plum
-	^ Plum

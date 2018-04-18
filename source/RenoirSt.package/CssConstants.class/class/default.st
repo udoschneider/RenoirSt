@@ -1,4 +1,0 @@
-Accessing - Cursors
-default  
-
-	^'default'

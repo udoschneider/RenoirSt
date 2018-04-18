@@ -1,1 +1,0 @@
-A CssWAUrlTest is a test case for the extensions to WAUrl

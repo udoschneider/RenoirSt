@@ -1,4 +1,0 @@
-Accessing - Text
-triangle
-	
-	^'triangle'

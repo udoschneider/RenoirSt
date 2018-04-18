@@ -1,1 +1,0 @@
-A CssMediaQueryExpressionTest is a test class for testing the behavior of CssMediaQueryExpression

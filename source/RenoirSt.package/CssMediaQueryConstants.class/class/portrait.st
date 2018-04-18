@@ -1,4 +1,0 @@
-Accessing - Orientation
-portrait
-
-	^ 'portrait' 

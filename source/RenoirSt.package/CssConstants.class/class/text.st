@@ -1,4 +1,0 @@
-Accessing - Cursors
-text 
-
-	^'text'

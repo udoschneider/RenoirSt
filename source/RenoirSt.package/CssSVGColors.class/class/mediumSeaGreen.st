@@ -1,3 +1,0 @@
-accessing
-mediumSeaGreen
-	^ MediumSeaGreen

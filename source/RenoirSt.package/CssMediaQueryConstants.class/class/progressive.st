@@ -1,4 +1,0 @@
-Accessing - Scan
-progressive
-
-	^ 'progressive'

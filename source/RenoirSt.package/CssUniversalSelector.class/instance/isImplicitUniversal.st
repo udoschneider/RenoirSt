@@ -1,4 +1,0 @@
-testing
-isImplicitUniversal
-
-	^ representation isEmpty

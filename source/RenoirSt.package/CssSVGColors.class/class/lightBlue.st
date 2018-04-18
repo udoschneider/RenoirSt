@@ -1,3 +1,0 @@
-accessing
-lightBlue
-	^ LightBlue
