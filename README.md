@@ -1,7 +1,6 @@
 Renoir.St
 =========
-
-[![Build Status](https://ci.inria.fr/pharo-contribution/buildStatus/icon?job=RenoirSt)](https://ci.inria.fr/pharo-contribution/job/RenoirSt/)
+![GitHub release](https://img.shields.io/github/release/ba-st/RenoirSt.svg)
 [![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=master)](https://travis-ci.org/ba-st/RenoirSt)
 [![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=master)](https://coveralls.io/github/ba-st/RenoirSt?branch=master)
 
