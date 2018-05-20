@@ -13,6 +13,7 @@ Class {
 { #category : #initialization }
 RenoirSt class >> initialize [
 
+	<ignoreForCoverage>
 	CssConstants := Namespace new.
 	self
 		initializeAttachmentConstants;
@@ -32,6 +33,7 @@ RenoirSt class >> initialize [
 { #category : #initialization }
 RenoirSt class >> initializeAttachmentConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #fixed to: 'fixed';
 		bind: #scroll to: 'scroll'
@@ -40,6 +42,7 @@ RenoirSt class >> initializeAttachmentConstants [
 { #category : #initialization }
 RenoirSt class >> initializeBackgroundConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #borderBox to: 'border-box';
 		bind: #closestCorner to: 'closest-corner';
@@ -56,6 +59,7 @@ RenoirSt class >> initializeBackgroundConstants [
 { #category : #initialization }
 RenoirSt class >> initializeBasicConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #auto to: 'auto';
 		bind: #even to: 'even';
@@ -72,6 +76,7 @@ RenoirSt class >> initializeBasicConstants [
 { #category : #initialization }
 RenoirSt class >> initializeBorderConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #collapse to: 'collapse';
 		bind: #dashed to: 'dashed';
@@ -93,6 +98,7 @@ RenoirSt class >> initializeBorderConstants [
 { #category : #initialization }
 RenoirSt class >> initializeCursorConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #crosshair to: 'crosshair';
 		bind: #default to: 'default';
@@ -108,6 +114,7 @@ RenoirSt class >> initializeCursorConstants [
 { #category : #initialization }
 RenoirSt class >> initializeDisplayConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #block to: 'block';
 		bind: #inline to: 'inline';
@@ -128,6 +135,7 @@ RenoirSt class >> initializeDisplayConstants [
 { #category : #initialization }
 RenoirSt class >> initializeFontConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #bold to: 'bold';
 		bind: #bolder to: 'bolder';
@@ -147,6 +155,7 @@ RenoirSt class >> initializeFontConstants [
 { #category : #initialization }
 RenoirSt class >> initializeListConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #armenian to: 'armenian';
 		bind: #circle to: 'circle';
@@ -169,6 +178,7 @@ RenoirSt class >> initializeListConstants [
 { #category : #initialization }
 RenoirSt class >> initializePositioningConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #absolute to: 'absolute';
 		bind: #always to: 'always';
@@ -195,6 +205,7 @@ RenoirSt class >> initializePositioningConstants [
 { #category : #initialization }
 RenoirSt class >> initializeRepeatConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #noRepeat to: 'no-repeat';
 		bind: #repeat to: 'repeat';
@@ -205,6 +216,7 @@ RenoirSt class >> initializeRepeatConstants [
 { #category : #initialization }
 RenoirSt class >> initializeSizeConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #contain to: 'contain';
 		bind: #cover to: 'cover'
@@ -213,6 +225,7 @@ RenoirSt class >> initializeSizeConstants [
 { #category : #initialization }
 RenoirSt class >> initializeTextConstants [
 
+	<ignoreForCoverage>
 	CssConstants
 		bind: #blink to: 'blink';
 		bind: #breakWord to: 'break-word';
