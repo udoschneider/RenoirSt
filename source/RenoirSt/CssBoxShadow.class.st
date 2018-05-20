@@ -7,6 +7,9 @@ Class {
 	#instVars : [
 		'components'
 	],
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Common'
 }
 
@@ -89,7 +92,7 @@ CssBoxShadow >> , aCssBoxShadow [
 CssBoxShadow >> beInset [
 
 	components := components asOrderedCollection
-		addFirst: CssConstants inset;
+		addFirst: CssConstants >> #inset;
 		asArray
 ]
 

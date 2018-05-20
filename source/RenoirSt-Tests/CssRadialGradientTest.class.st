@@ -4,6 +4,9 @@ A CssRadialGradientTest is a test class for testing the behavior of CssRadialGra
 Class {
 	#name : #CssRadialGradientTest,
 	#superclass : #TestCase,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Tests-Colors'
 }
 
@@ -11,8 +14,13 @@ Class {
 CssRadialGradientTest >> testCircleGradientPositioned [
 
 	| gradient |
-	
-	gradient := CssRadialGradient circular: 5 em at: CssConstants center fading: { CssSVGColors white. CssSVGColors red }.
+
+	gradient := CssRadialGradient
+		circular: 5 em
+		at: CssConstants >> #center
+		fading:
+			{CssSVGColors white.
+			CssSVGColors red}.
 	self assert: gradient printString equals: 'radial-gradient(5em circle at center, white, red)'
 ]
 

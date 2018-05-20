@@ -10,7 +10,7 @@ Class {
 		'property',
 		'value'
 	],
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'Instance Creation' }

@@ -5,7 +5,7 @@ A CssImportantRulePrecedencePoliciy is a policy indicating an important declarat
 Class {
 	#name : #CssImportantRulePrecedencePoliciy,
 	#superclass : #CssRulePrecedencePolicy,
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #Applying }

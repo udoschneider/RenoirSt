@@ -5,7 +5,7 @@ A CssFunction represents an abstract CSS function
 Class {
 	#name : #CssFunction,
 	#superclass : #CssObject,
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #Printing }

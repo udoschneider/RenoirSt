@@ -5,6 +5,9 @@ A CssFontConstants is a shared pool providing access to common constants for fon
 Class {
 	#name : #CssFontConstants,
 	#superclass : #Object,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Fonts'
 }
 
@@ -148,7 +151,7 @@ CssFontConstants class >> noHistoricalLigatures [
 { #category : #'Font Stretching' }
 CssFontConstants class >> normal [
 	
-	^CssConstants normal
+	^CssConstants >> #normal
 ]
 
 { #category : #'Font Variant' }
@@ -218,8 +221,8 @@ CssFontConstants class >> small [
 
 { #category : #'Font Variant' }
 CssFontConstants class >> smallCaps [
-	
-	^CssConstants smallCaps 
+
+	^ CssConstants >> #smallCaps
 ]
 
 { #category : #'Font Size' }

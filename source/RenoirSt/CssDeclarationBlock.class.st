@@ -8,7 +8,7 @@ Class {
 		'declarations',
 		'rulePrecedencePolicy'
 	],
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'background properties' }
