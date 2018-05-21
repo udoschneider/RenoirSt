@@ -6,7 +6,8 @@ Class {
 	#superclass : #SharedPool,
 	#classVars : [
 		'CssConstants',
-		'CssMediaQueryConstants'
+		'CssMediaQueryConstants',
+		'CssUnits'
 	],
 	#category : #'RenoirSt-Common'
 }
@@ -16,7 +17,8 @@ RenoirSt class >> initialize [
 
 	<ignoreForCoverage>
 	self initializeCssConstants.
-	self initializeMediaQueryConstants
+	self initializeMediaQueryConstants.
+	self initializeUnits
 ]
 
 { #category : #'private - initialization' }
@@ -259,6 +261,30 @@ RenoirSt class >> initializeGenericFontFamilyConstants [
 		bind: #serif to: 'serif';
 		bind: #cursive to: 'cursive';
 		bind: #sansSerif to: 'sans-serif'
+]
+
+{ #category : #initialization }
+RenoirSt class >> initializeLengthUnits [
+
+	<ignoreForCoverage>
+	"Absolute Units"
+	CssUnits
+		bind: #centimeter to: (CssUnit identifiedBy: 'cm');
+		bind: #inch to: (CssUnit identifiedBy: 'in');
+		bind: #millimeter to: (CssUnit identifiedBy: 'mm');
+		bind: #pica to: (CssUnit identifiedBy: 'pc');
+		bind: #pixel to: (CssUnit identifiedBy: 'px');
+		bind: #point to: (CssUnit identifiedBy: 'pt').
+	"Relative Units"
+	CssUnits
+		bind: #fontSize to: (CssUnit identifiedBy: 'em');
+		bind: #xHeight to: (CssUnit identifiedBy: 'ex');
+		bind: #zeroWidth to: (CssUnit identifiedBy: 'ch');
+		bind: #fontSizeOfRootElement to: (CssUnit identifiedBy: 'rem');
+		bind: #onePercentOfViewportHeight to: (CssUnit identifiedBy: 'vh');
+		bind: #onePercentOfViewportWidth to: (CssUnit identifiedBy: 'vw');
+		bind: #onePercentOfViewportSmallerDimension to: (CssUnit identifiedBy: 'vmin');
+		bind: #onePercentOfViewportLargerDimension to: (CssUnit identifiedBy: 'vmax')
 ]
 
 { #category : #'private - initialization' }
@@ -561,4 +587,37 @@ RenoirSt class >> initializeTextConstants [
 		bind: #under to: 'under';
 		bind: #underline to: 'underline';
 		bind: #uppercase to: 'uppercase'
+]
+
+{ #category : #initialization }
+RenoirSt class >> initializeUnits [
+
+	<ignoreForCoverage>
+	CssUnits := Namespace new.
+	self initializeLengthUnits.
+	"Angle"
+	CssUnits
+		bind: #degree to: (CssUnit identifiedBy: 'deg');
+		bind: #radian to: (CssUnit identifiedBy: 'rad');
+		bind: #gradian to: (CssUnit identifiedBy: 'grad');
+		bind: #turn to: (CssUnit identifiedBy: 'turn').
+	"Frequency"
+	CssUnits
+		bind: #hertz to: (CssUnit identifiedBy: 'Hz');
+		bind: #kiloHertz to: (CssUnit identifiedBy: 'kHz').
+	"Resolution"
+	CssUnits
+		bind: #dotsPerCentimeter to: (CssUnit identifiedBy: 'dpcm');
+		bind: #dotsPerInch to: (CssUnit identifiedBy: 'dpi');
+		bind: #dotsPerPixelUnit to: (CssUnit identifiedBy: 'dppx').
+	"Time"
+	CssUnits
+		bind: #second to: (CssUnit identifiedBy: 's');
+		bind: #millisecond to: (CssUnit identifiedBy: 'ms')
+]
+
+{ #category : #accessing }
+RenoirSt class >> units [
+
+	^ CssUnits
 ]

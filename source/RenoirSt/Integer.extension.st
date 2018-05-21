@@ -2,18 +2,20 @@ Extension { #name : #Integer }
 
 { #category : #'*RenoirSt' }
 Integer >> Hz [
-	^ self newMeasureWith: CssFrequencyUnits hertz
+
+	^ self newMeasureWith: RenoirSt units >> #hertz
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> ch [
-	^ self newMeasureWith: CssLengthUnits zeroWidth
+
+	^ self newMeasureWith: RenoirSt units >> #zeroWidth
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> cm [
 
-	 ^self newMeasureWith:  CssLengthUnits centimeter  
+	^ self newMeasureWith: RenoirSt units >> #centimeter
 ]
 
 { #category : #'*RenoirSt' }
@@ -25,66 +27,67 @@ Integer >> cssContentOn: aStream [
 { #category : #'*RenoirSt' }
 Integer >> deg [
 
-	 ^self newMeasureWith:  CssAngleUnits degree    
+	^ self newMeasureWith: RenoirSt units >> #degree
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> dpcm [
 
-	 ^self newMeasureWith: CssResolutionUnits dotsPerCentimeter 
+	^ self newMeasureWith: RenoirSt units >> #dotsPerCentimeter
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> dpi [
 
-	 ^self newMeasureWith: CssResolutionUnits dotsPerInch 
+	^ self newMeasureWith: RenoirSt units >> #dotsPerInch
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> dppx [
 
-	 ^self newMeasureWith: CssResolutionUnits dotsPerPixelUnit  
+	^ self newMeasureWith: RenoirSt units >> #dotsPerPixelUnit
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> em [
 
-	 ^self newMeasureWith: CssLengthUnits fontSize
+	^ self newMeasureWith: RenoirSt units >> #fontSize
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> ex [
 
-	 ^self newMeasureWith: CssLengthUnits xHeight 
+	^ self newMeasureWith: RenoirSt units >> #xHeight
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> grad [
 
-	 ^self newMeasureWith: CssAngleUnits gradian     
+	^ self newMeasureWith: RenoirSt units >> #gradian
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> in [
 
-	 ^self newMeasureWith:  CssLengthUnits inch 
+	^ self newMeasureWith: RenoirSt units >> #inch
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> kHz [
-	^ self newMeasureWith: CssFrequencyUnits kiloHertz 
+
+	^ self newMeasureWith: RenoirSt units >> #kiloHertz
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> mm [
 
-	 ^self newMeasureWith:  CssLengthUnits millimeter   
+	^ self newMeasureWith: RenoirSt units >> #millimeter
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> ms [
 
-	 ^self newMeasureWith: CssTimeUnits millisecond 
+	^ self newMeasureWith: RenoirSt units >> #millisecond
 ]
 
 { #category : #'*RenoirSt' }
@@ -101,65 +104,65 @@ Integer >> newMeasureWith: unit [
 { #category : #'*RenoirSt' }
 Integer >> pc [
 
-	 ^self newMeasureWith: CssLengthUnits pica
+	^ self newMeasureWith: RenoirSt units >> #pica
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> pt [
 
-	 ^self newMeasureWith: CssLengthUnits point 
+	^ self newMeasureWith: RenoirSt units >> #point
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> px [
 
-	 ^self newMeasureWith: CssLengthUnits pixel
+	^ self newMeasureWith: RenoirSt units >> #pixel
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> rad [
 
-	 ^self newMeasureWith: CssAngleUnits radian     
+	^ self newMeasureWith: RenoirSt units >> #radian
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> rem [
 
-	 ^self newMeasureWith: CssLengthUnits fontSizeOfRootElement  
+	^ self newMeasureWith: RenoirSt units >> #fontSizeOfRootElement
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> s [
 
-	 ^self newMeasureWith: CssTimeUnits second
+	^ self newMeasureWith: RenoirSt units >> #second
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> turn [
 
-	 ^self newMeasureWith:  CssAngleUnits turn     
+	^ self newMeasureWith: RenoirSt units >> #turn
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> vh [
 
-	 ^self newMeasureWith: CssLengthUnits onePercentOfViewportHeight
+	^ self newMeasureWith: RenoirSt units >> #onePercentOfViewportHeight
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> vmax [
 
-	 ^self newMeasureWith: CssLengthUnits onePercentOfViewportLargerDimension 
+	^ self newMeasureWith: RenoirSt units >> #onePercentOfViewportLargerDimension
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> vmin [
 
-	 ^self newMeasureWith:  CssLengthUnits onePercentOfViewportSmallerDimension 
+	^ self newMeasureWith: RenoirSt units >> #onePercentOfViewportSmallerDimension
 ]
 
 { #category : #'*RenoirSt' }
 Integer >> vw [
 
-	 ^self newMeasureWith: CssLengthUnits onePercentOfViewportWidth  
+	^ self newMeasureWith: RenoirSt units >> #onePercentOfViewportWidth
 ]

@@ -4,6 +4,9 @@ A CssAttributeReferenceTest is a test class for testing the behavior of CssAttri
 Class {
 	#name : #CssAttributeReferenceTest,
 	#superclass : #TestCase,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Tests-Units'
 }
 
@@ -21,9 +24,9 @@ CssAttributeReferenceTest >> testAttributeReferenceWithStringTypeAndFallback [
 CssAttributeReferenceTest >> testAttributeReferenceWithType [
 
 	| attributeReference |
-	
-	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssLengthUnits fontSize.
-	
+
+	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssUnits >> #fontSize.
+
 	self assert: attributeReference printString equals: 'attr(length em)'
 ]
 
@@ -31,9 +34,9 @@ CssAttributeReferenceTest >> testAttributeReferenceWithType [
 CssAttributeReferenceTest >> testAttributeReferenceWithTypeAndFallback [
 
 	| attributeReference |
-	
-	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssLengthUnits fontSize withFallback: 10 px.
-	
+
+	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssUnits >> #fontSize withFallback: 10 px.
+
 	self assert: attributeReference printString equals: 'attr(length em, 10px)'
 ]
 
