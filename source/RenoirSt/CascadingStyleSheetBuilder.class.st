@@ -51,7 +51,7 @@ CascadingStyleSheetBuilder >> declareFontFaceRuleWith: aDeclarationAction [
 
 	|  declarationBlock |
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction value: declarationBlock.
+	aDeclarationAction cull: declarationBlock cull: CssConstants.
 	self addStatement: (CssRuleSet selector: '@font-face' declarations: declarationBlock)
 ]
 
@@ -67,7 +67,7 @@ CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarati
 	| selector declarationBlock |
 	selector := aSelectorBlock cull: CssUniversalSelector implicit.
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction value: declarationBlock.
+	aDeclarationAction cull: declarationBlock cull: CssConstants.
 	self addStatement: (CssRuleSet selector: selector declarations: declarationBlock comment: aComment)
 ]
 

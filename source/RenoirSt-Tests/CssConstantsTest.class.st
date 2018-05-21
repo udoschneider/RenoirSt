@@ -7,7 +7,7 @@ Class {
 	#pools : [
 		'RenoirSt'
 	],
-	#category : #'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #Tests }

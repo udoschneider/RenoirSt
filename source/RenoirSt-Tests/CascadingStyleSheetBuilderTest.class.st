@@ -4,7 +4,7 @@ A CascadingStyleSheetBuilderTest is a test class for testing the behavior of Cas
 Class {
 	#name : #CascadingStyleSheetBuilderTest,
 	#superclass : #TestCase,
-	#category : #'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #Tests }
@@ -35,6 +35,19 @@ CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheet [
 	self
 		assert: builder build printString
 		equals: '.xxx<n>{<n><t>color: white;<n><t>margin: 12pt;<n>}<n><n>#oop<n>{<n><t>color: red;<n>}' expandMacros
+]
+
+{ #category : #Tests }
+CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheetUsingConstants [
+
+	| builder |
+
+	builder := CascadingStyleSheetBuilder new.
+	builder
+		declareRuleSetFor: [ :selector | selector class: 'xxx' ]
+		with: [ :style :constants | style fontSize: constants >> #auto ].
+
+	self assert: builder build printString equals: '.xxx<n>{<n><t>font-size: auto;<n>}' expandMacros
 ]
 
 { #category : #Tests }

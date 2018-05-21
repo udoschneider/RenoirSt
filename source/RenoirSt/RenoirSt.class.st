@@ -97,6 +97,12 @@ RenoirSt class >> initializeCssConstants [
 		initializeCursorConstants;
 		initializeDisplayConstants;
 		initializeFontConstants;
+		initializeFontFormatConstants;
+		initializeFontSizeConstants;
+		initializeFontStretchingConstants;
+		initializeFontSynthesisConstants;
+		initializeFontVariantConstants;
+		initializeGenericFontFamilyConstants;
 		initializeListConstants;
 		initializePositioningConstants;
 		initializeRepeatConstants;
@@ -159,6 +165,99 @@ RenoirSt class >> initializeFontConstants [
 		bind: #smallCaps to: 'small-caps';
 		bind: #smallCaption to: 'small-caption';
 		bind: #statusBar to: 'status-bar'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeFontFormatConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #svg to: 'svg';
+		bind: #truetype to: 'truetype';
+		bind: #opentype to: 'opentype';
+		bind: #embeddedOpentype to: 'embedded-opentype';
+		bind: #woff to: 'woff'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeFontSizeConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #smaller to: 'smaller';
+		bind: #xxSmall to: 'xx-small';
+		bind: #xSmall to: 'x-small';
+		bind: #larger to: 'larger';
+		bind: #xLarge to: 'x-large';
+		bind: #xxLarge to: 'xx-large';
+		bind: #small to: 'small';
+		bind: #large to: 'large'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeFontStretchingConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #extraCondensed to: 'extra-condensed';
+		bind: #ultraExpanded to: 'ultra-expanded';
+		bind: #extraExpanded to: 'extra-expanded';
+		bind: #semiExpanded to: 'semi-expanded';
+		bind: #condensed to: 'condensed';
+		bind: #ultraCondensed to: 'ultra-condensed';
+		bind: #expanded to: 'expanded';
+		bind: #semiCondensed to: 'semi-condensed'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeFontSynthesisConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #style to: 'style';
+		bind: #weight to: 'weight'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeFontVariantConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #noContextual to: 'no-contextual';
+		bind: #noCommonLigatures to: 'no-common-ligatures';
+		bind: #diagonalFractions to: 'diagonal-fractions';
+		bind: #commonLigatures to: 'common-ligatures';
+		bind: #ordinal to: 'ordinal';
+		bind: #noHistoricalLigatures to: 'no-historical-ligatures';
+		bind: #proportionalNums to: 'proportional-nums';
+		bind: #oldstyleNums to: 'oldstyle-nums';
+		bind: #stackedFractions to: 'stacked-fractions';
+		bind: #discretionaryLigatures to: 'discretionary-ligatures';
+		bind: #titlingCaps to: 'titling-caps';
+		bind: #slashedZero to: 'slashed-zero';
+		bind: #sub to: 'sub';
+		bind: #tabularNums to: 'tabular-nums';
+		bind: #allPetiteCaps to: 'all-petite-caps';
+		bind: #petiteCaps to: 'petite-caps';
+		bind: #historicalLigatures to: 'historical-ligatures';
+		bind: #super to: 'super';
+		bind: #allSmallCaps to: 'all-small-caps';
+		bind: #unicase to: 'unicase';
+		bind: #noDiscretionaryLigatures to: 'no-discretionary-ligatures';
+		bind: #liningNums to: 'lining-nums';
+		bind: #contextual to: 'contextual'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeGenericFontFamilyConstants [
+
+	<ignoreForCoverage>
+	CssConstants
+		bind: #fantasy to: 'fantasy';
+		bind: #monospace to: 'monospace';
+		bind: #serif to: 'serif';
+		bind: #cursive to: 'cursive';
+		bind: #sansSerif to: 'sans-serif'
 ]
 
 { #category : #'private - initialization' }
@@ -229,8 +328,6 @@ RenoirSt class >> initializePositioningConstants [
 		bind: #relative to: 'relative';
 		bind: #right to: 'right';
 		bind: #static to: 'static';
-		bind: #sub to: 'sub';
-		bind: #super to: 'super';
 		bind: #textBottom to: 'text-bottom';
 		bind: #textTop to: 'text-top';
 		bind: #top to: 'top';
