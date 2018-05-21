@@ -107,6 +107,7 @@ RenoirSt class >> initializeCssConstants [
 		initializePositioningConstants;
 		initializeRepeatConstants;
 		initializeSizeConstants;
+		initializeSVGColors;
 		initializeTextConstants
 ]
 
@@ -343,6 +344,186 @@ RenoirSt class >> initializeRepeatConstants [
 		bind: #repeat to: 'repeat';
 		bind: #repeatX to: 'repeat-x';
 		bind: #repeatY to: 'repeat-y'
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeSVGColors [
+
+	<ignoreForCoverage>
+	CssConstants bind: #colors to: Namespace new.
+	CssConstants >> #colors bind: #transparent to: 'transparent'.
+	self
+		initializeSVGColors1;
+		initializeSVGColors2;
+		initializeSVGColors3
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeSVGColors1 [
+
+	<ignoreForCoverage>
+	(CssConstants >> #colors)
+		bind: #aliceBlue to: ((CssRGBColor red: 240 green: 248 blue: 255) identifiedBy: 'aliceblue');
+		bind: #antiqueWhite to: ((CssRGBColor red: 250 green: 235 blue: 215) identifiedBy: 'antiquewhite');
+		bind: #aqua to: ((CssRGBColor red: 0 green: 255 blue: 255) identifiedBy: 'aqua');
+		bind: #aquamarine to: ((CssRGBColor red: 127 green: 255 blue: 212) identifiedBy: 'aquamarine');
+		bind: #azure to: ((CssRGBColor red: 240 green: 255 blue: 255) identifiedBy: 'azure');
+		bind: #beige to: ((CssRGBColor red: 245 green: 245 blue: 220) identifiedBy: 'beige');
+		bind: #bisque to: ((CssRGBColor red: 255 green: 228 blue: 196) identifiedBy: 'bisque');
+		bind: #black to: ((CssRGBColor red: 0 green: 0 blue: 0) identifiedBy: 'black');
+		bind: #blanchedAlmond to: ((CssRGBColor red: 255 green: 235 blue: 205) identifiedBy: 'blanchedalmond');
+		bind: #blue to: ((CssRGBColor red: 0 green: 0 blue: 255) identifiedBy: 'blue');
+		bind: #blueviolet to: ((CssRGBColor red: 138 green: 43 blue: 226) identifiedBy: 'blueviolet');
+		bind: #brown to: ((CssRGBColor red: 165 green: 42 blue: 42) identifiedBy: 'brown');
+		bind: #burlywood to: ((CssRGBColor red: 222 green: 184 blue: 135) identifiedBy: 'burlywood');
+		bind: #cadetBlue to: ((CssRGBColor red: 95 green: 158 blue: 160) identifiedBy: 'cadetblue');
+		bind: #chartreuse to: ((CssRGBColor red: 127 green: 255 blue: 0) identifiedBy: 'chartreuse');
+		bind: #chocolate to: ((CssRGBColor red: 210 green: 105 blue: 30) identifiedBy: 'chocolate');
+		bind: #coral to: ((CssRGBColor red: 255 green: 127 blue: 80) identifiedBy: 'coral');
+		bind: #cornflowerBlue to: ((CssRGBColor red: 100 green: 149 blue: 237) identifiedBy: 'cornflowerblue');
+		bind: #cornsilk to: ((CssRGBColor red: 255 green: 248 blue: 220) identifiedBy: 'cornsilk');
+		bind: #crimson to: ((CssRGBColor red: 220 green: 20 blue: 60) identifiedBy: 'crimson');
+		bind: #cyan to: ((CssRGBColor red: 0 green: 255 blue: 255) identifiedBy: 'cyan');
+		bind: #darkBlue to: ((CssRGBColor red: 0 green: 0 blue: 139) identifiedBy: 'darkblue');
+		bind: #darkCyan to: ((CssRGBColor red: 0 green: 139 blue: 139) identifiedBy: 'darkcyan');
+		bind: #darkGoldenrod to: ((CssRGBColor red: 184 green: 134 blue: 11) identifiedBy: 'darkgoldenrod');
+		bind: #darkGray to: ((CssRGBColor red: 169 green: 169 blue: 169) identifiedBy: 'darkgray');
+		bind: #darkGreen to: ((CssRGBColor red: 0 green: 100 blue: 0) identifiedBy: 'darkgreen');
+		bind: #darkGrey to: ((CssRGBColor red: 169 green: 169 blue: 169) identifiedBy: 'darkgrey');
+		bind: #darkKhaki to: ((CssRGBColor red: 189 green: 183 blue: 107) identifiedBy: 'darkkhaki');
+		bind: #darkMagenta to: ((CssRGBColor red: 139 green: 0 blue: 139) identifiedBy: 'darkmagenta');
+		bind: #darkOliveGreen to: ((CssRGBColor red: 85 green: 107 blue: 47) identifiedBy: 'darkolivegreen');
+		bind: #darkOrange to: ((CssRGBColor red: 255 green: 140 blue: 0) identifiedBy: 'darkorange');
+		bind: #darkOrchid to: ((CssRGBColor red: 153 green: 50 blue: 204) identifiedBy: 'darkorchid');
+		bind: #darkRed to: ((CssRGBColor red: 139 green: 0 blue: 0) identifiedBy: 'darkred');
+		bind: #darkSalmon to: ((CssRGBColor red: 233 green: 150 blue: 122) identifiedBy: 'darksalmon');
+		bind: #darkSeaGreen to: ((CssRGBColor red: 143 green: 188 blue: 143) identifiedBy: 'darkseagreen');
+		bind: #darkSlateBlue to: ((CssRGBColor red: 72 green: 61 blue: 139) identifiedBy: 'darkslateblue');
+		bind: #darkSlateGray to: ((CssRGBColor red: 47 green: 79 blue: 79) identifiedBy: 'darkslategray');
+		bind: #darkSlateGrey to: ((CssRGBColor red: 47 green: 79 blue: 79) identifiedBy: 'darkslategrey');
+		bind: #darkTurquoise to: ((CssRGBColor red: 0 green: 206 blue: 209) identifiedBy: 'darkturquoise');
+		bind: #darkViolet to: ((CssRGBColor red: 148 green: 0 blue: 211) identifiedBy: 'darkviolet');
+		bind: #deepPink to: ((CssRGBColor red: 255 green: 20 blue: 147) identifiedBy: 'deeppink');
+		bind: #deepSkyBlue to: ((CssRGBColor red: 0 green: 191 blue: 255) identifiedBy: 'deepskyblue');
+		bind: #dimGray to: ((CssRGBColor red: 105 green: 105 blue: 105) identifiedBy: 'dimgray');
+		bind: #dimGrey to: ((CssRGBColor red: 105 green: 105 blue: 105) identifiedBy: 'dimgrey');
+		bind: #dodgerBlue to: ((CssRGBColor red: 30 green: 144 blue: 255) identifiedBy: 'dodgerblue');
+		bind: #firebrick to: ((CssRGBColor red: 178 green: 34 blue: 34) identifiedBy: 'firebrick');
+		bind: #floralWhite to: ((CssRGBColor red: 255 green: 250 blue: 240) identifiedBy: 'floralwhite');
+		bind: #forestGreen to: ((CssRGBColor red: 34 green: 139 blue: 34) identifiedBy: 'forestgreen');
+		bind: #fuchsia to: ((CssRGBColor red: 255 green: 0 blue: 255) identifiedBy: 'fuchsia')
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeSVGColors2 [
+
+	<ignoreForCoverage>
+	(CssConstants >> #colors)
+		bind: #gainsboro to: ((CssRGBColor red: 220 green: 220 blue: 220) identifiedBy: 'gainsboro');
+		bind: #ghostWhite to: ((CssRGBColor red: 248 green: 248 blue: 255) identifiedBy: 'ghostwhite');
+		bind: #gold to: ((CssRGBColor red: 255 green: 215 blue: 0) identifiedBy: 'gold');
+		bind: #goldenrod to: ((CssRGBColor red: 218 green: 165 blue: 32) identifiedBy: 'goldenrod');
+		bind: #gray to: ((CssRGBColor red: 128 green: 128 blue: 128) identifiedBy: 'gray');
+		bind: #green to: ((CssRGBColor red: 0 green: 128 blue: 0) identifiedBy: 'green');
+		bind: #greenYellow to: ((CssRGBColor red: 173 green: 255 blue: 47) identifiedBy: 'greenyellow');
+		bind: #grey to: ((CssRGBColor red: 128 green: 128 blue: 128) identifiedBy: 'grey');
+		bind: #honeydew to: ((CssRGBColor red: 240 green: 255 blue: 240) identifiedBy: 'honeydew');
+		bind: #hotPink to: ((CssRGBColor red: 255 green: 105 blue: 180) identifiedBy: 'hotpink');
+		bind: #indianRed to: ((CssRGBColor red: 205 green: 92 blue: 92) identifiedBy: 'indianred');
+		bind: #indigo to: ((CssRGBColor red: 75 green: 0 blue: 130) identifiedBy: 'indigo');
+		bind: #ivory to: ((CssRGBColor red: 255 green: 255 blue: 240) identifiedBy: 'ivory');
+		bind: #khaki to: ((CssRGBColor red: 240 green: 230 blue: 140) identifiedBy: 'khaki');
+		bind: #lavender to: ((CssRGBColor red: 230 green: 230 blue: 250) identifiedBy: 'lavender');
+		bind: #lavenderBlush to: ((CssRGBColor red: 255 green: 240 blue: 245) identifiedBy: 'lavenderblush');
+		bind: #lawnGreen to: ((CssRGBColor red: 124 green: 252 blue: 0) identifiedBy: 'lawngreen');
+		bind: #lemonChiffon to: ((CssRGBColor red: 255 green: 250 blue: 205) identifiedBy: 'lemonchiffon');
+		bind: #lightBlue to: ((CssRGBColor red: 173 green: 216 blue: 230) identifiedBy: 'lightblue');
+		bind: #lightCoral to: ((CssRGBColor red: 240 green: 128 blue: 128) identifiedBy: 'lightcoral');
+		bind: #lightCyan to: ((CssRGBColor red: 224 green: 255 blue: 255) identifiedBy: 'lightcyan');
+		bind: #lightGoldenrodYellow to: ((CssRGBColor red: 250 green: 250 blue: 210) identifiedBy: 'lightgoldenrodyellow');
+		bind: #lightGray to: ((CssRGBColor red: 211 green: 211 blue: 211) identifiedBy: 'lightgray');
+		bind: #lightGreen to: ((CssRGBColor red: 144 green: 238 blue: 144) identifiedBy: 'lightgreen');
+		bind: #lightGrey to: ((CssRGBColor red: 211 green: 211 blue: 211) identifiedBy: 'lightgrey');
+		bind: #lightPink to: ((CssRGBColor red: 255 green: 182 blue: 193) identifiedBy: 'lightpink');
+		bind: #lightSalmon to: ((CssRGBColor red: 255 green: 160 blue: 122) identifiedBy: 'lightsalmon');
+		bind: #lightSeaGreen to: ((CssRGBColor red: 32 green: 178 blue: 170) identifiedBy: 'lightseagreen');
+		bind: #lightSkyBlue to: ((CssRGBColor red: 135 green: 206 blue: 250) identifiedBy: 'lightskyblue');
+		bind: #lightSlateGray to: ((CssRGBColor red: 119 green: 136 blue: 153) identifiedBy: 'lightslategray');
+		bind: #lightSlateGrey to: ((CssRGBColor red: 119 green: 136 blue: 153) identifiedBy: 'lightslategrey');
+		bind: #lightSteelBlue to: ((CssRGBColor red: 176 green: 196 blue: 222) identifiedBy: 'lightsteelblue');
+		bind: #lightYellow to: ((CssRGBColor red: 255 green: 255 blue: 224) identifiedBy: 'lightyellow');
+		bind: #lime to: ((CssRGBColor red: 0 green: 255 blue: 0) identifiedBy: 'lime');
+		bind: #limeGreen to: ((CssRGBColor red: 50 green: 205 blue: 50) identifiedBy: 'limegreen');
+		bind: #linen to: ((CssRGBColor red: 250 green: 240 blue: 230) identifiedBy: 'linen')
+]
+
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeSVGColors3 [
+
+	<ignoreForCoverage>
+	(CssConstants >> #colors)
+		bind: #magenta to: ((CssRGBColor red: 255 green: 0 blue: 255) identifiedBy: 'magenta');
+		bind: #maroon to: ((CssRGBColor red: 128 green: 0 blue: 0) identifiedBy: 'maroon');
+		bind: #mediumAquamarine to: ((CssRGBColor red: 102 green: 205 blue: 170) identifiedBy: 'mediumaquamarine');
+		bind: #mediumBlue to: ((CssRGBColor red: 0 green: 0 blue: 205) identifiedBy: 'mediumblue');
+		bind: #mediumOrchid to: ((CssRGBColor red: 186 green: 85 blue: 211) identifiedBy: 'mediumorchid');
+		bind: #mediumPurple to: ((CssRGBColor red: 147 green: 112 blue: 219) identifiedBy: 'mediumpurple');
+		bind: #mediumSeaGreen to: ((CssRGBColor red: 60 green: 179 blue: 113) identifiedBy: 'mediumseagreen');
+		bind: #mediumSlateBlue to: ((CssRGBColor red: 123 green: 104 blue: 238) identifiedBy: 'mediumslateblue');
+		bind: #mediumSpringGreen to: ((CssRGBColor red: 0 green: 250 blue: 154) identifiedBy: 'mediumspringgreen');
+		bind: #mediumTurquoise to: ((CssRGBColor red: 72 green: 209 blue: 204) identifiedBy: 'mediumturquoise');
+		bind: #mediumVioletRed to: ((CssRGBColor red: 199 green: 21 blue: 133) identifiedBy: 'mediumvioletred');
+		bind: #midnightBlue to: ((CssRGBColor red: 25 green: 25 blue: 112) identifiedBy: 'midnightblue');
+		bind: #mintCream to: ((CssRGBColor red: 245 green: 255 blue: 250) identifiedBy: 'mintcream');
+		bind: #mistyRose to: ((CssRGBColor red: 255 green: 228 blue: 225) identifiedBy: 'mistyrose');
+		bind: #moccasin to: ((CssRGBColor red: 255 green: 228 blue: 181) identifiedBy: 'moccasin');
+		bind: #navajoWhite to: ((CssRGBColor red: 255 green: 222 blue: 173) identifiedBy: 'navajowhite');
+		bind: #navy to: ((CssRGBColor red: 0 green: 0 blue: 128) identifiedBy: 'navy');
+		bind: #oldlace to: ((CssRGBColor red: 253 green: 245 blue: 230) identifiedBy: 'oldlace');
+		bind: #olive to: ((CssRGBColor red: 128 green: 128 blue: 0) identifiedBy: 'olive');
+		bind: #olivedrab to: ((CssRGBColor red: 107 green: 142 blue: 35) identifiedBy: 'olivedrab');
+		bind: #orange to: ((CssRGBColor red: 255 green: 165 blue: 0) identifiedBy: 'orange');
+		bind: #orangeRed to: ((CssRGBColor red: 255 green: 69 blue: 0) identifiedBy: 'orangered');
+		bind: #orchid to: ((CssRGBColor red: 218 green: 112 blue: 214) identifiedBy: 'orchid');
+		bind: #paleGoldenrod to: ((CssRGBColor red: 238 green: 232 blue: 170) identifiedBy: 'palegoldenrod');
+		bind: #paleGreen to: ((CssRGBColor red: 152 green: 251 blue: 152) identifiedBy: 'palegreen');
+		bind: #paleTurquoise to: ((CssRGBColor red: 175 green: 238 blue: 238) identifiedBy: 'paleturquoise');
+		bind: #paleVioletRed to: ((CssRGBColor red: 219 green: 112 blue: 147) identifiedBy: 'palevioletred');
+		bind: #papayaWhip to: ((CssRGBColor red: 255 green: 239 blue: 213) identifiedBy: 'papayawhip');
+		bind: #peachpuff to: ((CssRGBColor red: 255 green: 218 blue: 185) identifiedBy: 'peachpuff');
+		bind: #peru to: ((CssRGBColor red: 205 green: 133 blue: 63) identifiedBy: 'peru');
+		bind: #pink to: ((CssRGBColor red: 255 green: 192 blue: 203) identifiedBy: 'pink');
+		bind: #plum to: ((CssRGBColor red: 221 green: 160 blue: 221) identifiedBy: 'plum');
+		bind: #powderBlue to: ((CssRGBColor red: 176 green: 224 blue: 230) identifiedBy: 'powderblue');
+		bind: #purple to: ((CssRGBColor red: 128 green: 0 blue: 128) identifiedBy: 'purple');
+		bind: #red to: ((CssRGBColor red: 255 green: 0 blue: 0) identifiedBy: 'red');
+		bind: #rosyBrown to: ((CssRGBColor red: 188 green: 143 blue: 143) identifiedBy: 'rosybrown');
+		bind: #royalBlue to: ((CssRGBColor red: 65 green: 105 blue: 225) identifiedBy: 'royalblue');
+		bind: #saddleBrown to: ((CssRGBColor red: 139 green: 69 blue: 19) identifiedBy: 'saddlebrown');
+		bind: #salmon to: ((CssRGBColor red: 250 green: 128 blue: 114) identifiedBy: 'salmon');
+		bind: #sandyBrown to: ((CssRGBColor red: 244 green: 164 blue: 96) identifiedBy: 'sandybrown');
+		bind: #seaGreen to: ((CssRGBColor red: 46 green: 139 blue: 87) identifiedBy: 'seagreen');
+		bind: #seaShell to: ((CssRGBColor red: 255 green: 245 blue: 238) identifiedBy: 'seashell');
+		bind: #sienna to: ((CssRGBColor red: 160 green: 82 blue: 45) identifiedBy: 'sienna');
+		bind: #silver to: ((CssRGBColor red: 192 green: 192 blue: 192) identifiedBy: 'silver');
+		bind: #skyBlue to: ((CssRGBColor red: 135 green: 206 blue: 235) identifiedBy: 'skyblue');
+		bind: #slateBlue to: ((CssRGBColor red: 106 green: 90 blue: 205) identifiedBy: 'slateblue');
+		bind: #slateGray to: ((CssRGBColor red: 112 green: 128 blue: 144) identifiedBy: 'slategray');
+		bind: #slateGrey to: ((CssRGBColor red: 112 green: 128 blue: 144) identifiedBy: 'slategrey');
+		bind: #snow to: ((CssRGBColor red: 255 green: 250 blue: 250) identifiedBy: 'snow');
+		bind: #springGreen to: ((CssRGBColor red: 0 green: 255 blue: 127) identifiedBy: 'springgreen');
+		bind: #steelBlue to: ((CssRGBColor red: 70 green: 130 blue: 180) identifiedBy: 'steelblue');
+		bind: #tan to: ((CssRGBColor red: 210 green: 180 blue: 140) identifiedBy: 'tan');
+		bind: #teal to: ((CssRGBColor red: 0 green: 128 blue: 128) identifiedBy: 'teal');
+		bind: #thistle to: ((CssRGBColor red: 216 green: 191 blue: 216) identifiedBy: 'thistle');
+		bind: #tomato to: ((CssRGBColor red: 255 green: 99 blue: 71) identifiedBy: 'tomato');
+		bind: #turquoise to: ((CssRGBColor red: 64 green: 224 blue: 208) identifiedBy: 'turquoise');
+		bind: #violet to: ((CssRGBColor red: 238 green: 130 blue: 238) identifiedBy: 'violet');
+		bind: #wheat to: ((CssRGBColor red: 245 green: 222 blue: 179) identifiedBy: 'wheat');
+		bind: #white to: ((CssRGBColor red: 255 green: 255 blue: 255) identifiedBy: 'white');
+		bind: #whiteSmoke to: ((CssRGBColor red: 245 green: 245 blue: 245) identifiedBy: 'whitesmoke');
+		bind: #yellow to: ((CssRGBColor red: 255 green: 255 blue: 0) identifiedBy: 'yellow');
+		bind: #yellowGreen to: ((CssRGBColor red: 154 green: 205 blue: 50) identifiedBy: 'yellowgreen')
 ]
 
 { #category : #'private - initialization' }

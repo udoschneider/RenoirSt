@@ -39,9 +39,9 @@ CssDeclarationBlockTest >> testPrintInlined [
 CssDeclarationBlockTest >> testPrintStringOfBackgroundProperties [
 
 	self
-		assert: [ :style | style background: CssSVGColors blue ] rendersProperty: 'background' withValue: 'blue';
+		assert: [ :style :constants | style background: constants >> #colors >> #blue ] rendersProperty: 'background' withValue: 'blue';
 		assert: [ :style :constants | style backgroundAttachment: constants >> #scroll ] rendersProperty: 'background-attachment' withValue: 'scroll';
-		assert: [ :style | style backgroundColor: CssSVGColors red ] rendersProperty: 'background-color' withValue: 'red';
+		assert: [ :style :constants | style backgroundColor: constants >> #colors >> #red ] rendersProperty: 'background-color' withValue: 'red';
 		assert: [ :style | style backgroundImage: 'logo.png' ] rendersProperty: 'background-image' withValue: 'logo.png';
 		assert: [ :style | style backgroundPosition: {0 percent. 0 percent} ] rendersProperty: 'background-position' withValue: '0% 0%';
 		assert: [ :style :constants | style backgroundRepeat: constants >> #repeat ] rendersProperty: 'background-repeat' withValue: 'repeat';
@@ -61,7 +61,7 @@ CssDeclarationBlockTest >> testPrintStringOfBorderImageProperties [
 		assert: [ :style :constants | style borderImageRepeat: constants  >> #round ] rendersProperty: 'border-image-repeat' withValue: 'round';
 		assert: [ :style :constants | style borderImage: constants  >> #none ] rendersProperty: 'border-image' withValue: 'none';
 		assert:
-				[ :style | 
+				[ :style :constants | 
 			style
 				boxShadow:
 					(CssBoxShadow
@@ -69,7 +69,7 @@ CssDeclarationBlockTest >> testPrintStringOfBorderImageProperties [
 						verticalOffset: 10 px
 						blurRadius: 10 px
 						spreadDistance: 35 px
-						color: CssSVGColors blue) ]
+						color: constants >> #colors >> #blue) ]
 			rendersProperty: 'box-shadow'
 			withValue: '10px 10px 10px 35px blue'
 ]
@@ -78,24 +78,24 @@ CssDeclarationBlockTest >> testPrintStringOfBorderImageProperties [
 CssDeclarationBlockTest >> testPrintStringOfBorderProperties [
 
 	self
-		assert: [ :style :constants | style border: { constants  >> #thin. constants  >> #dashed. CssSVGColors royalBlue }  ] rendersProperty: 'border' withValue: 'thin dashed royalblue';
-		assert: [ :style :constants | style borderBottom: { constants  >> #thin. constants  >> #dashed. CssSVGColors royalBlue }  ] rendersProperty: 'border-bottom' withValue: 'thin dashed royalblue';
-		assert: [ :style :constants | style borderTop: { constants  >> #thin. constants  >> #dashed. CssSVGColors royalBlue }  ] rendersProperty: 'border-top' withValue: 'thin dashed royalblue';
-		assert: [ :style :constants | style borderRight: { constants  >> #thin. constants  >> #dashed. CssSVGColors royalBlue }  ] rendersProperty: 'border-right' withValue: 'thin dashed royalblue';
-		assert: [ :style :constants | style borderLeft: { constants  >> #thin. constants  >> #dashed. CssSVGColors royalBlue }  ] rendersProperty: 'border-left' withValue: 'thin dashed royalblue';
-		assert: [ :style | style borderColor: CssSVGColors royalBlue ] rendersProperty: 'border-color' withValue: 'royalblue';
+		assert: [ :style :constants | style border: { constants  >> #thin. constants  >> #dashed. constants  >> #colors >> #royalBlue }  ] rendersProperty: 'border' withValue: 'thin dashed royalblue';
+		assert: [ :style :constants | style borderBottom: { constants  >> #thin. constants  >> #dashed. constants  >> #colors >> #royalBlue }  ] rendersProperty: 'border-bottom' withValue: 'thin dashed royalblue';
+		assert: [ :style :constants | style borderTop: { constants  >> #thin. constants  >> #dashed. constants  >> #colors >> #royalBlue }  ] rendersProperty: 'border-top' withValue: 'thin dashed royalblue';
+		assert: [ :style :constants | style borderRight: { constants  >> #thin. constants  >> #dashed. constants  >> #colors >> #royalBlue }  ] rendersProperty: 'border-right' withValue: 'thin dashed royalblue';
+		assert: [ :style :constants | style borderLeft: { constants  >> #thin. constants  >> #dashed. constants  >> #colors >> #royalBlue }  ] rendersProperty: 'border-left' withValue: 'thin dashed royalblue';
+		assert: [ :style :constants | style borderColor: constants  >> #colors >> #royalBlue ] rendersProperty: 'border-color' withValue: 'royalblue';
 		assert: [ :style :constants | style borderWidth:  constants  >> #thin. ] rendersProperty: 'border-width' withValue: 'thin';
 		assert: [ :style :constants | style borderStyle: constants  >> #dashed. ] rendersProperty: 'border-style' withValue: 'dashed';
-		assert: [ :style :constants | style borderTopColor: CssSVGColors royalBlue ] rendersProperty: 'border-top-color' withValue: 'royalblue';
+		assert: [ :style :constants | style borderTopColor: constants  >> #colors >> #royalBlue ] rendersProperty: 'border-top-color' withValue: 'royalblue';
 		assert: [ :style :constants | style borderTopWidth:  constants  >> #thin. ] rendersProperty: 'border-top-width' withValue: 'thin';
 		assert: [ :style :constants | style borderTopStyle: constants  >> #dashed. ] rendersProperty: 'border-top-style' withValue: 'dashed';
-		assert: [ :style | style borderBottomColor: CssSVGColors royalBlue ] rendersProperty: 'border-bottom-color' withValue: 'royalblue';
+		assert: [ :style :constants | style borderBottomColor: constants  >> #colors >> #royalBlue ] rendersProperty: 'border-bottom-color' withValue: 'royalblue';
 		assert: [ :style :constants | style borderBottomWidth:  constants  >> #thin. ] rendersProperty: 'border-bottom-width' withValue: 'thin';
 		assert: [ :style :constants | style borderBottomStyle: constants  >> #dashed. ] rendersProperty: 'border-bottom-style' withValue: 'dashed';
-		assert: [ :style | style borderLeftColor: CssSVGColors royalBlue ] rendersProperty: 'border-left-color' withValue: 'royalblue';
+		assert: [ :style :constants | style borderLeftColor: constants  >> #colors >> #royalBlue ] rendersProperty: 'border-left-color' withValue: 'royalblue';
 		assert: [ :style :constants | style borderLeftWidth:  constants  >> #thin. ] rendersProperty: 'border-left-width' withValue: 'thin';
 		assert: [ :style :constants | style borderLeftStyle: constants  >> #dashed. ] rendersProperty: 'border-left-style' withValue: 'dashed';
-		assert: [ :style | style borderRightColor: CssSVGColors royalBlue ] rendersProperty: 'border-right-color' withValue: 'royalblue';
+		assert: [ :style :constants | style borderRightColor: constants  >> #colors >> #royalBlue ] rendersProperty: 'border-right-color' withValue: 'royalblue';
 		assert: [ :style :constants | style borderRightWidth:  constants  >> #thin. ] rendersProperty: 'border-right-width' withValue: 'thin';
 		assert: [ :style :constants | style borderRightStyle: constants  >> #dashed. ] rendersProperty: 'border-right-style' withValue: 'dashed';
 		assert: [ :style | style borderRadius: 4 px ] rendersProperty: 'border-radius' withValue: '4px';
@@ -125,7 +125,7 @@ CssDeclarationBlockTest >> testPrintStringOfColorProperties [
 
 	self
 		assert: [ :style | style opacity: 0 ] rendersProperty: 'opacity' withValue: '0';
-		assert: [ :style | style color: CssSVGColors yellow ] rendersProperty: 'color' withValue: 'yellow'
+		assert: [ :style :constants | style color: constants >> #colors >> #yellow ] rendersProperty: 'color' withValue: 'yellow'
 ]
 
 { #category : #Tests }
@@ -145,7 +145,7 @@ CssDeclarationBlockTest >> testPrintStringOfFontProperties [
 		assert: [ :style :constants | style fontStyle: constants >> #italic ] rendersProperty: 'font-style' withValue: 'italic';
 		assert: [ :style :constants | style fontVariant: constants >> #smallCaps ] rendersProperty: 'font-variant' withValue: 'small-caps';
 		assert: [ :style :constants | style fontWeight: constants >> #bolder ] rendersProperty: 'font-weight' withValue: 'bolder';
-		assert: [ :style | style color: CssSVGColors goldenrod ] rendersProperty: 'color' withValue: 'goldenrod';
+		assert: [ :style :constants | style color: constants >> #colors >> #goldenrod ] rendersProperty: 'color' withValue: 'goldenrod';
 		assert: [ :style :constants | style fontStretch: constants >> #ultraCondensed ] rendersProperty: 'font-stretch' withValue: 'ultra-condensed';
 		assert: [ :style :constants | style fontSynthesis: {constants >> #weight . constants >> #style}] rendersProperty: 'font-synthesis' withValue: 'weight style';
 		assert: [ :style :constants | style fontKerning: constants >> #auto ] rendersProperty: 'font-kerning' withValue: 'auto'
@@ -244,11 +244,11 @@ CssDeclarationBlockTest >> testPrintStringOfTextDecorationProperties [
 
 	self 
 		assert: [ :style :constants | style textDecorationLine: constants  >> #underline ] rendersProperty: 'text-decoration-line' withValue: 'underline';
-		assert: [ :style | style textDecorationColor: CssSVGColors red ] rendersProperty: 'text-decoration-color' withValue: 'red';
+		assert: [ :style :constants | style textDecorationColor: constants >> #colors >> #red ] rendersProperty: 'text-decoration-color' withValue: 'red';
 		assert: [ :style :constants | style textDecorationStyle: constants  >> #solid ] rendersProperty: 'text-decoration-style' withValue: 'solid';
 		assert: [ :style :constants | style textUnderlinePosition: constants  >> #under ] rendersProperty: 'text-underline-position' withValue: 'under';
 		assert: [ :style :constants | style textEmphasisStyle: constants  >> #filled ] rendersProperty: 'text-emphasis-style' withValue: 'filled';
-		assert: [ :style | style textEmphasisColor: CssSVGColors red ] rendersProperty: 'text-emphasis-color' withValue: 'red';
+		assert: [ :style :constants | style textEmphasisColor: constants >> #colors >> #red ] rendersProperty: 'text-emphasis-color' withValue: 'red';
 		assert: [ :style :constants | style textEmphasisPosition: constants  >> #over ] rendersProperty: 'text-emphasis-position' withValue: 'over';
 		assert: [ :style :constants | style textEmphasis: constants  >> #filled ] rendersProperty: 'text-emphasis' withValue: 'filled';
 		assert: [ :style :constants | style textShadow: constants  >> #none ] rendersProperty: 'text-shadow' withValue: 'none'
@@ -275,7 +275,7 @@ CssDeclarationBlockTest >> testPrintStringOfUIProperties [
 	self 
 		assert: [ :style :constants | style cursor: constants  >> #auto ] rendersProperty: 'cursor' withValue: 'auto';
 		assert: [ :style :constants | style outline: constants  >> #dotted ] rendersProperty: 'outline' withValue: 'dotted';
-		assert: [ :style | style outlineColor: CssSVGColors black ] rendersProperty: 'outline-color' withValue: 'black';
+		assert: [ :style :constants | style outlineColor: constants >> #colors >> #black ] rendersProperty: 'outline-color' withValue: 'black';
 		assert: [ :style :constants | style outlineStyle: constants  >> #dotted ] rendersProperty: 'outline-style' withValue: 'dotted';
 		assert: [ :style | style outlineWidth: 2 px ] rendersProperty: 'outline-width' withValue: '2px'
 ]

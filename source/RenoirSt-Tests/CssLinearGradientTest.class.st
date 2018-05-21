@@ -15,7 +15,7 @@ CssLinearGradientTest >> testGradientWithAngleDirectionSpecified [
 
 	| gradient |
 	
-	gradient := CssLinearGradient rotated: 45 deg fading: { CssSVGColors white. CssSVGColors red. CssSVGColors white }.
+	gradient := CssLinearGradient rotated: 45 deg fading: { CssConstants >> #colors >> #white. CssConstants >> #colors >> #red. CssConstants >> #colors >> #white }.
 	self assert: gradient printString equals: 'linear-gradient(45deg, white, red, white)'
 ]
 
@@ -24,7 +24,7 @@ CssLinearGradientTest >> testGradientWithColorStops [
 
 	| gradient |
 	
-	gradient := CssLinearGradient fading: { CssSVGColors white. (CssColorStop for: CssSVGColors red at: 20 percent) }.
+	gradient := CssLinearGradient fading: { CssConstants >> #colors >> #white. (CssColorStop for: CssConstants >> #colors >> #red at: 20 percent) }.
 	self assert: gradient printString equals: 'linear-gradient(white, red 20%)'
 ]
 
@@ -35,12 +35,12 @@ CssLinearGradientTest >> testGradientWithNamedDirectionSpecified [
 	
 	gradient := CssLinearGradient
 		to: CssConstants >> #bottom
-		fading: {CssSVGColors white. CssSVGColors red}.
+		fading: {CssConstants >> #colors >> #white. CssConstants >> #colors >> #red}.
 	self assert: gradient printString equals: 'linear-gradient(to bottom, white, red)'.
 
 	gradient := CssLinearGradient
 		to: {CssConstants >>#top. CssConstants >>#right}
-		fading: {CssSVGColors white. CssSVGColors red}.
+		fading: {CssConstants >> #colors >> #white. CssConstants >> #colors >> #red}.
 	self assert: gradient printString equals: 'linear-gradient(to top right, white, red)'
 ]
 
@@ -49,7 +49,7 @@ CssLinearGradientTest >> testGradientWithNoDirectionSpecified [
 
 	| gradient |
 	
-	gradient := CssLinearGradient fading: { CssSVGColors white. CssSVGColors red }.
+	gradient := CssLinearGradient fading: { CssConstants >> #colors >> #white. CssConstants >> #colors >> #red }.
 	self assert: gradient printString equals: 'linear-gradient(white, red)'
 ]
 
@@ -59,8 +59,8 @@ CssLinearGradientTest >> testRepeatingGradientWithNoDirectionSpecified [
 	| gradient |
 	gradient := CssLinearGradient
 		fading:
-			{CssSVGColors white.
-			CssSVGColors red}.
+			{CssConstants >> #colors >> #white.
+			CssConstants >> #colors >> #red}.
 	gradient beRepeating.
 	
 	self assert: gradient printString equals: 'repeating-linear-gradient(white, red)'

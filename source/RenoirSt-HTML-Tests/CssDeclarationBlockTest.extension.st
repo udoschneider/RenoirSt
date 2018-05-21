@@ -5,7 +5,7 @@ CssDeclarationBlockTest >> testVendorPropertySupport [
 
 	| style |
 	style := CssDeclarationBlock new.
-	style vendorPropertyAt: 'border-end-color' put: CssSVGColors black.
+	style vendorPropertyAt: 'border-end-color' put: CssConstants >> #colors >> #black.
 
 	self
 		assert: style printString
