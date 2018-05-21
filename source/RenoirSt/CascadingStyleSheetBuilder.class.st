@@ -7,6 +7,9 @@ Class {
 	#instVars : [
 		'statements'
 	],
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Common'
 }
 
@@ -30,15 +33,15 @@ CascadingStyleSheetBuilder >> comment: aCommentText [
 
 { #category : #Configuring }
 CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMediaQueryBlock [
-	
+
 	| styleSheetBuilder mediaQueryBuilder |
-	
+
 	styleSheetBuilder := self class new.
 	aSubStyleSheetBlock value: styleSheetBuilder.
-	
+
 	mediaQueryBuilder := CssMediaQueryRuleBuilder new.
-	aMediaQueryBlock value: mediaQueryBuilder.
-	
+	aMediaQueryBlock cull: mediaQueryBuilder cull: CssMediaQueryConstants.
+
 	mediaQueryBuilder useStyleSheet: styleSheetBuilder build.
 	self addStatement: mediaQueryBuilder build
 ]

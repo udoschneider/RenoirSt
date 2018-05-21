@@ -5,7 +5,8 @@ Class {
 	#name : #RenoirSt,
 	#superclass : #SharedPool,
 	#classVars : [
-		'CssConstants'
+		'CssConstants',
+		'CssMediaQueryConstants'
 	],
 	#category : #'RenoirSt-Common'
 }
@@ -14,23 +15,11 @@ Class {
 RenoirSt class >> initialize [
 
 	<ignoreForCoverage>
-	CssConstants := Namespace new.
-	self
-		initializeAttachmentConstants;
-		initializeBackgroundConstants;
-		initializeBasicConstants;
-		initializeBorderConstants;
-		initializeCursorConstants;
-		initializeDisplayConstants;
-		initializeFontConstants;
-		initializeListConstants;
-		initializePositioningConstants;
-		initializeRepeatConstants;
-		initializeSizeConstants;
-		initializeTextConstants
+	self initializeCssConstants.
+	self initializeMediaQueryConstants
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeAttachmentConstants [
 
 	<ignoreForCoverage>
@@ -39,7 +28,7 @@ RenoirSt class >> initializeAttachmentConstants [
 		bind: #scroll to: 'scroll'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeBackgroundConstants [
 
 	<ignoreForCoverage>
@@ -56,7 +45,7 @@ RenoirSt class >> initializeBackgroundConstants [
 		bind: #space to: 'space'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeBasicConstants [
 
 	<ignoreForCoverage>
@@ -73,7 +62,7 @@ RenoirSt class >> initializeBasicConstants [
 		bind: #vertical to: 'vertical'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeBorderConstants [
 
 	<ignoreForCoverage>
@@ -95,7 +84,27 @@ RenoirSt class >> initializeBorderConstants [
 		bind: #thin to: 'thin'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeCssConstants [
+
+	<ignoreForCoverage>
+	CssConstants := Namespace new.
+	self
+		initializeAttachmentConstants;
+		initializeBackgroundConstants;
+		initializeBasicConstants;
+		initializeBorderConstants;
+		initializeCursorConstants;
+		initializeDisplayConstants;
+		initializeFontConstants;
+		initializeListConstants;
+		initializePositioningConstants;
+		initializeRepeatConstants;
+		initializeSizeConstants;
+		initializeTextConstants
+]
+
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeCursorConstants [
 
 	<ignoreForCoverage>
@@ -111,7 +120,7 @@ RenoirSt class >> initializeCursorConstants [
 		bind: #wait to: 'wait'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeDisplayConstants [
 
 	<ignoreForCoverage>
@@ -132,7 +141,7 @@ RenoirSt class >> initializeDisplayConstants [
 		bind: #tableRowGroup to: 'table-row-group'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeFontConstants [
 
 	<ignoreForCoverage>
@@ -152,7 +161,7 @@ RenoirSt class >> initializeFontConstants [
 		bind: #statusBar to: 'status-bar'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeListConstants [
 
 	<ignoreForCoverage>
@@ -175,7 +184,33 @@ RenoirSt class >> initializeListConstants [
 		bind: #upperRoman to: 'upper-roman'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
+RenoirSt class >> initializeMediaQueryConstants [
+
+	<ignoreForCoverage>
+	CssMediaQueryConstants := Namespace new.
+	"Media Types"
+	CssMediaQueryConstants
+		bind: #braille to: 'braille';
+		bind: #embossed to: 'embossed';
+		bind: #handheld to: 'handheld';
+		bind: #print to: 'print';
+		bind: #projection to: 'projection';
+		bind: #screen to: 'screen';
+		bind: #speech to: 'speech';
+		bind: #tty to: 'tty';
+		bind: #tv to: 'tv'.
+	"Orientation"
+	CssMediaQueryConstants
+		bind: #landscape to: 'landscape';
+		bind: #portrait to: 'portrait'.
+	"Scan"
+	CssMediaQueryConstants
+		bind: #interlace to: 'interlace';
+		bind: #progressive to: 'progressive'
+]
+
+{ #category : #'private - initialization' }
 RenoirSt class >> initializePositioningConstants [
 
 	<ignoreForCoverage>
@@ -202,7 +237,7 @@ RenoirSt class >> initializePositioningConstants [
 		bind: #visible to: 'visible'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeRepeatConstants [
 
 	<ignoreForCoverage>
@@ -213,7 +248,7 @@ RenoirSt class >> initializeRepeatConstants [
 		bind: #repeatY to: 'repeat-y'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeSizeConstants [
 
 	<ignoreForCoverage>
@@ -222,7 +257,7 @@ RenoirSt class >> initializeSizeConstants [
 		bind: #cover to: 'cover'
 ]
 
-{ #category : #initialization }
+{ #category : #'private - initialization' }
 RenoirSt class >> initializeTextConstants [
 
 	<ignoreForCoverage>

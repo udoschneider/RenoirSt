@@ -51,13 +51,30 @@ CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheetWithSomeComments [
 CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithMediaQuery [
 
 	| builder |
+
 	builder := CascadingStyleSheetBuilder new.
 	builder
 		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
 		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ] ]
-			forMediaMatching: [ :queryBuilder | queryBuilder type: CssMediaQueryConstants print ].
+			forMediaMatching: [ :queryBuilder :constants | queryBuilder type: constants >> #print ].
 
 	self
 		assert: builder build printString
 		equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media print<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
+]
+
+{ #category : #Tests }
+CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithMediaQueryWithoutConstants [
+
+	| builder |
+
+	builder := CascadingStyleSheetBuilder new.
+	builder
+		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
+		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ] ]
+			forMediaMatching: [ :queryBuilder | queryBuilder width: 600 px ].
+
+	self
+		assert: builder build printString
+		equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media all and (width: 600px)<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
 ]
