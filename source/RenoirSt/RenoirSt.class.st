@@ -6,8 +6,7 @@ Class {
 	#superclass : #SharedPool,
 	#classVars : [
 		'CssConstants',
-		'CssMediaQueryConstants',
-		'CssUnits'
+		'CssMediaQueryConstants'
 	],
 	#category : #'RenoirSt-Common'
 }
@@ -16,9 +15,10 @@ Class {
 RenoirSt class >> initialize [
 
 	<ignoreForCoverage>
-	self initializeCssConstants.
-	self initializeMediaQueryConstants.
-	self initializeUnits
+	self
+		initializeCssConstants;
+		initializeMediaQueryConstants;
+		initializeUnits
 ]
 
 { #category : #'private - initialization' }
@@ -268,7 +268,7 @@ RenoirSt class >> initializeLengthUnits [
 
 	<ignoreForCoverage>
 	"Absolute Units"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #centimeter to: (CssUnit identifiedBy: 'cm');
 		bind: #inch to: (CssUnit identifiedBy: 'in');
 		bind: #millimeter to: (CssUnit identifiedBy: 'mm');
@@ -276,7 +276,7 @@ RenoirSt class >> initializeLengthUnits [
 		bind: #pixel to: (CssUnit identifiedBy: 'px');
 		bind: #point to: (CssUnit identifiedBy: 'pt').
 	"Relative Units"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #fontSize to: (CssUnit identifiedBy: 'em');
 		bind: #xHeight to: (CssUnit identifiedBy: 'ex');
 		bind: #zeroWidth to: (CssUnit identifiedBy: 'ch');
@@ -593,25 +593,25 @@ RenoirSt class >> initializeTextConstants [
 RenoirSt class >> initializeUnits [
 
 	<ignoreForCoverage>
-	CssUnits := Namespace new.
+	CssConstants bind: #units to: Namespace new.
 	self initializeLengthUnits.
 	"Angle"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #degree to: (CssUnit identifiedBy: 'deg');
 		bind: #radian to: (CssUnit identifiedBy: 'rad');
 		bind: #gradian to: (CssUnit identifiedBy: 'grad');
 		bind: #turn to: (CssUnit identifiedBy: 'turn').
 	"Frequency"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #hertz to: (CssUnit identifiedBy: 'Hz');
 		bind: #kiloHertz to: (CssUnit identifiedBy: 'kHz').
 	"Resolution"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #dotsPerCentimeter to: (CssUnit identifiedBy: 'dpcm');
 		bind: #dotsPerInch to: (CssUnit identifiedBy: 'dpi');
 		bind: #dotsPerPixelUnit to: (CssUnit identifiedBy: 'dppx').
 	"Time"
-	CssUnits
+	(CssConstants >> #units)
 		bind: #second to: (CssUnit identifiedBy: 's');
 		bind: #millisecond to: (CssUnit identifiedBy: 'ms')
 ]
@@ -619,5 +619,5 @@ RenoirSt class >> initializeUnits [
 { #category : #accessing }
 RenoirSt class >> units [
 
-	^ CssUnits
+	^ CssConstants >> #units
 ]

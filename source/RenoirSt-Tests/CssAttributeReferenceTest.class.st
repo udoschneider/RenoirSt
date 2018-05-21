@@ -25,7 +25,7 @@ CssAttributeReferenceTest >> testAttributeReferenceWithType [
 
 	| attributeReference |
 
-	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssUnits >> #fontSize.
+	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssConstants >> #units >> #fontSize.
 
 	self assert: attributeReference printString equals: 'attr(length em)'
 ]
@@ -35,7 +35,7 @@ CssAttributeReferenceTest >> testAttributeReferenceWithTypeAndFallback [
 
 	| attributeReference |
 
-	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssUnits >> #fontSize withFallback: 10 px.
+	attributeReference := CssAttributeReference toAttributeNamed: 'length' ofType: CssConstants >> #units >> #fontSize withFallback: 10 px.
 
 	self assert: attributeReference printString equals: 'attr(length em, 10px)'
 ]
