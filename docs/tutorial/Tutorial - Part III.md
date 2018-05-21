@@ -10,13 +10,13 @@ However, for balance, an `!important` declaration takes precedence over a normal
 The library provides support for this feature by sending `beImportantDuring:` message to the style. Let's see an example:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph ]
-  with: [:style | 
+  with: [:style :constants |
     style beImportantDuring: [:importantStyle |
-      importantStyle 
-        textIndent: 1 em; 
-        fontStyle: CssConstants italic
+      importantStyle
+        textIndent: 1 em;
+        fontStyle: constants >> #italic
     ].
     style fontSize: 18 pt.
   ];
@@ -42,26 +42,26 @@ A `@media` rule specifies the target media types of a set of statements. The `@m
 
 The most basic media rule consists of specifying just a media type:
 ```smalltalk
-CascadingStyleSheetBuilder new 
-	declare: [ :cssBuilder | 
+CascadingStyleSheetBuilder new
+	declare: [ :cssBuilder |
 		cssBuilder
-			declareRuleSetFor: [ :selector | selector id: #oop ] 
-			with: [ :style | style color: CssSVGColors red ]
+			declareRuleSetFor: [ :selector | selector id: #oop ]
+			with: [ :style :constants | style color: constants >> #colors >> #red ]
 		]
-	forMediaMatching: [ :queryBuilder | queryBuilder type: CssMediaQueryConstants print ];
+	forMediaMatching: [ :queryBuilder :constants | queryBuilder type: constants >> #print ];
 	build
 ```
 
-To use media queries in the library just send the message `declare:forMediaMatching:` to the builder. The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of media queries.
+To use media queries in the library just send the message `declare:forMediaMatching:` to the builder. The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of media queries (and optionally constants access).
 
-The media query builder will match any media type by default. To specify a media type just send it the message `type:` with the corresponding media type. The class `CssMediaQueryConstants` provides easy access to the following media types: 
+The media query builder will match any media type by default. To specify a media type just send it the message `type:` with the corresponding media type. The `constants` argument provides easy access to the following media types:
 `braille`, `embossed`, `handheld`, `print`, `projection`, `screen`, `speech`, `tty` and `tv`.
 
 The media query builder supports a variety of messages for additional conditions (called media features). Media features are used in expressions to describe requirements of the output device.
 
 The following media feature messages are supported:
 - Accepting a `CssMeasure` with length units
-	- `width:` 
+	- `width:`
 	- `minWidth:`
 	- `maxWidht:`
 	- `height:`
@@ -73,7 +73,7 @@ The following media feature messages are supported:
 	- `deviceHeight:`
 	- `minDeviceHeight:`
 	- `maxDeviceHeight:`
-- `orientation:` accepting `CssMediaQueryConstants portrait` or `CssMediaQueryConstants landscape`
+- `orientation:` accepting `constants >> #portrait` or `constants >> #landscape`
 - Accepting fractions as aspect ratios
 	- `aspectRatio:`
 	- `minAspectRatio:`
@@ -96,21 +96,21 @@ The following media feature messages are supported:
 	- `resolution:`
 	- `minResolution:`
 	- `maxResolution:`
-- `scan:` accepting `CssMediaQueryConstants progressive` or `CssMediaQueryConstants interlace`
+- `scan:` accepting `constants >> #progressive` or `constants >> #interlace`
 
 New units for resolutions are added using the `CssMeasure` abstraction. This kind of measures can be created sending the messages `dpi` (dots per inch), `dpcm` (dots per centimeter) or `dppx` (dots per pixel unit) to an integer or float.
 
 Let's see a final example to better understand the media features support:
 ```smalltalk
-CascadingStyleSheetBuilder new 
-	declare: [ :cssBuilder | 
+CascadingStyleSheetBuilder new
+	declare: [ :cssBuilder |
 		cssBuilder
-			declareRuleSetFor: [ :selector | selector id: #oop ] 
-			with: [ :style | style color: CssSVGColors red ]
+			declareRuleSetFor: [ :selector | selector id: #oop ]
+			with: [ :style :constants | style color: constants >> #colors >> #red ]
 		]
-	forMediaMatching: [ :queryBuilder | 
-		queryBuilder 
-			orientation: CssMediaQueryConstants landscape;
+	forMediaMatching: [ :queryBuilder :constants |
+		queryBuilder
+			orientation: constants >> #landscape;
 			resolution: 300 dpi
 		];
 	build
@@ -131,7 +131,7 @@ Evaluates to:
 
 ## Vendor specific extensions
 
-The library doesn't provide out of the box support for non standard properties. However since version `1.4.0` the message `vendorPropertyAt:put:` is available to ease the creation of this kind of properties by the end user. 
+The library doesn't provide out of the box support for non standard properties. However since version `1.4.0` the message `vendorPropertyAt:put:` is available to ease the creation of this kind of properties by the end user.
 
 For example:
 
@@ -162,7 +162,7 @@ The `@font-face` rule allows for linking to fonts that are automatically fetched
 This support is implemented in the builder:
 ```smalltalk
 CascadingStyleSheetBuilder new
-	declareFontFaceRuleWith: [ :style | 
+	declareFontFaceRuleWith: [ :style |
 		style
 			fontFamily: 'Gentium';
 			src: 'http://example.com/fonts/gentium.woff' asZnUrl ];
@@ -177,20 +177,20 @@ renders as:
 }
 ```
 
-This kind of rule allows for multiple `src` definitions specifying the resources containing the data. This resources can be external (fonts fetched from a URL) or local (available in the user system). This kind of resources are supported using `CssLocalFontReference` and `CssExternalFontReference`. 
+This kind of rule allows for multiple `src` definitions specifying the resources containing the data. This resources can be external (fonts fetched from a URL) or local (available in the user system). This kind of resources are supported using `CssLocalFontReference` and `CssExternalFontReference`.
 
 Here's a more complex case showing this:
 ```smalltalk
 CascadingStyleSheetBuilder new
 	declareFontFaceRuleWith:
-		[ :style | 
+		[ :style :constants |
 		style
 			fontFamily: 'MainText';
 			src: (CssExternalFontReference locatedAt: 'gentium.eat' asZnUrl relativeToStyleSheet);
-			src: (CssLocalFontReference toFontNamed: 'Gentium')	, (CssExternalFontReference locatedAt: 'gentium.woff' asZnUrl relativeToStyleSheet withFormat: CssFontConstants woff);
+			src: (CssLocalFontReference toFontNamed: 'Gentium')	, (CssExternalFontReference locatedAt: 'gentium.woff' asZnUrl relativeToStyleSheet withFormat: constants woff);
 			src: (CssExternalFontReference svgFontLocatedAt: 'fonts.svg' asZnUrl relativeToStyleSheet withId: 'simple') ];
 	build
-``` 
+```
 
 ```css
 @font-face
@@ -217,7 +217,7 @@ The `Units` package (available using the ConfigurationBrowser in Pharo) includes
 The library includes an optional group including some useful extensions. The [Seaside](www.seaside.st) framework includes his own class modeling URLs, when this configuration is loaded the instances of `WAUrl` can be used in the properties requiring an URI:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div class: 'logo' ]
   with: [:style | style backgroundImage: 'images/logo.png' seasideUrl ];
   build
@@ -237,16 +237,16 @@ To load this extensions you need to load in an image with Seaside already loaded
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:stable-pharo-50/source';
+  repository: 'github://gcotelli/RenoirSt:v5/source';
   load: 'Deployment-Seaside-Extensions'
 ```
 
-or 
+or
 
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:stable-pharo-40/source';
+  repository: 'github://gcotelli/RenoirSt:v5/source';
   load: 'Deployment-Seaside-Extensions'
 ```
 
@@ -258,23 +258,23 @@ Using the new Metacello API it's easy to reference the library as a dependency f
 
 ```smalltalk
 ...
-	spec 
+	spec
 		baseline: 'RenoirSt'
-		with: [ spec repository: 'github://gcotelli/RenoirSt:v1.6.0/source'];
-		import: 'RenoirSt' 
+		with: [ spec repository: 'github://gcotelli/RenoirSt:v5.0.0/source'];
+		import: 'RenoirSt'
 ```
 
 you can also load specific groups, like the Seaside extensions or do pattern matching on the versions given this project uses Semantic Versioning:
 
 ```smalltalk
 ...
-	spec 
+	spec
 		baseline: 'RenoirSt'
-		with: [ 
+		with: [
 			spec
-				repository: 'github://gcotelli/RenoirSt:v1.?/source';
+				repository: 'github://gcotelli/RenoirSt:v5/source';
 				loads: #('Deployment-Seaside-Extensions')];
-		import: 'RenoirSt' 
+		import: 'RenoirSt'
 ```
 
 The available groups are:

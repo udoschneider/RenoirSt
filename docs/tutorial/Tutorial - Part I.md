@@ -18,7 +18,7 @@ Beautiful! You have now an inspector on your fisrt (empty and useless) style she
 Our first style sheet will simply assign a margin to every `div` element in the DOM.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style margin: 2 px ];
   build
@@ -40,7 +40,7 @@ The properties API is mostly defined following these rules:
 
 #### Lengths, Angles, Times and Frequencies
 
-Another thing to note is how `2 px` was interpreted. The resulting object is a `CssMeasure`. The library provides out-of-the-box support for the length, angle, time and frequency units in the CSS spec. There are extensions for `Integer` and `Float` classes allowing to obtain lengths. The supported length units are: 
+Another thing to note is how `2 px` was interpreted. The resulting object is a `CssMeasure`. The library provides out-of-the-box support for the length, angle, time and frequency units in the CSS spec. There are extensions for `Integer` and `Float` classes allowing to obtain lengths. The supported length units are:
 - `em` relative to font size
 - `ex` relative to "x" height
 - `ch` relative to width of the zero glyph in the element's font
@@ -53,7 +53,7 @@ Another thing to note is how `2 px` was interpreted. The resulting object is a `
 - `mm` millimeteres
 - `in` inches
 - `pc` picas
-- `pt` points 
+- `pt` points
 - `px` pixels (note that CSS has some special definition for pixel)
 
 The supported angle units are:
@@ -72,9 +72,9 @@ The supported frequency units are:
 
 It also supports the creation of percentages: `50 percent` is expressed as `50%` in the resulting CSS.
 
-Some properties require integer or floating point values. In this cases just use the Pharo provided integer and float support. For example: 
+Some properties require integer or floating point values. In this cases just use the Pharo provided integer and float support. For example:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style zIndex: 2 ];
   build
@@ -82,14 +82,14 @@ CascadingStyleSheetBuilder new
 
 #### Colors
 
-The library also supports abstractions for properties requiring color values. The shared pool `CssSVGColors` provides easy access to colors in the SVG 1.0 list, and the abstractions `CssRGBColor` and `CssHSLColor` allow the creation of colors in the RGB or HSL space including alpha support.
+The library also supports abstractions for properties requiring color values. The second block on the builder can be used to access constants provided by the library. So `constants >> #colors` provides easy access to colors in the SVG 1.0 list, and the abstractions `CssRGBColor` and `CssHSLColor` allow the creation of colors in the RGB or HSL space including alpha support.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | 
-    style 
-      backgroundColor: CssSVGColors aliceBlue;
+  with: [:style :constants |
+    style
+      backgroundColor: constants >> #colors >> #aliceBlue;
       borderColor: (CssRGBColor red: 0 green: 128 blue: 0 alpha: 0.5)];
   build
 ```
@@ -107,7 +107,7 @@ div
 RGB-Colors also support percentual values:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style borderColor: (CssRGBColor red: 0 percent green: 50 percent blue: 0 percent) ];
   build
@@ -123,12 +123,12 @@ Notice the difference in the message used because there is no alpha channel spec
 
 #### Constants
 
-A lot of values for CSS properties are just keyword constants. This support is provided by the classes `CssConstants` and `CssFontConstants`.
+A lot of values for CSS properties are just keyword constants. This support is in the second argument in the builder.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style textAlign: CssConstants justify ];
+  with: [:style :constants | style textAlign: constants >> #justify ];
   build
 ```
 Evaluates to:
@@ -144,7 +144,7 @@ div
 Some properties support a wide range of values. For example the `margin` property can have 1, 2 , 3 or 4 values specified. If only one value needs to be specified just provide it, in other case use an `Array` like this:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style margin: { 2 px. 4 px } ];
   build
@@ -161,7 +161,7 @@ div
 `ZnUrl` instances can be used as the value for properties requiring an URI. Both relative and absolute URLs are accepted. A relative URL is by default considered relative to the site root.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div class: 'logo' ]
   with: [:style | style backgroundImage: 'images/logo.png' asZnUrl ];
   declareRuleSetFor: [:selector | selector div class: 'logo' ]
@@ -184,12 +184,12 @@ div.logo
 In case you want an URL relative to the style sheet, you must send the message `relativeToStyleSheet`:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div class: 'logo' ]
   with: [:style | style backgroundImage: 'images/logo.png' asZnUrl relativeToStyleSheet];
   build
 ```
-Evaluates to: 
+Evaluates to:
 ```css
 div.logo
 {
@@ -202,7 +202,7 @@ div.logo
 When declaring rule sets the library support attaching comments to them. To do that send the message `declareRuleSetFor:with:andComment:`, for example:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style margin: 2 pc ]
   andComment: 'Two picas margin';
@@ -220,7 +220,7 @@ div
 Since version 1.3.0 is possible to also define stand-alone comments (not attached to any rule):
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   comment: 'A general comment';
   build
 ```
@@ -237,7 +237,7 @@ A functional notation is a type of CSS component value that can represent more c
 
 The library provides support for math expressions using the  `CssMathExpression` abstraction. This math expressions are built instantiating a `CssMathExpression` with the first operand, and sending to it `+`, `-`, `*` or `/` messages. Lets see some example:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
   with: [:style | style margin: (CssMathExpression on: 2 pc) / 3 + 2 percent ];
   build
@@ -252,12 +252,12 @@ div
 
 #### Toggling between values: `toggle()`
 
-This kind of expressions allows descendant elements to cycle over a list of values instead of inheriting the same value. It's supported using the `CssToggle` abstraction. 
+This kind of expressions allows descendant elements to cycle over a list of values instead of inheriting the same value. It's supported using the `CssToggle` abstraction.
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector unorderedList unorderedList ]
-  with: [:style | style listStyleType: (CssToggle cyclingOver: { CssConstants disc. CssConstants circle. CssConstants square}) ];
+  with: [:style :constants | style listStyleType: (CssToggle cyclingOver: { constants >> #disc. constants >> #circle. constants >> #square}) ];
   build
 ```
 Evaluates to:
@@ -273,7 +273,7 @@ ul ul
 The attr() function is allowed as a component value in properties applied to an element or pseudo-element. It returns the value of an attribute on the element. If used on a pseudo-element, it returns the value of the attribute on the pseudo-element's originating element. It's supported using the `CssAttributeReference` abstraction. This function can be used simply providing an attribute name:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
   with: [:style | style content: (CssAttributeReference toAttributeNamed: 'title') ];
   build
@@ -288,9 +288,9 @@ div::before
 or providing also the type or unit of the attribute (if no type or unit is specified the `string` type is assumed):
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div  ]
-  with: [:style | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: CssLengthUnits pixel) ];
+  with: [:style | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: RenoirSt units >> #pixel) ];
   build
 ```
 Evaluates to:
@@ -304,7 +304,7 @@ div
 also it's possible to provide a fallback value in case the attribute is not present:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
   with: [:style | style content: (CssAttributeReference toStringAttributeNamed: 'title' withFallback: 'Missing title') ];
   build
@@ -318,9 +318,9 @@ div::before
 ```
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
-  with: [:style | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: CssLengthUnits pixel withFallback: 10 px) ];
+  with: [:style | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: RenoirSt units >> #pixel withFallback: 10 px) ];
   build
 ```
 Evaluates to:
@@ -333,28 +333,28 @@ div::before
 
 #### Gradients: `linear-gradient()` `radial-gradient()` `repeating-linear-gradient()` `repeating-radial-gradient()`
 
-A gradient is an image that smoothly fades from one color to another. These are commonly used for subtle shading in background images, buttons, and many other things. The gradient notations described in this section allow an author to specify such an image in a terse syntax, so that the UA can generate the image automatically when rendering the page. This notation is supported using `CssLinearGradient` and `CssRadialGradient` asbtractions. 
+A gradient is an image that smoothly fades from one color to another. These are commonly used for subtle shading in background images, buttons, and many other things. The gradient notations described in this section allow an author to specify such an image in a terse syntax, so that the UA can generate the image automatically when rendering the page. This notation is supported using `CssLinearGradient` and `CssRadialGradient` asbtractions.
 
 Let's see some examples for linear gradients:
 
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient fading: { CssSVGColors yellow. CssSVGColors blue }) ];
+  with: [:style :constants | style background: (CssLinearGradient fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient to: CssConstants bottom fading: { CssSVGColors yellow. CssSVGColors blue }) ];
+  with: [:style :constants | style background: (CssLinearGradient to: constants >> #bottom fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient rotated: 45 deg fading: { CssSVGColors yellow. CssSVGColors blue }) ];
+  with: [:style :constants | style background: (CssLinearGradient rotated: 45 deg fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient rotated: 90 deg fading: { CssSVGColors yellow. (CssColorStop for: CssSVGColors blue at: 30 percent) }) ];
+  with: [:style :constants | style background: (CssLinearGradient rotated: 90 deg fading: { constants >> #colors >> #yellow. (CssColorStop for: constants >> #colors >> #blue at: 30 percent) }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient fading: { CssSVGColors yellow. (CssColorStop for: CssSVGColors blue at: 20 percent). CssSVGColors green}) ];
+  with: [:style :constants | style background: (CssLinearGradient fading: { constants >> #colors >> #yellow. (CssColorStop for: constants >> #colors >> #blue at: 20 percent). constants >> #colors >> #green}) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssLinearGradient to: { CssConstants top. CssConstants right } fading: { CssSVGColors red.  CssSVGColors white. CssSVGColors blue }) ];
+  with: [:style :constants | style background: (CssLinearGradient to: { constants >> #top. constants >> #right } fading: { constants >> #colors >> #red.  constants >> #colors >> #white. constants >> #colors >> #blue }) ];
   build
 ```
 
-evaluates to: 
+evaluates to:
 
 ```css
 div
@@ -390,15 +390,15 @@ div
 
 and some for radial gradients:
 ```smalltalk
-CascadingStyleSheetBuilder new 
+CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssRadialGradient fading: { CssSVGColors yellow. CssSVGColors green }) ];
+  with: [:style :constants | style background: (CssRadialGradient fading: { constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssRadialGradient elliptical: CssConstants farthestCorner at: CssConstants center fading: { CssSVGColors yellow. CssSVGColors green }) ];
+  with: [:style :constants | style background: (CssRadialGradient elliptical: constants >> #farthestCorner at: constants >> #center fading: { constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssRadialGradient elliptical: CssConstants farthestSide at: { CssConstants left. CssConstants bottom} fading: { CssSVGColors red. (CssColorStop for: CssSVGColors yellow at: 50 px). CssSVGColors green }) ];
+  with: [:style :constants | style background: (CssRadialGradient elliptical: constants >> #farthestSide at: { constants >> #left. constants >> #bottom} fading: { constants >> #colors >> #red. (CssColorStop for: constants >> #colors >> #yellow at: 50 px). constants >> #colors >> #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style | style background: (CssRadialGradient elliptical: {20 px. 30 px} at: { 20 px. 30 px} fading: { CssSVGColors red. CssSVGColors yellow. CssSVGColors green }) ];
+  with: [:style :constants | style background: (CssRadialGradient elliptical: {20 px. 30 px} at: { 20 px. 30 px} fading: { constants >> #colors >> #red. constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
   build
 ```
 evaluates to:
@@ -438,7 +438,7 @@ repeating-radial-gradient(yellow, green);
 This abstraction simplifies the use of the `box-shadow` property. Let's see some examples:
 
 ```smalltalk
-CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssSVGColors black newWithAlpha: 0.4)
+CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)
 ```
 renders as:
 ```css
@@ -446,12 +446,12 @@ renders as:
 ```
 
 ```smalltalk
-(CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssSVGColors black newWithAlpha: 0.4)) , 
-(CssBoxShadow horizontalOffset: 12 px verticalOffset: 11 px blurRadius: 0 px  spreadDistance: 8 px color: (CssSVGColors black newWithAlpha: 0.4)) beInset
+(CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)) ,
+(CssBoxShadow horizontalOffset: 12 px verticalOffset: 11 px blurRadius: 0 px  spreadDistance: 8 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)) beInset
 ```
 renders as:
 ```css
 64px 64px 12px 40px rgba(0,0,0,0.4), inset 12px 11px 0px 8px rgba(0,0,0,0.4)
 ```
-			
+
 [Go to next chapter](Tutorial - Part II.md)
