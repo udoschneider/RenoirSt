@@ -290,7 +290,7 @@ or providing also the type or unit of the attribute (if no type or unit is speci
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div  ]
-  with: [:style | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: RenoirSt units >> #pixel) ];
+  with: [:style :constants | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: constants >> #units >> #pixel) ];
   build
 ```
 Evaluates to:
@@ -320,7 +320,7 @@ div::before
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
-  with: [:style | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: RenoirSt units >> #pixel withFallback: 10 px) ];
+  with: [:style :constants | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: constants >> #units >> #pixel withFallback: 10 px) ];
   build
 ```
 Evaluates to:
