@@ -11,6 +11,12 @@ Class {
 	#category : #'RenoirSt-Common'
 }
 
+{ #category : #accessing }
+RenoirSt class >> constants [
+
+	^ CssConstants
+]
+
 { #category : #initialization }
 RenoirSt class >> initialize [
 
@@ -619,5 +625,5 @@ RenoirSt class >> initializeUnits [
 { #category : #accessing }
 RenoirSt class >> units [
 
-	^ CssConstants >> #units
+	^ self constants >> #units
 ]
