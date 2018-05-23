@@ -1,7 +1,7 @@
 Extension { #name : #WATagBrush }
 
 { #category : #'*RenoirSt-Seaside' }
-WATagBrush >> setInlineStyleTo: aDeclarationAction [
+WATagBrush >> setStyleTo: aDeclarationAction [
 
 	| declarationBlock |
 
