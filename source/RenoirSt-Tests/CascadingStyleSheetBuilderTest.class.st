@@ -21,20 +21,19 @@ CascadingStyleSheetBuilderTest >> testBuildingOnlyWithComments [
 
 { #category : #Tests }
 CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheet [
-	
+
 	| builder |
+
 	builder := CascadingStyleSheetBuilder new.
 	builder
 		declareRuleSetFor: [ :selector | selector class: 'xxx' ]
 			with: [ :style | 
 			style
-				color: 'white';
+				color: #white;
 				margin: 12 pt ];
-		declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ].
-	
-	self
-		assert: builder build printString
-		equals: '.xxx<n>{<n><t>color: white;<n><t>margin: 12pt;<n>}<n><n>#oop<n>{<n><t>color: red;<n>}' expandMacros
+		declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #red ].
+
+	self assert: builder build printString equals: '.xxx<n>{<n><t>color: white;<n><t>margin: 12pt;<n>}<n><n>#oop<n>{<n><t>color: red;<n>}' expandMacros
 ]
 
 { #category : #Tests }
@@ -43,9 +42,7 @@ CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheetUsingConstants [
 	| builder |
 
 	builder := CascadingStyleSheetBuilder new.
-	builder
-		declareRuleSetFor: [ :selector | selector class: 'xxx' ]
-		with: [ :style :constants | style fontSize: constants >> #auto ].
+	builder declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style fontSize: #auto ].
 
 	self assert: builder build printString equals: '.xxx<n>{<n><t>font-size: auto;<n>}' expandMacros
 ]
@@ -54,8 +51,9 @@ CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheetUsingConstants [
 CascadingStyleSheetBuilderTest >> testBuildingSimpleStyleSheetWithSomeComments [
 
 	| builder |
+
 	builder := CascadingStyleSheetBuilder new.
-	builder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ] andComment: 'Example CSS'.
+	builder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #red ] andComment: 'Example CSS'.
 
 	self assert: builder build printString equals: '/*Example CSS*/<n>#oop<n>{<n><t>color: red;<n>}' expandMacros
 ]
@@ -68,12 +66,9 @@ CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithMediaQuery [
 	builder := CascadingStyleSheetBuilder new.
 	builder
 		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
-		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ] ]
-			forMediaMatching: [ :queryBuilder :constants | queryBuilder type: constants >> #print ].
+		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #red ] ] forMediaMatching: [ :queryBuilder | queryBuilder type: #print ].
 
-	self
-		assert: builder build printString
-		equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media print<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
+	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media print<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
 ]
 
 { #category : #Tests }
@@ -84,10 +79,7 @@ CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithMediaQueryWithoutCon
 	builder := CascadingStyleSheetBuilder new.
 	builder
 		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
-		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: 'red' ] ]
-			forMediaMatching: [ :queryBuilder | queryBuilder width: 600 px ].
+		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #red ] ] forMediaMatching: [ :queryBuilder | queryBuilder width: 600 px ].
 
-	self
-		assert: builder build printString
-		equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media all and (width: 600px)<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
+	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media all and (width: 600px)<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
 ]

@@ -13,11 +13,5 @@ Class {
 { #category : #Tests }
 CssToggleTest >> testPrintString [
 
-	self
-		assert:
-			(CssToggle
-				cyclingOver:
-					{CssConstants >> #italic.
-					CssConstants >> #normal}) printString
-		equals: 'toggle(italic, normal)'
+	self assert: (CssToggle cyclingOver: #(#italic #normal)) printString equals: 'toggle(italic, normal)'
 ]

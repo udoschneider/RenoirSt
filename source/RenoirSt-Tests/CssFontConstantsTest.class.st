@@ -10,105 +10,111 @@ Class {
 	#category : #'RenoirSt-Tests-Fonts'
 }
 
+{ #category : #'private - asserting' }
+CssFontConstantsTest >> assertConstant: aSymbol equals: anExpectedValue [
+
+	self assert: CssConstants >> aSymbol equals: anExpectedValue
+]
+
 { #category : #Tests }
 CssFontConstantsTest >> testFontFormatConstants [
 
 	self
-		assert: CssConstants >> #woff equals: 'woff';
-		assert: CssConstants >> #truetype equals: 'truetype';
-		assert: CssConstants >> #opentype equals: 'opentype';
-		assert: CssConstants >> #embeddedOpentype equals: 'embedded-opentype';
-		assert: CssConstants >> #svg equals: 'svg'
+		assertConstant: #woff equals: 'woff';
+		assertConstant: #truetype equals: 'truetype';
+		assertConstant: #opentype equals: 'opentype';
+		assertConstant: #embeddedOpentype equals: 'embedded-opentype';
+		assertConstant: #svg equals: 'svg'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontSizeConstants [
 
 	self
-		assert: CssConstants >> #xxSmall equals: 'xx-small';
-		assert: CssConstants >> #xSmall equals: 'x-small';
-		assert: CssConstants >> #small equals: 'small';
-		assert: CssConstants >> #medium equals: 'medium';
-		assert: CssConstants >> #large equals: 'large';
-		assert: CssConstants >> #xLarge equals: 'x-large';
-		assert: CssConstants >> #xxLarge equals: 'xx-large';
-		assert: CssConstants >> #larger equals: 'larger';
-		assert: CssConstants >> #smaller equals: 'smaller'
+		assertConstant: #xxSmall equals: 'xx-small';
+		assertConstant: #xSmall equals: 'x-small';
+		assertConstant: #small equals: 'small';
+		assertConstant: #medium equals: 'medium';
+		assertConstant: #large equals: 'large';
+		assertConstant: #xLarge equals: 'x-large';
+		assertConstant: #xxLarge equals: 'xx-large';
+		assertConstant: #larger equals: 'larger';
+		assertConstant: #smaller equals: 'smaller'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontStretchConstants [
 
 	self
-		assert: CssConstants >> #ultraCondensed equals: 'ultra-condensed';
-		assert: CssConstants >> #extraCondensed equals: 'extra-condensed';
-		assert: CssConstants >> #condensed equals: 'condensed';
-		assert: CssConstants >> #semiCondensed equals: 'semi-condensed';
-		assert: CssConstants >> #normal equals: 'normal';
-		assert: CssConstants >> #semiExpanded equals: 'semi-expanded';
-		assert: CssConstants >> #extraExpanded equals: 'extra-expanded';
-		assert: CssConstants >> #expanded equals: 'expanded';
-		assert: CssConstants >> #ultraExpanded equals: 'ultra-expanded'
+		assertConstant: #ultraCondensed equals: 'ultra-condensed';
+		assertConstant: #extraCondensed equals: 'extra-condensed';
+		assertConstant: #condensed equals: 'condensed';
+		assertConstant: #semiCondensed equals: 'semi-condensed';
+		assertConstant: #normal equals: 'normal';
+		assertConstant: #semiExpanded equals: 'semi-expanded';
+		assertConstant: #extraExpanded equals: 'extra-expanded';
+		assertConstant: #expanded equals: 'expanded';
+		assertConstant: #ultraExpanded equals: 'ultra-expanded'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontVariantCapsConstants [
 
 	self
-		assert: CssConstants >> #smallCaps equals: 'small-caps';
-		assert: CssConstants >> #allSmallCaps equals: 'all-small-caps';
-		assert: CssConstants >> #petiteCaps equals: 'petite-caps';
-		assert: CssConstants >> #allPetiteCaps equals: 'all-petite-caps';
-		assert: CssConstants >> #unicase equals: 'unicase';
-		assert: CssConstants >> #titlingCaps equals: 'titling-caps';
-		assert: CssConstants >> #normal equals: 'normal'
+		assertConstant: #smallCaps equals: 'small-caps';
+		assertConstant: #allSmallCaps equals: 'all-small-caps';
+		assertConstant: #petiteCaps equals: 'petite-caps';
+		assertConstant: #allPetiteCaps equals: 'all-petite-caps';
+		assertConstant: #unicase equals: 'unicase';
+		assertConstant: #titlingCaps equals: 'titling-caps';
+		assertConstant: #normal equals: 'normal'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontVariantLigaturesConstants [
 
 	self
-		assert: CssConstants >> #commonLigatures  equals: 'common-ligatures';
-		assert: CssConstants >> #noCommonLigatures equals: 'no-common-ligatures';
-		assert: CssConstants >> #discretionaryLigatures equals: 'discretionary-ligatures';
-		assert: CssConstants >> #noDiscretionaryLigatures  equals: 'no-discretionary-ligatures';
-		assert: CssConstants >> #historicalLigatures equals: 'historical-ligatures';
-		assert: CssConstants >> #noHistoricalLigatures equals: 'no-historical-ligatures';
-		assert: CssConstants >> #contextual equals: 'contextual';
-		assert: CssConstants >> #noContextual equals: 'no-contextual'
+		assertConstant: #commonLigatures  equals: 'common-ligatures';
+		assertConstant: #noCommonLigatures equals: 'no-common-ligatures';
+		assertConstant: #discretionaryLigatures equals: 'discretionary-ligatures';
+		assertConstant: #noDiscretionaryLigatures  equals: 'no-discretionary-ligatures';
+		assertConstant: #historicalLigatures equals: 'historical-ligatures';
+		assertConstant: #noHistoricalLigatures equals: 'no-historical-ligatures';
+		assertConstant: #contextual equals: 'contextual';
+		assertConstant: #noContextual equals: 'no-contextual'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontVariantNumericConstants [
 
 	self
-		assert: CssConstants >> #ordinal equals: 'ordinal';
-		assert: CssConstants >> #slashedZero equals: 'slashed-zero';
-		assert: CssConstants >> #liningNums equals: 'lining-nums';
-		assert: CssConstants >> #oldstyleNums equals: 'oldstyle-nums';
-		assert: CssConstants >> #proportionalNums equals: 'proportional-nums';
-		assert: CssConstants >> #tabularNums equals: 'tabular-nums';
-		assert: CssConstants >> #diagonalFractions equals: 'diagonal-fractions';
-		assert: CssConstants >> #stackedFractions equals: 'stacked-fractions';
-		assert: CssConstants >> #normal equals: 'normal'
+		assertConstant: #ordinal equals: 'ordinal';
+		assertConstant: #slashedZero equals: 'slashed-zero';
+		assertConstant: #liningNums equals: 'lining-nums';
+		assertConstant: #oldstyleNums equals: 'oldstyle-nums';
+		assertConstant: #proportionalNums equals: 'proportional-nums';
+		assertConstant: #tabularNums equals: 'tabular-nums';
+		assertConstant: #diagonalFractions equals: 'diagonal-fractions';
+		assertConstant: #stackedFractions equals: 'stacked-fractions';
+		assertConstant: #normal equals: 'normal'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testFontVariantPositionConstants [
 
 	self
-		assert: CssConstants >> #sub  equals: 'sub';
-		assert: CssConstants >> #super equals: 'super';
-		assert: CssConstants >> #normal equals: 'normal'
+		assertConstant: #sub  equals: 'sub';
+		assertConstant: #super equals: 'super';
+		assertConstant: #normal equals: 'normal'
 ]
 
 { #category : #Tests }
 CssFontConstantsTest >> testGenericFontFamiliesAccessors [
 
 	self
-		assert: CssConstants >> #serif equals: 'serif';
-		assert: CssConstants >> #sansSerif equals: 'sans-serif';
-		assert: CssConstants >> #cursive equals: 'cursive';
-		assert: CssConstants >> #fantasy equals: 'fantasy';
-		assert: CssConstants >> #monospace equals: 'monospace'
+		assertConstant: #serif equals: 'serif';
+		assertConstant: #sansSerif equals: 'sans-serif';
+		assertConstant: #cursive equals: 'cursive';
+		assertConstant: #fantasy equals: 'fantasy';
+		assertConstant: #monospace equals: 'monospace'
 ]

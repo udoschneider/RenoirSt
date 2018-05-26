@@ -4,9 +4,6 @@ A CssMediaQueryRuleTest is a test class for testing the behavior of CssMediaQuer
 Class {
 	#name : #CssMediaQueryRuleTest,
 	#superclass : #TestCase,
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
@@ -16,7 +13,7 @@ CssMediaQueryRuleTest >> testPrintStringOfSimpleMediaQuery [
 	| styleSheet mediaQuery |
 
 	styleSheet := CascadingStyleSheet withAll: #().
-	mediaQuery := CssMediaQueryRule ofType: CssMediaQueryConstants >> #screen enabling: styleSheet.
+	mediaQuery := CssMediaQueryRule ofType: #screen enabling: styleSheet.
 
 	self assert: mediaQuery printString equals: '@media screen<n>{<n><t><n>}' expandMacros
 ]
@@ -28,13 +25,11 @@ CssMediaQueryRuleTest >> testPrintStringWithExpressions [
 
 	styleSheet := CascadingStyleSheet withAll: #().
 	mediaQuery := CssMediaQueryRule
-		ofType: CssMediaQueryConstants >> #screen
+		ofType: #screen
 		conforming:
 			{(CssMediaQueryExpression forFeatureNamed: 'color').
-			(CssMediaQueryExpression forFeatureNamed: 'orientation' withValue: 'landscape')}
+			(CssMediaQueryExpression forFeatureNamed: 'orientation' withValue: #landscape)}
 		enabling: styleSheet.
 
-	self
-		assert: mediaQuery printString
-		equals: '@media screen and (color) and (orientation: landscape)<n>{<n><t><n>}' expandMacros
+	self assert: mediaQuery printString equals: '@media screen and (color) and (orientation: landscape)<n>{<n><t><n>}' expandMacros
 ]

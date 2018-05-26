@@ -4,13 +4,9 @@ Extension { #name : #CssDeclarationBlockTest }
 CssDeclarationBlockTest >> testVendorPropertySupport [
 
 	| style |
-	style := CssDeclarationBlock new.
-	style vendorPropertyAt: 'border-end-color' put: CssConstants >> #colors >> #black.
 
-	self
-		assert: style printString
-		equals:
-			('{<n><t><1s>: <2s>;<n><t>-moz-<1s>: <2s>;<n><t>-webkit-<1s>: <2s>;<n><t>-o-<1s>: <2s>;<n><t>-ms-<1s>: <2s>;<n>}'
-				expandMacrosWith: 'border-end-color'
-				with: 'black')
+	style := CssDeclarationBlock new.
+	style vendorPropertyAt: 'border-end-color' put: #black.
+
+	self assert: style printString equals: ('{<n><t><1s>: <2s>;<n><t>-moz-<1s>: <2s>;<n><t>-webkit-<1s>: <2s>;<n><t>-o-<1s>: <2s>;<n><t>-ms-<1s>: <2s>;<n>}' expandMacrosWith: 'border-end-color' with: 'black')
 ]

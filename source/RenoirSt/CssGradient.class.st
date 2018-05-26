@@ -7,6 +7,12 @@ Class {
 	#category : #'RenoirSt-Colors'
 }
 
+{ #category : #converting }
+CssGradient class >> asColorStops: aColorStopOrNamedConstantCollection [
+
+	^ aColorStopOrNamedConstantCollection collect: [ :colorStopOrNamedConstant | self lookupColor: colorStopOrNamedConstant ]
+]
+
 { #category : #private }
 CssGradient >> colorStops [
 

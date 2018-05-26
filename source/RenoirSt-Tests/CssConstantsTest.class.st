@@ -10,197 +10,202 @@ Class {
 	#category : #'RenoirSt-Tests-Common'
 }
 
+{ #category : #'private - asserting' }
+CssConstantsTest >> assertConstant: aSymbol equals: anExpectedValue [
+
+	self assert: CssConstants >> aSymbol equals: anExpectedValue
+]
+
 { #category : #Tests }
 CssConstantsTest >> testAttachmentProperties [
 
 	self
-		assert: CssConstants >> #fixed equals: 'fixed';
-		assert: CssConstants >> #scroll equals: 'scroll'
+		assertConstant: #fixed equals: 'fixed';
+		assertConstant: #scroll equals: 'scroll'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testBackgroundProperties [
 	
 	self
-		assert: CssConstants >> #round equals: 'round';
-		assert: CssConstants >> #space equals: 'space';
-		assert: CssConstants >> #local equals: 'local';
-		assert: CssConstants >> #borderBox equals: 'border-box';
-		assert: CssConstants >> #paddingBox equals: 'padding-box';
-		assert: CssConstants >> #contentBox equals: 'content-box';
-		assert: CssConstants >> #closestCorner equals: 'closest-corner';
-		assert: CssConstants >> #closestSide equals: 'closest-side';
-		assert: CssConstants >> #farthestCorner equals: 'farthest-corner';
-		assert: CssConstants >> #farthestSide equals: 'farthest-side'
+		assertConstant: #round equals: 'round';
+		assertConstant: #space equals: 'space';
+		assertConstant: #local equals: 'local';
+		assertConstant: #borderBox equals: 'border-box';
+		assertConstant: #paddingBox equals: 'padding-box';
+		assertConstant: #contentBox equals: 'content-box';
+		assertConstant: #closestCorner equals: 'closest-corner';
+		assertConstant: #closestSide equals: 'closest-side';
+		assertConstant: #farthestCorner equals: 'farthest-corner';
+		assertConstant: #farthestSide equals: 'farthest-side'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testBasicConstants [
 
 	self
-		assert: CssConstants >> #auto equals: 'auto';
-		assert: CssConstants >> #even equals: 'even';
-		assert: CssConstants >> #hide equals: 'hide';
-		assert: CssConstants >> #inherit equals: 'inherit';
-		assert: CssConstants >> #none equals: 'none';
-		assert: CssConstants >> #odd equals: 'odd';
-		assert: CssConstants >> #show equals: 'show';
-		assert: CssConstants >> #vertical equals: 'vertical';
-		assert: CssConstants >> #initial equals: 'initial';
-		assert: CssConstants >> #invert equals: 'invert'
+		assertConstant: #auto equals: 'auto';
+		assertConstant: #even equals: 'even';
+		assertConstant: #hide equals: 'hide';
+		assertConstant: #inherit equals: 'inherit';
+		assertConstant: #none equals: 'none';
+		assertConstant: #odd equals: 'odd';
+		assertConstant: #show equals: 'show';
+		assertConstant: #vertical equals: 'vertical';
+		assertConstant: #initial equals: 'initial';
+		assertConstant: #invert equals: 'invert'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testBorderProperties [
 
 	self
-		assert: CssConstants >> #fill equals: 'fill';
-		assert: CssConstants >> #stretch equals: 'stretch';
-		assert: CssConstants >> #collapse equals: 'collapse';
-		assert: CssConstants >> #dashed equals: 'dashed';
-		assert: CssConstants >> #dotted equals: 'dotted';
-		assert: CssConstants >> #double equals: 'double';
-		assert: CssConstants >> #groove equals: 'groove';
-		assert: CssConstants >> #inset equals: 'inset';
-		assert: CssConstants >> #medium equals: 'medium';
-		assert: CssConstants >> #outset equals: 'outset';
-		assert: CssConstants >> #ridge equals: 'ridge';
-		assert: CssConstants >> #separate equals: 'separate';
-		assert: CssConstants >> #solid equals: 'solid';
-		assert: CssConstants >> #thick equals: 'thick';
-		assert: CssConstants >> #thin equals: 'thin'
+		assertConstant: #fill equals: 'fill';
+		assertConstant: #stretch equals: 'stretch';
+		assertConstant: #collapse equals: 'collapse';
+		assertConstant: #dashed equals: 'dashed';
+		assertConstant: #dotted equals: 'dotted';
+		assertConstant: #double equals: 'double';
+		assertConstant: #groove equals: 'groove';
+		assertConstant: #inset equals: 'inset';
+		assertConstant: #medium equals: 'medium';
+		assertConstant: #outset equals: 'outset';
+		assertConstant: #ridge equals: 'ridge';
+		assertConstant: #separate equals: 'separate';
+		assertConstant: #solid equals: 'solid';
+		assertConstant: #thick equals: 'thick';
+		assertConstant: #thin equals: 'thin'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testCursors [
 
 	self
-		assert: CssConstants >> #crosshair equals: 'crosshair';
-		assert: CssConstants >> #default equals: 'default';
-		assert: CssConstants >> #help equals: 'help';
-		assert: CssConstants >> #move equals: 'move';
-		assert: CssConstants >> #notAllowed equals: 'not-allowed';
-		assert: CssConstants >> #pointer equals: 'pointer';
-		assert: CssConstants >> #progress equals: 'progress';
-		assert: CssConstants >> #text equals: 'text';
-		assert: CssConstants >> #wait equals: 'wait'
+		assertConstant: #crosshair equals: 'crosshair';
+		assertConstant: #default equals: 'default';
+		assertConstant: #help equals: 'help';
+		assertConstant: #move equals: 'move';
+		assertConstant: #notAllowed equals: 'not-allowed';
+		assertConstant: #pointer equals: 'pointer';
+		assertConstant: #progress equals: 'progress';
+		assertConstant: #text equals: 'text';
+		assertConstant: #wait equals: 'wait'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testDisplayConstants [
 
 	self
-		assert: CssConstants >> #inline equals: 'inline';
-		assert: CssConstants >> #inlineBlock equals: 'inline-block';
-		assert: CssConstants >> #inlineTable equals: 'inline-table';
-		assert: CssConstants >> #listItem equals: 'list-item';
-		assert: CssConstants >> #table equals: 'table';
-		assert: CssConstants >> #tableCaption equals: 'table-caption';
-		assert: CssConstants >> #tableCell equals: 'table-cell';
-		assert: CssConstants >> #tableColumn equals: 'table-column';
-		assert: CssConstants >> #tableColumnGroup equals: 'table-column-group';
-		assert: CssConstants >> #tableFooterGroup equals: 'table-footer-group';
-		assert: CssConstants >> #tableHeaderGroup equals: 'table-header-group';
-		assert: CssConstants >> #tableRow equals: 'table-row';
-		assert: CssConstants >> #tableRowGroup equals: 'table-row-group'
+		assertConstant: #inline equals: 'inline';
+		assertConstant: #inlineBlock equals: 'inline-block';
+		assertConstant: #inlineTable equals: 'inline-table';
+		assertConstant: #listItem equals: 'list-item';
+		assertConstant: #table equals: 'table';
+		assertConstant: #tableCaption equals: 'table-caption';
+		assertConstant: #tableCell equals: 'table-cell';
+		assertConstant: #tableColumn equals: 'table-column';
+		assertConstant: #tableColumnGroup equals: 'table-column-group';
+		assertConstant: #tableFooterGroup equals: 'table-footer-group';
+		assertConstant: #tableHeaderGroup equals: 'table-header-group';
+		assertConstant: #tableRow equals: 'table-row';
+		assertConstant: #tableRowGroup equals: 'table-row-group'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testFontConstants [
 
 	self
-		assert: CssConstants >> #bold equals: 'bold';
-		assert: CssConstants >> #bolder equals: 'bolder';
-		assert: CssConstants >> #caption equals: 'caption';
-		assert: CssConstants >> #icon equals: 'icon';
-		assert: CssConstants >> #lighter equals: 'lighter';
-		assert: CssConstants >> #menu equals: 'menu';
-		assert: CssConstants >> #messageBox equals: 'message-box';
-		assert: CssConstants >> #oblique equals: 'oblique';
-		assert: CssConstants >> #smallCaption equals: 'small-caption';
-		assert: CssConstants >> #statusBar equals: 'status-bar'
+		assertConstant: #bold equals: 'bold';
+		assertConstant: #bolder equals: 'bolder';
+		assertConstant: #caption equals: 'caption';
+		assertConstant: #icon equals: 'icon';
+		assertConstant: #lighter equals: 'lighter';
+		assertConstant: #menu equals: 'menu';
+		assertConstant: #messageBox equals: 'message-box';
+		assertConstant: #oblique equals: 'oblique';
+		assertConstant: #smallCaption equals: 'small-caption';
+		assertConstant: #statusBar equals: 'status-bar'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testGradientConstants [
 	
 	self
-		assert: CssConstants >> #closestSide equals: 'closest-side';
-		assert: CssConstants >> #farthestSide equals: 'farthest-side';
-		assert: CssConstants >> #closestCorner equals: 'closest-corner';
-		assert: CssConstants >> #farthestCorner equals: 'farthest-corner'
+		assertConstant: #closestSide equals: 'closest-side';
+		assertConstant: #farthestSide equals: 'farthest-side';
+		assertConstant: #closestCorner equals: 'closest-corner';
+		assertConstant: #farthestCorner equals: 'farthest-corner'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testListProperties [
 
 	self
-		assert: CssConstants >> #armenian equals: 'armenian';
-		assert: CssConstants >> #decimal equals: 'decimal';
-		assert: CssConstants >> #decimalLeadingZero equals: 'decimal-leading-zero';
-		assert: CssConstants >> #disc equals: 'disc';
-		assert: CssConstants >> #georgian equals: 'georgian';
-		assert: CssConstants >> #lowerGreek equals: 'lower-greek';
-		assert: CssConstants >> #lowerLatin equals: 'lower-latin';
-		assert: CssConstants >> #lowerRoman equals: 'lower-roman';
-		assert: CssConstants >> #outside equals: 'outside';
-		assert: CssConstants >> #square equals: 'square';
-		assert: CssConstants >> #upperAlpha equals: 'upper-alpha';
-		assert: CssConstants >> #upperLatin equals: 'upper-latin';
-		assert: CssConstants >> #upperRoman equals: 'upper-roman'
+		assertConstant: #armenian equals: 'armenian';
+		assertConstant: #decimal equals: 'decimal';
+		assertConstant: #decimalLeadingZero equals: 'decimal-leading-zero';
+		assertConstant: #disc equals: 'disc';
+		assertConstant: #georgian equals: 'georgian';
+		assertConstant: #lowerGreek equals: 'lower-greek';
+		assertConstant: #lowerLatin equals: 'lower-latin';
+		assertConstant: #lowerRoman equals: 'lower-roman';
+		assertConstant: #outside equals: 'outside';
+		assertConstant: #square equals: 'square';
+		assertConstant: #upperAlpha equals: 'upper-alpha';
+		assertConstant: #upperLatin equals: 'upper-latin';
+		assertConstant: #upperRoman equals: 'upper-roman'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testPositioningProperties [
 
 	self
-		assert: CssConstants >> #absolute equals: 'absolute';
-		assert: CssConstants >> #always equals: 'always';
-		assert: CssConstants >> #avoid equals: 'avoid';
-		assert: CssConstants >> #baseline equals: 'baseline';
-		assert: CssConstants >> #justify equals: 'justify';
-		assert: CssConstants >> #static equals: 'static';
-		assert: CssConstants >> #sub equals: 'sub';
-		assert: CssConstants >> #super equals: 'super';
-		assert: CssConstants >> #textBottom equals: 'text-bottom';
-		assert: CssConstants >> #textTop equals: 'text-top';
-		assert: CssConstants >> #visible equals: 'visible'
+		assertConstant: #absolute equals: 'absolute';
+		assertConstant: #always equals: 'always';
+		assertConstant: #avoid equals: 'avoid';
+		assertConstant: #baseline equals: 'baseline';
+		assertConstant: #justify equals: 'justify';
+		assertConstant: #static equals: 'static';
+		assertConstant: #sub equals: 'sub';
+		assertConstant: #super equals: 'super';
+		assertConstant: #textBottom equals: 'text-bottom';
+		assertConstant: #textTop equals: 'text-top';
+		assertConstant: #visible equals: 'visible'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testRepeatProperties [
 
 	self
-		assert: CssConstants >> #noRepeat equals: 'no-repeat';
-		assert: CssConstants >> #repeat equals: 'repeat';
-		assert: CssConstants >> #repeatX equals: 'repeat-x';
-		assert: CssConstants >> #repeatY equals: 'repeat-y'
+		assertConstant: #noRepeat equals: 'no-repeat';
+		assertConstant: #repeat equals: 'repeat';
+		assertConstant: #repeatX equals: 'repeat-x';
+		assertConstant: #repeatY equals: 'repeat-y'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testSizeConstants [
-	
-	self 
-		assert: CssConstants >> #cover equals: 'cover'
+
+	self assertConstant: #cover equals: 'cover'
 ]
 
 { #category : #Tests }
 CssConstantsTest >> testTextConstants [
 
 	self
-		assert: CssConstants >> #blink equals: 'blink';
-		assert: CssConstants >> #filled equals: 'filled';
-		assert: CssConstants >> #open equals: 'open';
-		assert: CssConstants >> #dot equals: 'dot';
-		assert: CssConstants >> #doubleCircle equals: 'double-circle';
-		assert: CssConstants >> #lineThrough equals: 'line-through';
-		assert: CssConstants >> #lowercase equals: 'lowercase';
-		assert: CssConstants >> #triangle equals: 'triangle';
-		assert: CssConstants >> #sesame equals: 'sesame';
-		assert: CssConstants >> #over equals: 'over';
-		assert: CssConstants >> #overline equals: 'overline';
-		assert: CssConstants >> #pre equals: 'pre';
-		assert: CssConstants >> #preLine equals: 'pre-line';
-		assert: CssConstants >> #preWrap equals: 'pre-wrap';
-		assert: CssConstants >> #uppercase equals: 'uppercase'
+		assertConstant: #blink equals: 'blink';
+		assertConstant: #filled equals: 'filled';
+		assertConstant: #open equals: 'open';
+		assertConstant: #dot equals: 'dot';
+		assertConstant: #doubleCircle equals: 'double-circle';
+		assertConstant: #lineThrough equals: 'line-through';
+		assertConstant: #lowercase equals: 'lowercase';
+		assertConstant: #triangle equals: 'triangle';
+		assertConstant: #sesame equals: 'sesame';
+		assertConstant: #over equals: 'over';
+		assertConstant: #overline equals: 'overline';
+		assertConstant: #pre equals: 'pre';
+		assertConstant: #preLine equals: 'pre-line';
+		assertConstant: #preWrap equals: 'pre-wrap';
+		assertConstant: #uppercase equals: 'uppercase'
 ]

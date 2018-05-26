@@ -131,8 +131,8 @@ CssPseudoClassSelectorTest >> testPrintStringOfStructuralPseudoClassesUsingEvenA
 	baseSelector := CssUniversalSelector explicit.
 
 	self
-		assert: (CssPseudoClassSelector childAt: CssConstants >> #even on: baseSelector) printString equals: '*:nth-child(even)';
-		assert: (CssPseudoClassSelector siblingOfTypeAt: CssConstants >> #odd on: baseSelector) printString equals: '*:nth-of-type(odd)'
+		assert: (CssPseudoClassSelector childAt: #even on: baseSelector) printString equals: '*:nth-child(even)';
+		assert: (CssPseudoClassSelector siblingOfTypeAt: #odd on: baseSelector) printString equals: '*:nth-of-type(odd)'
 ]
 
 { #category : #Tests }

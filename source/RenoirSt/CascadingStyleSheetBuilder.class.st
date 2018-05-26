@@ -7,9 +7,6 @@ Class {
 	#instVars : [
 		'statements'
 	],
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Common'
 }
 
@@ -40,7 +37,7 @@ CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMe
 	aSubStyleSheetBlock value: styleSheetBuilder.
 
 	mediaQueryBuilder := CssMediaQueryRuleBuilder new.
-	aMediaQueryBlock cull: mediaQueryBuilder cull: CssMediaQueryConstants.
+	aMediaQueryBlock cull: mediaQueryBuilder.
 
 	mediaQueryBuilder useStyleSheet: styleSheetBuilder build.
 	self addStatement: mediaQueryBuilder build
@@ -49,9 +46,10 @@ CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMe
 { #category : #Configuring }
 CascadingStyleSheetBuilder >> declareFontFaceRuleWith: aDeclarationAction [
 
-	|  declarationBlock |
+	| declarationBlock |
+
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction cull: declarationBlock cull: CssConstants.
+	aDeclarationAction cull: declarationBlock.
 	self addStatement: (CssRuleSet selector: '@font-face' declarations: declarationBlock)
 ]
 
@@ -65,9 +63,10 @@ CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarati
 CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarationAction andComment: aComment [
 
 	| selector declarationBlock |
+
 	selector := aSelectorBlock cull: CssUniversalSelector implicit.
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction cull: declarationBlock cull: CssConstants.
+	aDeclarationAction cull: declarationBlock.
 	self addStatement: (CssRuleSet selector: selector declarations: declarationBlock comment: aComment)
 ]
 

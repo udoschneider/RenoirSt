@@ -11,9 +11,9 @@ Class {
 }
 
 { #category : #'Instance Creation' }
-CssToggle class >> cyclingOver: aCollection [ 
-	
-	^self new initializeCyclingOver: aCollection 
+CssToggle class >> cyclingOver: aCollection [
+
+	^ self new initializeCyclingOver: (self lookupValue: aCollection)
 ]
 
 { #category : #private }

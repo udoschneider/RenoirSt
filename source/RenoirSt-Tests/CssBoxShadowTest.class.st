@@ -1,9 +1,9 @@
+"
+I'm a test case for CssBoxShadow
+"
 Class {
 	#name : #CssBoxShadowTest,
 	#superclass : #TestCase,
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Tests-Common'
 }
 
@@ -19,7 +19,7 @@ CssBoxShadowTest >> testBoxShadowSet [
 		verticalOffset: 2 px
 		blurRadius: 1 px
 		spreadDistance: 1 px
-		color: CssConstants >> #colors >> #white.
+		color: #white.
 
 	self assert: (insetShadow , shadow) printString equals: 'inset 1px 2px, 1px 2px 1px 1px white'
 ]
@@ -47,13 +47,13 @@ CssBoxShadowTest >> testBoxShadowWithBlurRadiusPrintString [
 CssBoxShadowTest >> testBoxShadowWithColorPrintString [
 
 	self
-		assert: (CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px color: CssConstants >> #colors >> #red) printString equals: '64px 64px red';
+		assert: (CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px color: #red) printString equals: '64px 64px red';
 		assert:
 			(CssBoxShadow
 				horizontalOffset: 64 px
 				verticalOffset: 64 px
 				blurRadius: 3 px
-				color: CssConstants >> #colors >> #red) printString
+				color: #red) printString
 			equals: '64px 64px 3px red';
 		assert:
 			(CssBoxShadow
@@ -61,7 +61,7 @@ CssBoxShadowTest >> testBoxShadowWithColorPrintString [
 				verticalOffset: 64 px
 				blurRadius: 3 px
 				spreadDistance: 8 px
-				color: CssConstants >> #colors >> #red) printString
+				color: #red) printString
 			equals: '64px 64px 3px 8px red'
 ]
 

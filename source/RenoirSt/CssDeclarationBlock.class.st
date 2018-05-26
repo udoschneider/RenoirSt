@@ -662,9 +662,9 @@ CssDeclarationBlock >> printInlinedOn: aStream [
 ]
 
 { #category : #private }
-CssDeclarationBlock >> propertyAt: aPropertyName put: aValue [
-	
-	declarations add: (rulePrecedencePolicy applyTo: (CssDeclaration property: aPropertyName value: aValue))
+CssDeclarationBlock >> propertyAt: aPropertyName put: aNamedConstantOrValue [
+
+	declarations add: (rulePrecedencePolicy applyTo: (CssDeclaration property: aPropertyName value: (self class lookupValue: aNamedConstantOrValue)))
 ]
 
 { #category : #'generated content properties' }

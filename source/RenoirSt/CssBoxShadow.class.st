@@ -7,9 +7,6 @@ Class {
 	#instVars : [
 		'components'
 	],
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Common'
 }
 
@@ -33,14 +30,14 @@ CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: v
 ]
 
 { #category : #'Instance Creation' }
-CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength blurRadius: blurRadiusLength color: color [
+CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength blurRadius: blurRadiusLength color: colorOrNamedConstant [
 
 	^ self
 		withAll:
 			{horizontalOffsetLength.
 			verticalOffsetLength.
 			blurRadiusLength.
-			color}
+			(self lookupColor: colorOrNamedConstant)}
 ]
 
 { #category : #'Instance Creation' }
@@ -55,7 +52,7 @@ CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: v
 ]
 
 { #category : #'Instance Creation' }
-CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength blurRadius: blurRadiusLength spreadDistance: spreadDistanceLength color: color [
+CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength blurRadius: blurRadiusLength spreadDistance: spreadDistanceLength color: colorOrNamedConstant [
 
 	^ self
 		withAll:
@@ -63,17 +60,17 @@ CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: v
 			verticalOffsetLength.
 			blurRadiusLength.
 			spreadDistanceLength.
-			color}
+			(self lookupColor: colorOrNamedConstant)}
 ]
 
 { #category : #'Instance Creation' }
-CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength color: color [
+CssBoxShadow class >> horizontalOffset: horizontalOffsetLength verticalOffset: verticalOffsetLength color: colorOrNamedConstant [
 
 	^ self
 		withAll:
 			{horizontalOffsetLength.
 			verticalOffsetLength.
-			color}
+			(self lookupColor: colorOrNamedConstant)}
 ]
 
 { #category : #private }
@@ -92,7 +89,7 @@ CssBoxShadow >> , aCssBoxShadow [
 CssBoxShadow >> beInset [
 
 	components := components asOrderedCollection
-		addFirst: CssConstants >> #inset;
+		addFirst: (self class lookupValue: #inset);
 		asArray
 ]
 
