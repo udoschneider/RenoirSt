@@ -4,6 +4,9 @@ A CssMediaQueryRuleBuilderTest is a test class for testing the behavior of CssMe
 Class {
 	#name : #CssMediaQueryRuleBuilderTest,
 	#superclass : #TestCase,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Tests-MediaQueries'
 }
 
@@ -13,7 +16,7 @@ CssMediaQueryRuleBuilderTest >> testComplexCaseBuilding [
 	| builder |
 	builder := CssMediaQueryRuleBuilder new.
 	builder
-		type: CssMediaQueryConstants print;
+		type: CssMediaQueryConstants >> #print;
 		width: 300 px;
 		minWidth: 100 px;
 		maxWidth: 500 px;
@@ -26,7 +29,7 @@ CssMediaQueryRuleBuilderTest >> testComplexCaseBuilding [
 		deviceWidth: 100 px;
 		minDeviceWidth: 10 px;
 		maxDeviceWidth: 400 px;
-		orientation: CssMediaQueryConstants landscape;
+		orientation: CssMediaQueryConstants >> #landscape;
 		aspectRatio: 16 / 9;
 		minAspecRatio: 16 / 9;
 		maxAspectRatio: 16 / 9;
@@ -40,7 +43,7 @@ CssMediaQueryRuleBuilderTest >> testComplexCaseBuilding [
 		minMonochrome: 1;
 		maxMonochrome: 3;
 		resolution: 72 dpi;
-		scan: CssMediaQueryConstants progressive;
+		scan: CssMediaQueryConstants >> #progressive;
 		grid: 1.
 
 	self
@@ -55,7 +58,7 @@ CssMediaQueryRuleBuilderTest >> testSimpleBuilding [
 
 	| builder |
 	builder := CssMediaQueryRuleBuilder new.
-	builder orientation: CssMediaQueryConstants portrait.
+	builder orientation: CssMediaQueryConstants >> #portrait.
 
 	self assert: builder build printString equals: '@media all and (orientation: portrait)<n>{<n><t><n>}' expandMacros
 ]

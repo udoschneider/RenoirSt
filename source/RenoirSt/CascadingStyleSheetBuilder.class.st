@@ -7,7 +7,10 @@ Class {
 	#instVars : [
 		'statements'
 	],
-	#category : #RenoirSt
+	#pools : [
+		'RenoirSt'
+	],
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #private }
@@ -30,15 +33,15 @@ CascadingStyleSheetBuilder >> comment: aCommentText [
 
 { #category : #Configuring }
 CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMediaQueryBlock [
-	
+
 	| styleSheetBuilder mediaQueryBuilder |
-	
+
 	styleSheetBuilder := self class new.
 	aSubStyleSheetBlock value: styleSheetBuilder.
-	
+
 	mediaQueryBuilder := CssMediaQueryRuleBuilder new.
-	aMediaQueryBlock value: mediaQueryBuilder.
-	
+	aMediaQueryBlock cull: mediaQueryBuilder cull: CssMediaQueryConstants.
+
 	mediaQueryBuilder useStyleSheet: styleSheetBuilder build.
 	self addStatement: mediaQueryBuilder build
 ]
@@ -48,7 +51,7 @@ CascadingStyleSheetBuilder >> declareFontFaceRuleWith: aDeclarationAction [
 
 	|  declarationBlock |
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction value: declarationBlock.
+	aDeclarationAction cull: declarationBlock cull: CssConstants.
 	self addStatement: (CssRuleSet selector: '@font-face' declarations: declarationBlock)
 ]
 
@@ -64,7 +67,7 @@ CascadingStyleSheetBuilder >> declareRuleSetFor: aSelectorBlock with: aDeclarati
 	| selector declarationBlock |
 	selector := aSelectorBlock cull: CssUniversalSelector implicit.
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction value: declarationBlock.
+	aDeclarationAction cull: declarationBlock cull: CssConstants.
 	self addStatement: (CssRuleSet selector: selector declarations: declarationBlock comment: aComment)
 ]
 

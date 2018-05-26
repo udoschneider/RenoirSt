@@ -5,7 +5,7 @@ A CssObject is the abstract superclass of the CSS renderable objects
 Class {
 	#name : #CssObject,
 	#superclass : #Object,
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #Printing }

@@ -4,7 +4,7 @@ A ReflectiveCascadingStyleSheetBuilderTest is a test class for testing the behav
 Class {
 	#name : #ReflectiveCascadingStyleSheetBuilderTest,
 	#superclass : #TestCase,
-	#category : #'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #'tests-building' }

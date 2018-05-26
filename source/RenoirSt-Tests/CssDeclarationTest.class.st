@@ -4,7 +4,7 @@ A CssDeclarationTest is a test class for testing the behavior of CssDeclaration
 Class {
 	#name : #CssDeclarationTest,
 	#superclass : #TestCase,
-	#category : #'RenoirSt-Tests'
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #Tests }

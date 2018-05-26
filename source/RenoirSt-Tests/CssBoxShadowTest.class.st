@@ -1,14 +1,17 @@
 Class {
 	#name : #CssBoxShadowTest,
 	#superclass : #TestCase,
-	#category : #'RenoirSt-Tests'
+	#pools : [
+		'RenoirSt'
+	],
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #Tests }
 CssBoxShadowTest >> testBoxShadowSet [
-	
+
 	| insetShadow shadow |
-	
+
 	insetShadow := CssBoxShadow horizontalOffset: 1 px verticalOffset: 2 px.
 	insetShadow beInset.
 	shadow := CssBoxShadow
@@ -16,8 +19,8 @@ CssBoxShadowTest >> testBoxShadowSet [
 		verticalOffset: 2 px
 		blurRadius: 1 px
 		spreadDistance: 1 px
-		color: CssSVGColors white.
-	
+		color: CssConstants >> #colors >> #white.
+
 	self assert: (insetShadow , shadow) printString equals: 'inset 1px 2px, 1px 2px 1px 1px white'
 ]
 
@@ -44,13 +47,13 @@ CssBoxShadowTest >> testBoxShadowWithBlurRadiusPrintString [
 CssBoxShadowTest >> testBoxShadowWithColorPrintString [
 
 	self
-		assert: (CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px color: CssSVGColors red) printString equals: '64px 64px red';
+		assert: (CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px color: CssConstants >> #colors >> #red) printString equals: '64px 64px red';
 		assert:
 			(CssBoxShadow
 				horizontalOffset: 64 px
 				verticalOffset: 64 px
 				blurRadius: 3 px
-				color: CssSVGColors red) printString
+				color: CssConstants >> #colors >> #red) printString
 			equals: '64px 64px 3px red';
 		assert:
 			(CssBoxShadow
@@ -58,7 +61,7 @@ CssBoxShadowTest >> testBoxShadowWithColorPrintString [
 				verticalOffset: 64 px
 				blurRadius: 3 px
 				spreadDistance: 8 px
-				color: CssSVGColors red) printString
+				color: CssConstants >> #colors >> #red) printString
 			equals: '64px 64px 3px 8px red'
 ]
 

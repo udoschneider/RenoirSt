@@ -4,7 +4,10 @@ A CssTogleTest is a test class for testing the behavior of CssTogle
 Class {
 	#name : #CssToggleTest,
 	#superclass : #TestCase,
-	#category : #'RenoirSt-Tests'
+	#pools : [
+		'RenoirSt'
+	],
+	#category : #'RenoirSt-Tests-Common'
 }
 
 { #category : #Tests }
@@ -14,7 +17,7 @@ CssToggleTest >> testPrintString [
 		assert:
 			(CssToggle
 				cyclingOver:
-					{CssConstants italic.
-					CssConstants normal}) printString
+					{CssConstants >> #italic.
+					CssConstants >> #normal}) printString
 		equals: 'toggle(italic, normal)'
 ]

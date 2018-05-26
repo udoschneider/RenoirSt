@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'comment'
 	],
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #'Instance Creation' }

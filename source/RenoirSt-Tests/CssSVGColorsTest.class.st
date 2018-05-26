@@ -4,6 +4,9 @@ A CssSVGColorsTest is a test class for testing the behavior of CssSVGColors
 Class {
 	#name : #CssSVGColorsTest,
 	#superclass : #TestCase,
+	#pools : [
+		'RenoirSt'
+	],
 	#category : #'RenoirSt-Tests-Colors'
 }
 
@@ -22,5 +25,7 @@ CssSVGColorsTest >> expectedColorNames [
 { #category : #tests }
 CssSVGColorsTest >> testColors [
 
-	self colorSelectors with: self expectedColorNames do: [ :colorSelector :colorName | self assert: (CssSVGColors perform: colorSelector) printString equals: colorName ]
+	self colorSelectors
+		with: self expectedColorNames
+		do: [ :colorSelector :colorName | self assert: (CssConstants >> #colors >> colorSelector) printString equals: colorName ]
 ]

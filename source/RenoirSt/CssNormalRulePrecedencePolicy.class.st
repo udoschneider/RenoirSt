@@ -5,7 +5,7 @@ A CssNormalRulePrecedencePolicy is a policy indicating an standard declaration.
 Class {
 	#name : #CssNormalRulePrecedencePolicy,
 	#superclass : #CssRulePrecedencePolicy,
-	#category : #RenoirSt
+	#category : #'RenoirSt-Common'
 }
 
 { #category : #Applying }

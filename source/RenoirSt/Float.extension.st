@@ -3,7 +3,7 @@ Extension { #name : #Float }
 { #category : #'*RenoirSt' }
 Float >> cm [
 
-	 ^self newMeasureWith: CssLengthUnits centimeter  
+	^ self newMeasureWith: RenoirSt units >> #centimeter
 ]
 
 { #category : #'*RenoirSt' }
@@ -15,37 +15,37 @@ Float >> cssContentOn: aStream [
 { #category : #'*RenoirSt' }
 Float >> deg [
 
-	 ^self newMeasureWith: CssAngleUnits degree    
+	 ^self newMeasureWith: RenoirSt units >> #degree    
 ]
 
 { #category : #'*RenoirSt' }
 Float >> em [
 
-	 ^self newMeasureWith: CssLengthUnits fontSize
+	^ self newMeasureWith: RenoirSt units >> #fontSize
 ]
 
 { #category : #'*RenoirSt' }
 Float >> grad [
 
-	 ^self newMeasureWith:CssAngleUnits gradian     
+	^ self newMeasureWith: RenoirSt units >> #gradian
 ]
 
 { #category : #'*RenoirSt' }
 Float >> in [
 
-	 ^self newMeasureWith: CssLengthUnits inch 
+	^ self newMeasureWith: RenoirSt units >> #inch
 ]
 
 { #category : #'*RenoirSt' }
 Float >> mm [
 
-	 ^self newMeasureWith: CssLengthUnits millimeter   
+	^ self newMeasureWith: RenoirSt units >> #millimeter
 ]
 
 { #category : #'*RenoirSt' }
 Float >> ms [
 
-	 ^self newMeasureWith: CssTimeUnits millisecond 
+	^ self newMeasureWith: RenoirSt units >> #millisecond
 ]
 
 { #category : #'*RenoirSt' }
@@ -56,23 +56,23 @@ Float >> newMeasureWith: unit [
 { #category : #'*RenoirSt' }
 Float >> pc [
 
-	 ^self newMeasureWith: CssLengthUnits pica
+	^ self newMeasureWith: RenoirSt units >> #pica
 ]
 
 { #category : #'*RenoirSt' }
 Float >> rad [
 
-	 ^self newMeasureWith: CssAngleUnits radian     
+	^ self newMeasureWith: RenoirSt units >> #radian
 ]
 
 { #category : #'*RenoirSt' }
 Float >> s [
 
-	 ^self newMeasureWith: CssTimeUnits second
+	^ self newMeasureWith: RenoirSt units >> #second
 ]
 
 { #category : #'*RenoirSt' }
 Float >> turn [
 
-	 ^self newMeasureWith: CssAngleUnits turn     
+	^ self newMeasureWith: RenoirSt units >> #turn
 ]
