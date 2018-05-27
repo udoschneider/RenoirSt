@@ -57,6 +57,8 @@ To use media queries in the library just send the message `declare:forMediaMatch
 The media query builder will match any media type by default. To specify a media type just send it the message `type:` with the corresponding media type. You can provide the following media types by keyword:
 `braille`, `embossed`, `handheld`, `print`, `projection`, `screen`, `speech`, `tty` and `tv`.
 
+To get the list of media query constants supported inspect `RenoirSt classPool at: #CssMediaQueryConstants`.
+
 The media query builder supports a variety of messages for additional conditions (called media features). Media features are used in expressions to describe requirements of the output device.
 
 The following media feature messages are supported:
