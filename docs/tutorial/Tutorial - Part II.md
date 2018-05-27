@@ -12,7 +12,7 @@ These selectors match a specific element type in the DOM. The library provides o
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector orderedList ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -30,7 +30,7 @@ One of the most common use cases is the **descendant combinator**.
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div orderedList ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -44,7 +44,7 @@ In case you need to use parenthesis in the right part of the expression, use `/`
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div / (selector class: 'custom') ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -58,7 +58,7 @@ div .custom
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div > selector orderedList ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -72,7 +72,7 @@ div > ol
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div + selector orderedList ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -84,7 +84,7 @@ div + ol
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ~ selector orderedList ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -98,7 +98,7 @@ div ~ ol
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | (selector div class: 'pastoral') id: #account5 ]
-  with: [:style :constants | style listStyleType: constants >> #lowerRoman ];
+  with: [:style | style listStyleType: #lowerRoman ];
   build
 ```
 ```css
@@ -119,7 +119,7 @@ Attribute presence:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector h1 havingAttribute: 'title' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -133,7 +133,7 @@ exact attribute value matching:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector span withAttribute: 'class' equalTo: 'example' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -148,7 +148,7 @@ inclusion:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'rel' includes: 'copyright' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -162,7 +162,7 @@ and:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor firstValueOfAttribute: 'hreflang' beginsWith: 'en' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -182,7 +182,7 @@ This selectors are provided for matching substrings in the value of an attribute
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'type' beginsWith: 'image/' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -195,7 +195,7 @@ a[type^="image/"]
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor attribute: 'type' endsWith: '.html' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -208,7 +208,7 @@ a[type$=".html"]
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph attribute: 'title' includesSubstring: 'hello' ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -225,15 +225,15 @@ Here is a small example that uses the pseudo-classes:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector anchor link ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   declareRuleSetFor: [:selector | selector anchor visited active]
-  with: [:style :constants | style color: constants >> #colors >> #green ];
+  with: [:style | style color: #green ];
   declareRuleSetFor: [:selector | selector anchor focus hover enabled]
-  with: [:style :constants | style color: constants >> #colors >> #green ];
+  with: [:style | style color: #green ];
   declareRuleSetFor: [:selector | (selector paragraph class: 'note') target disabled]
-  with: [:style :constants | style color: constants >> #colors >> #green ];
+  with: [:style | style color: #green ];
   declareRuleSetFor: [:selector | selector input checked ]
-  with: [:style :constants | style color: constants >> #colors >> #green ];
+  with: [:style | style color: #green ];
   build
 ```
 ```css
@@ -285,7 +285,7 @@ This selector is supported sending the message `not:`. Lets see an example:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector button not: (selector havingAttribute: 'DISABLED') ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -304,7 +304,7 @@ The :root pseudo-class represents an element that is the root of the document. T
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector root ]
-  with: [:style :constants | style color: constants >> #colors >> #grey ];
+  with: [:style | style color: #grey ];
   build
 ```
 
@@ -319,11 +319,11 @@ Since version 1.1.0 the library supports an abstraction for this kind of formula
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector childAt: 3 n + 1 ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
   declareRuleSetFor: [:selector | selector childAt: 5 ]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
-  declareRuleSetFor: [:selector | selector childAt: CssConstants even]
-  with: [:style :constants | style color: constants >> #colors >> #blue ];
+  with: [:style | style color: #blue ];
+  declareRuleSetFor: [:selector | selector childAt: #even]
+  with: [:style | style color: #blue ];
   build
 ```
 ```css
@@ -374,7 +374,7 @@ This selector describes the contents of the first formatted line of an element.
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph firstLine ]
-  with: [:style :constants | style textTransform: constants >> #uppercase ];
+  with: [:style | style textTransform: #uppercase ];
   build
 ```
 ```css

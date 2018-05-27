@@ -12,11 +12,11 @@ The library provides support for this feature by sending `beImportantDuring:` me
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector paragraph ]
-  with: [:style :constants |
+  with: [:style |
     style beImportantDuring: [:importantStyle |
       importantStyle
         textIndent: 1 em;
-        fontStyle: constants >> #italic
+        fontStyle: #italic
     ].
     style fontSize: 18 pt.
   ];
@@ -46,15 +46,15 @@ CascadingStyleSheetBuilder new
 	declare: [ :cssBuilder |
 		cssBuilder
 			declareRuleSetFor: [ :selector | selector id: #oop ]
-			with: [ :style :constants | style color: constants >> #colors >> #red ]
+			with: [ :style | style color: #red ]
 		]
-	forMediaMatching: [ :queryBuilder :constants | queryBuilder type: constants >> #print ];
+	forMediaMatching: [ :queryBuilder | queryBuilder type: #print ];
 	build
 ```
 
-To use media queries in the library just send the message `declare:forMediaMatching:` to the builder. The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of media queries (and optionally constants access).
+To use media queries in the library just send the message `declare:forMediaMatching:` to the builder.  The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of media queries.
 
-The media query builder will match any media type by default. To specify a media type just send it the message `type:` with the corresponding media type. The `constants` argument provides easy access to the following media types:
+The media query builder will match any media type by default. To specify a media type just send it the message `type:` with the corresponding media type. You can provide the following media types by keyword:
 `braille`, `embossed`, `handheld`, `print`, `projection`, `screen`, `speech`, `tty` and `tv`.
 
 The media query builder supports a variety of messages for additional conditions (called media features). Media features are used in expressions to describe requirements of the output device.
@@ -73,7 +73,7 @@ The following media feature messages are supported:
 	- `deviceHeight:`
 	- `minDeviceHeight:`
 	- `maxDeviceHeight:`
-- `orientation:` accepting `constants >> #portrait` or `constants >> #landscape`
+- `orientation:` accepting `#portrait` or `#landscape`
 - Accepting fractions as aspect ratios
 	- `aspectRatio:`
 	- `minAspectRatio:`
@@ -96,7 +96,7 @@ The following media feature messages are supported:
 	- `resolution:`
 	- `minResolution:`
 	- `maxResolution:`
-- `scan:` accepting `constants >> #progressive` or `constants >> #interlace`
+- `scan:` accepting `#progressive` or `#interlace`
 
 New units for resolutions are added using the `CssMeasure` abstraction. This kind of measures can be created sending the messages `dpi` (dots per inch), `dpcm` (dots per centimeter) or `dppx` (dots per pixel unit) to an integer or float.
 
@@ -106,11 +106,11 @@ CascadingStyleSheetBuilder new
 	declare: [ :cssBuilder |
 		cssBuilder
 			declareRuleSetFor: [ :selector | selector id: #oop ]
-			with: [ :style :constants | style color: constants >> #colors >> #red ]
+			with: [ :style | style color: #red ]
 		]
-	forMediaMatching: [ :queryBuilder :constants |
+	forMediaMatching: [ :queryBuilder |
 		queryBuilder
-			orientation: constants >> #landscape;
+			orientation: #landscape;
 			resolution: 300 dpi
 		];
 	build
@@ -183,11 +183,11 @@ Here's a more complex case showing this:
 ```smalltalk
 CascadingStyleSheetBuilder new
 	declareFontFaceRuleWith:
-		[ :style :constants |
+		[ :style |
 		style
 			fontFamily: 'MainText';
 			src: (CssExternalFontReference locatedAt: 'gentium.eat' asZnUrl relativeToStyleSheet);
-			src: (CssLocalFontReference toFontNamed: 'Gentium')	, (CssExternalFontReference locatedAt: 'gentium.woff' asZnUrl relativeToStyleSheet withFormat: constants woff);
+			src: (CssLocalFontReference toFontNamed: 'Gentium')	, (CssExternalFontReference locatedAt: 'gentium.woff' asZnUrl relativeToStyleSheet withFormat: #woff);
 			src: (CssExternalFontReference svgFontLocatedAt: 'fonts.svg' asZnUrl relativeToStyleSheet withId: 'simple') ];
 	build
 ```
@@ -237,7 +237,7 @@ To load this extensions you need to load in an image with Seaside already loaded
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:v5/source';
+  repository: 'github://ba-st/RenoirSt:v5/source';
   load: 'Deployment-Seaside-Extensions'
 ```
 
@@ -246,8 +246,8 @@ or
 ```smalltalk
 Metacello new
   baseline: 'RenoirSt';
-  repository: 'github://gcotelli/RenoirSt:v5/source';
-  load: 'Deployment-Seaside-Extensions'
+  repository: 'github://ba-st/RenoirSt:v5/source';
+  load: 'Development-Seaside-Extensions'
 ```
 
 There's an integration job in the CI server, testing this specific configuration: [![Build Status](https://ci.inria.fr/pharo-contribution/buildStatus/icon?job=RenoirSt-SeasideExtensions)](https://ci.inria.fr/pharo-contribution/job/RenoirSt-SeasideExtensions/).
@@ -260,7 +260,7 @@ Using the new Metacello API it's easy to reference the library as a dependency f
 ...
 	spec
 		baseline: 'RenoirSt'
-		with: [ spec repository: 'github://gcotelli/RenoirSt:v5.0.0/source'];
+		with: [ spec repository: 'github://ba-st/RenoirSt:v5.0.0/source'];
 		import: 'RenoirSt'
 ```
 
@@ -272,7 +272,7 @@ you can also load specific groups, like the Seaside extensions or do pattern mat
 		baseline: 'RenoirSt'
 		with: [
 			spec
-				repository: 'github://gcotelli/RenoirSt:v5/source';
+				repository: 'github://ba-st/RenoirSt:v5/source';
 				loads: #('Deployment-Seaside-Extensions')];
 		import: 'RenoirSt'
 ```
