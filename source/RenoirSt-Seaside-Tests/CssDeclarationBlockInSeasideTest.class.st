@@ -1,3 +1,6 @@
+"
+I'm a test case for testing RenoirSt extensions that are Seaside aware.
+"
 Class {
 	#name : #CssDeclarationBlockInSeasideTest,
 	#superclass : #TestCase,
@@ -26,16 +29,15 @@ CssDeclarationBlockInSeasideTest >> testInlineStyleRendering [
 		yourself.
 
 	self
-		assert: (builder render: [ :html | html div setInlineStyleTo: [ :style | style margin: 1 px ] ])
-			equals: '<div style="margin: 1px;"></div>';
+		assert: (builder render: [ :html | html div setStyleTo: [ :style | style margin: 1 px ] ]) equals: '<div style="margin: 1px;"></div>';
 		assert:
 			(builder
 				render: [ :html | 
 					html div
-						setInlineStyleTo: [ :style :constants | 
+						setStyleTo: [ :style | 
 							style
-								margin: constants >> #auto;
-								color: constants >> #colors >> #blue ] ])
+								margin: #auto;
+								color: #blue ] ])
 			equals: '<div style="margin: auto;color: blue;"></div>'
 ]
 
