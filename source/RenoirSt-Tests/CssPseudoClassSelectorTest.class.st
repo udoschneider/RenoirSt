@@ -4,9 +4,6 @@ A CssPseudoClassSelectorTest is a test class for testing the behavior of CssPseu
 Class {
 	#name : #CssPseudoClassSelectorTest,
 	#superclass : #TestCase,
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Tests-Selectors'
 }
 
