@@ -82,14 +82,14 @@ CascadingStyleSheetBuilder new
 
 #### Colors
 
-The library also supports abstractions for properties requiring color values. The second block on the builder can be used to access constants provided by the library. So `constants >> #colors` provides easy access to colors in the SVG 1.0 list, and the abstractions `CssRGBColor` and `CssHSLColor` allow the creation of colors in the RGB or HSL space including alpha support.
+The library also supports abstractions for properties requiring color values. You can reference the colors in the SVG 1.0 list by name, and the abstractions `CssRGBColor` and `CssHSLColor` allow the creation of colors in the RGB or HSL space including alpha support. To get the list of supported colors inspect `RenoirSt constants >> #colors`.
 
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants |
+  with: [:style |
     style
-      backgroundColor: constants >> #colors >> #aliceBlue;
+      backgroundColor: #aliceBlue;
       borderColor: (CssRGBColor red: 0 green: 128 blue: 0 alpha: 0.5)];
   build
 ```
@@ -123,12 +123,12 @@ Notice the difference in the message used because there is no alpha channel spec
 
 #### Constants
 
-A lot of values for CSS properties are just keyword constants. This support is in the second argument in the builder.
+A lot of values for CSS properties are just keyword constants. You can reference it by keyword, inspect `RenoirSt constants` to get the list of supported ones.
 
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style textAlign: constants >> #justify ];
+  with: [:style | style textAlign: #justify ];
   build
 ```
 Evaluates to:
@@ -257,7 +257,7 @@ This kind of expressions allows descendant elements to cycle over a list of valu
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector unorderedList unorderedList ]
-  with: [:style :constants | style listStyleType: (CssToggle cyclingOver: { constants >> #disc. constants >> #circle. constants >> #square}) ];
+  with: [:style | style listStyleType: (CssToggle cyclingOver: { #disc. #circle. #square}) ];
   build
 ```
 Evaluates to:
@@ -290,7 +290,7 @@ or providing also the type or unit of the attribute (if no type or unit is speci
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div  ]
-  with: [:style :constants | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: constants >> #units >> #pixel) ];
+  with: [:style | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel) ];
   build
 ```
 Evaluates to:
@@ -320,7 +320,7 @@ div::before
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
-  with: [:style :constants | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: constants >> #units >> #pixel withFallback: 10 px) ];
+  with: [:style | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel withFallback: 10 px) ];
   build
 ```
 Evaluates to:
@@ -331,6 +331,8 @@ div::before
 }
 ```
 
+To get a list of the supported units inspect `RenoirSt constants >> #units`.
+
 #### Gradients: `linear-gradient()` `radial-gradient()` `repeating-linear-gradient()` `repeating-radial-gradient()`
 
 A gradient is an image that smoothly fades from one color to another. These are commonly used for subtle shading in background images, buttons, and many other things. The gradient notations described in this section allow an author to specify such an image in a terse syntax, so that the UA can generate the image automatically when rendering the page. This notation is supported using `CssLinearGradient` and `CssRadialGradient` asbtractions.
@@ -340,17 +342,17 @@ Let's see some examples for linear gradients:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
+  with: [:style | style background: (CssLinearGradient fading: { #yellow. #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient to: constants >> #bottom fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
+  with: [:style | style background: (CssLinearGradient to: #bottom fading: { #yellow. #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient rotated: 45 deg fading: { constants >> #colors >> #yellow. constants >> #colors >> #blue }) ];
+  with: [:style | style background: (CssLinearGradient rotated: 45 deg fading: { #yellow. #blue }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient rotated: 90 deg fading: { constants >> #colors >> #yellow. (CssColorStop for: constants >> #colors >> #blue at: 30 percent) }) ];
+  with: [:style | style background: (CssLinearGradient rotated: 90 deg fading: { #yellow. (CssColorStop for: #blue at: 30 percent) }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient fading: { constants >> #colors >> #yellow. (CssColorStop for: constants >> #colors >> #blue at: 20 percent). constants >> #colors >> #green}) ];
+  with: [:style | style background: (CssLinearGradient fading: { #yellow. (CssColorStop for: #blue at: 20 percent). #green}) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssLinearGradient to: { constants >> #top. constants >> #right } fading: { constants >> #colors >> #red.  constants >> #colors >> #white. constants >> #colors >> #blue }) ];
+  with: [:style | style background: (CssLinearGradient to: { #top. #right } fading: { #red.  #white. #blue }) ];
   build
 ```
 
@@ -392,13 +394,13 @@ and some for radial gradients:
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssRadialGradient fading: { constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
+  with: [:style | style background: (CssRadialGradient fading: { #yellow. #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssRadialGradient elliptical: constants >> #farthestCorner at: constants >> #center fading: { constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
+  with: [:style | style background: (CssRadialGradient elliptical: #farthestCorner at: #center fading: { #yellow. #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssRadialGradient elliptical: constants >> #farthestSide at: { constants >> #left. constants >> #bottom} fading: { constants >> #colors >> #red. (CssColorStop for: constants >> #colors >> #yellow at: 50 px). constants >> #colors >> #green }) ];
+  with: [:style | style background: (CssRadialGradient elliptical: #farthestSide at: { #left. #bottom} fading: { #red. (CssColorStop for: #yellow at: 50 px). #green }) ];
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style background: (CssRadialGradient elliptical: {20 px. 30 px} at: { 20 px. 30 px} fading: { constants >> #colors >> #red. constants >> #colors >> #yellow. constants >> #colors >> #green }) ];
+  with: [:style | style background: (CssRadialGradient elliptical: {20 px. 30 px} at: { 20 px. 30 px} fading: { #red. #yellow. #green }) ];
   build
 ```
 evaluates to:
@@ -426,7 +428,7 @@ div
 
 To make the gradient repeatable, just send to it the message `beRepeating`. For Example:
 ```smalltalk
-(CssRadialGradient fading: { CssSVGColors yellow. CssSVGColors green }) beRepeating
+(CssRadialGradient fading: { #yellow. #green }) beRepeating
 ```
 renders as:
 ```css
@@ -438,20 +440,20 @@ repeating-radial-gradient(yellow, green);
 This abstraction simplifies the use of the `box-shadow` property. Let's see some examples:
 
 ```smalltalk
-CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)
+CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: #black
 ```
 renders as:
 ```css
-64px 64px 12px 40px rgba(0,0,0,0.4)
+64px 64px 12px 40px black
 ```
 
 ```smalltalk
-(CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)) ,
-(CssBoxShadow horizontalOffset: 12 px verticalOffset: 11 px blurRadius: 0 px  spreadDistance: 8 px color: (CssConstants >> #colors >> #black newWithAlpha: 0.4)) beInset
+(CssBoxShadow horizontalOffset: 64 px verticalOffset: 64 px blurRadius: 12 px  spreadDistance: 40 px color: #black) ,
+(CssBoxShadow horizontalOffset: 12 px verticalOffset: 11 px blurRadius: 0 px  spreadDistance: 8 px color: #black ) beInset
 ```
 renders as:
 ```css
-64px 64px 12px 40px rgba(0,0,0,0.4), inset 12px 11px 0px 8px rgba(0,0,0,0.4)
+64px 64px 12px 40px black, inset 12px 11px 0px 8px black
 ```
 
 [Go to next chapter](Tutorial - Part II.md)

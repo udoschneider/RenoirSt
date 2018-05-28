@@ -29,9 +29,9 @@ CssPseudoClassSelector class >> checkedOn: aSelector [
 ]
 
 { #category : #'Instance Creation' }
-CssPseudoClassSelector class >> childAt: anInteger on: aSelector [ 
-	
-	^self named: 'nth-child' withArguments: { anInteger } over: aSelector 
+CssPseudoClassSelector class >> childAt: aNamedConstantOrInteger on: aSelector [
+
+	^ self named: 'nth-child' withArguments: {(self lookupValue: aNamedConstantOrInteger)} over: aSelector
 ]
 
 { #category : #'Instance Creation' }
@@ -143,9 +143,9 @@ CssPseudoClassSelector class >> rootOn: aSelector [
 ]
 
 { #category : #'Instance Creation' }
-CssPseudoClassSelector class >> siblingOfTypeAt: anInteger on: aSelector [ 
+CssPseudoClassSelector class >> siblingOfTypeAt: aNamedConstantOrInteger on: aSelector [
 
-	^self named: 'nth-of-type' withArguments: { anInteger } over: aSelector
+	^ self named: 'nth-of-type' withArguments: {(self lookupValue: aNamedConstantOrInteger)} over: aSelector
 ]
 
 { #category : #'Instance Creation' }

@@ -15,7 +15,7 @@ Class {
 { #category : #'Instance Creation' }
 CssColorStop class >> for: aCssColor at: aLenght [
 
-	^self new initializeFor: aCssColor at: aLenght
+	^ self new initializeFor: (self lookupColor: aCssColor) at: aLenght
 ]
 
 { #category : #Printing }

@@ -31,7 +31,7 @@ RenoirSt class >> initialize [
 RenoirSt class >> initializeAttachmentConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #fixed to: 'fixed';
 		bind: #scroll to: 'scroll'
 ]
@@ -40,7 +40,7 @@ RenoirSt class >> initializeAttachmentConstants [
 RenoirSt class >> initializeBackgroundConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #borderBox to: 'border-box';
 		bind: #closestCorner to: 'closest-corner';
 		bind: #closestSide to: 'closest-side';
@@ -57,7 +57,7 @@ RenoirSt class >> initializeBackgroundConstants [
 RenoirSt class >> initializeBasicConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #auto to: 'auto';
 		bind: #even to: 'even';
 		bind: #hide to: 'hide';
@@ -74,7 +74,7 @@ RenoirSt class >> initializeBasicConstants [
 RenoirSt class >> initializeBorderConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #collapse to: 'collapse';
 		bind: #dashed to: 'dashed';
 		bind: #dotted to: 'dotted';
@@ -123,7 +123,7 @@ RenoirSt class >> initializeCssConstants [
 RenoirSt class >> initializeCursorConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #crosshair to: 'crosshair';
 		bind: #default to: 'default';
 		bind: #help to: 'help';
@@ -139,7 +139,7 @@ RenoirSt class >> initializeCursorConstants [
 RenoirSt class >> initializeDisplayConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #block to: 'block';
 		bind: #inline to: 'inline';
 		bind: #inlineBlock to: 'inline-block';
@@ -160,7 +160,7 @@ RenoirSt class >> initializeDisplayConstants [
 RenoirSt class >> initializeFontConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #bold to: 'bold';
 		bind: #bolder to: 'bolder';
 		bind: #caption to: 'caption';
@@ -180,7 +180,7 @@ RenoirSt class >> initializeFontConstants [
 RenoirSt class >> initializeFontFormatConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #svg to: 'svg';
 		bind: #truetype to: 'truetype';
 		bind: #opentype to: 'opentype';
@@ -192,7 +192,7 @@ RenoirSt class >> initializeFontFormatConstants [
 RenoirSt class >> initializeFontSizeConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #smaller to: 'smaller';
 		bind: #xxSmall to: 'xx-small';
 		bind: #xSmall to: 'x-small';
@@ -207,7 +207,7 @@ RenoirSt class >> initializeFontSizeConstants [
 RenoirSt class >> initializeFontStretchingConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #extraCondensed to: 'extra-condensed';
 		bind: #ultraExpanded to: 'ultra-expanded';
 		bind: #extraExpanded to: 'extra-expanded';
@@ -222,7 +222,7 @@ RenoirSt class >> initializeFontStretchingConstants [
 RenoirSt class >> initializeFontSynthesisConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #style to: 'style';
 		bind: #weight to: 'weight'
 ]
@@ -231,7 +231,7 @@ RenoirSt class >> initializeFontSynthesisConstants [
 RenoirSt class >> initializeFontVariantConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #noContextual to: 'no-contextual';
 		bind: #noCommonLigatures to: 'no-common-ligatures';
 		bind: #diagonalFractions to: 'diagonal-fractions';
@@ -261,7 +261,7 @@ RenoirSt class >> initializeFontVariantConstants [
 RenoirSt class >> initializeGenericFontFamilyConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #fantasy to: 'fantasy';
 		bind: #monospace to: 'monospace';
 		bind: #serif to: 'serif';
@@ -274,7 +274,7 @@ RenoirSt class >> initializeLengthUnits [
 
 	<ignoreForCoverage>
 	"Absolute Units"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #centimeter to: (CssUnit identifiedBy: 'cm');
 		bind: #inch to: (CssUnit identifiedBy: 'in');
 		bind: #millimeter to: (CssUnit identifiedBy: 'mm');
@@ -282,7 +282,7 @@ RenoirSt class >> initializeLengthUnits [
 		bind: #pixel to: (CssUnit identifiedBy: 'px');
 		bind: #point to: (CssUnit identifiedBy: 'pt').
 	"Relative Units"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #fontSize to: (CssUnit identifiedBy: 'em');
 		bind: #xHeight to: (CssUnit identifiedBy: 'ex');
 		bind: #zeroWidth to: (CssUnit identifiedBy: 'ch');
@@ -297,7 +297,7 @@ RenoirSt class >> initializeLengthUnits [
 RenoirSt class >> initializeListConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #armenian to: 'armenian';
 		bind: #circle to: 'circle';
 		bind: #decimal to: 'decimal';
@@ -346,7 +346,7 @@ RenoirSt class >> initializeMediaQueryConstants [
 RenoirSt class >> initializePositioningConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #absolute to: 'absolute';
 		bind: #always to: 'always';
 		bind: #avoid to: 'avoid';
@@ -371,7 +371,7 @@ RenoirSt class >> initializePositioningConstants [
 RenoirSt class >> initializeRepeatConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #noRepeat to: 'no-repeat';
 		bind: #repeat to: 'repeat';
 		bind: #repeatX to: 'repeat-x';
@@ -382,8 +382,8 @@ RenoirSt class >> initializeRepeatConstants [
 RenoirSt class >> initializeSVGColors [
 
 	<ignoreForCoverage>
-	CssConstants bind: #colors to: Namespace new.
-	CssConstants >> #colors bind: #transparent to: 'transparent'.
+	self constants bind: #colors to: Namespace new.
+	self constants >> #colors bind: #transparent to: 'transparent'.
 	self
 		initializeSVGColors1;
 		initializeSVGColors2;
@@ -394,7 +394,7 @@ RenoirSt class >> initializeSVGColors [
 RenoirSt class >> initializeSVGColors1 [
 
 	<ignoreForCoverage>
-	(CssConstants >> #colors)
+	(self constants >> #colors)
 		bind: #aliceBlue to: ((CssRGBColor red: 240 green: 248 blue: 255) identifiedBy: 'aliceblue');
 		bind: #antiqueWhite to: ((CssRGBColor red: 250 green: 235 blue: 215) identifiedBy: 'antiquewhite');
 		bind: #aqua to: ((CssRGBColor red: 0 green: 255 blue: 255) identifiedBy: 'aqua');
@@ -450,7 +450,7 @@ RenoirSt class >> initializeSVGColors1 [
 RenoirSt class >> initializeSVGColors2 [
 
 	<ignoreForCoverage>
-	(CssConstants >> #colors)
+	(self constants >> #colors)
 		bind: #gainsboro to: ((CssRGBColor red: 220 green: 220 blue: 220) identifiedBy: 'gainsboro');
 		bind: #ghostWhite to: ((CssRGBColor red: 248 green: 248 blue: 255) identifiedBy: 'ghostwhite');
 		bind: #gold to: ((CssRGBColor red: 255 green: 215 blue: 0) identifiedBy: 'gold');
@@ -493,7 +493,7 @@ RenoirSt class >> initializeSVGColors2 [
 RenoirSt class >> initializeSVGColors3 [
 
 	<ignoreForCoverage>
-	(CssConstants >> #colors)
+	(self constants >> #colors)
 		bind: #magenta to: ((CssRGBColor red: 255 green: 0 blue: 255) identifiedBy: 'magenta');
 		bind: #maroon to: ((CssRGBColor red: 128 green: 0 blue: 0) identifiedBy: 'maroon');
 		bind: #mediumAquamarine to: ((CssRGBColor red: 102 green: 205 blue: 170) identifiedBy: 'mediumaquamarine');
@@ -562,7 +562,7 @@ RenoirSt class >> initializeSVGColors3 [
 RenoirSt class >> initializeSizeConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #contain to: 'contain';
 		bind: #cover to: 'cover'
 ]
@@ -571,7 +571,7 @@ RenoirSt class >> initializeSizeConstants [
 RenoirSt class >> initializeTextConstants [
 
 	<ignoreForCoverage>
-	CssConstants
+	self constants
 		bind: #blink to: 'blink';
 		bind: #breakWord to: 'break-word';
 		bind: #capitalize to: 'capitalize';
@@ -599,25 +599,25 @@ RenoirSt class >> initializeTextConstants [
 RenoirSt class >> initializeUnits [
 
 	<ignoreForCoverage>
-	CssConstants bind: #units to: Namespace new.
+	self constants bind: #units to: Namespace new.
 	self initializeLengthUnits.
 	"Angle"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #degree to: (CssUnit identifiedBy: 'deg');
 		bind: #radian to: (CssUnit identifiedBy: 'rad');
 		bind: #gradian to: (CssUnit identifiedBy: 'grad');
 		bind: #turn to: (CssUnit identifiedBy: 'turn').
 	"Frequency"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #hertz to: (CssUnit identifiedBy: 'Hz');
 		bind: #kiloHertz to: (CssUnit identifiedBy: 'kHz').
 	"Resolution"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #dotsPerCentimeter to: (CssUnit identifiedBy: 'dpcm');
 		bind: #dotsPerInch to: (CssUnit identifiedBy: 'dpi');
 		bind: #dotsPerPixelUnit to: (CssUnit identifiedBy: 'dppx').
 	"Time"
-	(CssConstants >> #units)
+	(self constants >> #units)
 		bind: #second to: (CssUnit identifiedBy: 's');
 		bind: #millisecond to: (CssUnit identifiedBy: 'ms')
 ]

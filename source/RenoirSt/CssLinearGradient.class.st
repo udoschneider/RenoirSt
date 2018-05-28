@@ -19,9 +19,9 @@ CssLinearGradient class >> fading: aColorStopCollection [
 ]
 
 { #category : #private }
-CssLinearGradient class >> in: aDirection fading: aColorStopCollection [ 
-	
-	^self new initializeIn: aDirection fading: aColorStopCollection 
+CssLinearGradient class >> in: aDirection fading: aColorStopCollection [
+
+	^ self new initializeIn: aDirection fading: (self asColorStops: aColorStopCollection)
 ]
 
 { #category : #'Instance Creation' }

@@ -8,9 +8,6 @@ Class {
 		'url',
 		'format'
 	],
-	#pools : [
-		'RenoirSt'
-	],
 	#category : #'RenoirSt-Fonts'
 }
 
@@ -21,15 +18,15 @@ CssExternalFontReference class >> locatedAt: anUrl [
 ]
 
 { #category : #'Instance Creation' }
-CssExternalFontReference class >> locatedAt: anUrl withFormat: aFontFormatString [
-		
-	^self new initializeLocatedAt: anUrl withFormat: aFontFormatString 
+CssExternalFontReference class >> locatedAt: anUrl withFormat: aNamedConstantOrFontFormatString [
+
+	^ self new initializeLocatedAt: anUrl withFormat: (self lookupValue: aNamedConstantOrFontFormatString)
 ]
 
 { #category : #'Instance Creation' }
 CssExternalFontReference class >> svgFontLocatedAt: aUrl withId: aString [
 
-	^ self locatedAt: (CssSVGFontLocation at: aUrl withId: aString) withFormat: CssConstants >> #svg
+	^ self locatedAt: (CssSVGFontLocation at: aUrl withId: aString) withFormat: #svg
 ]
 
 { #category : #Printing }

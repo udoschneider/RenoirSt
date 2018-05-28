@@ -54,5 +54,5 @@ CssMediaQueryExpression >> cssContentOn: aStream [
 CssMediaQueryExpression >> initializeForFeatureNamed: aString withValues: aCollection [
 
 	mediaFeature := aString.
-	values := aCollection
+	values := aCollection collect: [ :aValue | CssMediaQueryConstants at: aValue ifAbsent: [ aValue ] ]
 ]

@@ -15,7 +15,7 @@ Class {
 { #category : #'Instance Creation' }
 CssRadialGradient class >> circular: aRadiusOrKeyword at: aPosition fading: colorStops [ 
 	
-	^self shape: (CssGradientComponent on: { aRadiusOrKeyword . 'circle'. 'at'. aPosition }) fading: colorStops
+	^self shape: (CssGradientComponent on: { aRadiusOrKeyword . 'circle'. 'at'. self lookupValue: aPosition }) fading: colorStops
 ]
 
 { #category : #'Instance Creation' }
@@ -26,15 +26,9 @@ CssRadialGradient class >> circular: aRadiusOrKeyword fading: colorStops [
 
 { #category : #'Instance Creation' }
 CssRadialGradient class >> elliptical: aCssValue at: aPosition fading: colorStops [
-	
+
 	^ self
-		shape:
-			(CssGradientComponent
-				on:
-					{aCssValue.
-					'ellipse'.
-					'at'.
-					aPosition})
+		shape:(CssGradientComponent on: {aCssValue. 'ellipse'. 'at'. (self lookupValue: aPosition)})
 		fading: colorStops
 ]
 
@@ -51,9 +45,9 @@ CssRadialGradient class >> fading: aColorStopCollection [
 ]
 
 { #category : #private }
-CssRadialGradient class >> shape: aShapeSpec fading: aColorStopCollection [ 
-	
-	^self new initializeShape: aShapeSpec fading: aColorStopCollection 
+CssRadialGradient class >> shape: aShapeSpec fading: aColorStopCollection [
+
+	^ self new initializeShape: aShapeSpec fading: (self asColorStops: aColorStopCollection)
 ]
 
 { #category : #Configuring }

@@ -48,6 +48,12 @@ CssAttributeReference class >> toStringAttributeNamed: aString withFallback: aFa
 ]
 
 { #category : #private }
+CssAttributeReference >> asTypeOrUnit: aCssTypeOrNamedUnit [
+
+	^ CssConstants >> #units at: aCssTypeOrNamedUnit ifAbsent: [ aCssTypeOrNamedUnit ]
+]
+
+{ #category : #private }
 CssAttributeReference >> cssFunctionParametersContentOn: aStream [
 	attributeName cssContentOn: aStream.
 	aStream space.
@@ -61,8 +67,9 @@ CssAttributeReference >> functionName [
 ]
 
 { #category : #'initialize - release' }
-CssAttributeReference >> initializeWithAttributeNamed: aString withType: aCssTypeOrUnit withFallback: aCssFallback [
+CssAttributeReference >> initializeWithAttributeNamed: aString withType: aCssTypeOrNamedUnit withFallback: aCssFallback [
+
 	attributeName := aString.
-	typeOrUnit := aCssTypeOrUnit.
+	typeOrUnit := self asTypeOrUnit: aCssTypeOrNamedUnit.
 	fallback := aCssFallback
 ]
