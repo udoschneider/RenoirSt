@@ -6,6 +6,6 @@ WATagBrush >> setStyleTo: aDeclarationAction [
 	| declarationBlock |
 
 	declarationBlock := CssDeclarationBlock new.
-	aDeclarationAction cull: declarationBlock cull: RenoirSt constants.
+	aDeclarationAction cull: declarationBlock.
 	self style: declarationBlock
 ]
