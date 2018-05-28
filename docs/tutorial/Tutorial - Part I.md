@@ -87,7 +87,7 @@ The library also supports abstractions for properties requiring color values. Yo
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants |
+  with: [:style |
     style
       backgroundColor: #aliceBlue;
       borderColor: (CssRGBColor red: 0 green: 128 blue: 0 alpha: 0.5)];
@@ -128,7 +128,7 @@ A lot of values for CSS properties are just keyword constants. You can reference
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div ]
-  with: [:style :constants | style textAlign: #justify ];
+  with: [:style | style textAlign: #justify ];
   build
 ```
 Evaluates to:
@@ -257,7 +257,7 @@ This kind of expressions allows descendant elements to cycle over a list of valu
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector unorderedList unorderedList ]
-  with: [:style :constants | style listStyleType: (CssToggle cyclingOver: { #disc. #circle. #square}) ];
+  with: [:style | style listStyleType: (CssToggle cyclingOver: { #disc. #circle. #square}) ];
   build
 ```
 Evaluates to:
@@ -290,7 +290,7 @@ or providing also the type or unit of the attribute (if no type or unit is speci
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div  ]
-  with: [:style :constants | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel) ];
+  with: [:style | style width: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel) ];
   build
 ```
 Evaluates to:
@@ -320,7 +320,7 @@ div::before
 ```smalltalk
 CascadingStyleSheetBuilder new
   declareRuleSetFor: [:selector | selector div before ]
-  with: [:style :constants | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel withFallback: 10 px) ];
+  with: [:style | style content: (CssAttributeReference toAttributeNamed: 'height' ofType: #pixel withFallback: 10 px) ];
   build
 ```
 Evaluates to:
