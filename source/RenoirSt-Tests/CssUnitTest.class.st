@@ -13,7 +13,7 @@ CssUnitTest >> testCantCreateWithEmptyIdentifier [
 	self
 		should: [ CssUnit identifiedBy: '' ]
 		raise: InstanceCreationFailed
-		withExceptionDo: [:error | self assert: error messageText equals: 'A unit identifier can''t be empty']
+		withMessageText: 'A unit identifier can''t be empty'
 ]
 
 { #category : #Tests }
