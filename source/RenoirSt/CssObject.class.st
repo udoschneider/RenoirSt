@@ -30,6 +30,12 @@ CssObject class >> lookupValue: aNamedConstantOrValue [
 ]
 
 { #category : #Printing }
+CssObject >> asString [
+
+	^ self printString
+]
+
+{ #category : #Printing }
 CssObject >> cssContentOn: aStream [
 
 	self subclassResponsibility 
