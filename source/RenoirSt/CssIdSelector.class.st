@@ -30,7 +30,9 @@ CssIdSelector class >> for: anId over: aSelector [
 CssIdSelector >> cssContentOn: aStream [
 
 	selector cssContentOn: aStream.
-	aStream nextPutAll: id printString
+	aStream
+		nextPut: $#;
+		nextPutAll: id asString
 ]
 
 { #category : #'initialize-release' }

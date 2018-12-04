@@ -39,7 +39,7 @@ CssRadialGradientTest >> testEllipseGradientPositioned [
 
 	| gradient |
 	
-	gradient := CssRadialGradient elliptical: {5 em. 3 em} at: { 5px . 30 px} fading: #(#white #red).
+	gradient := CssRadialGradient elliptical: {5 em. 3 em} at: { 5 px. 30 px} fading: #(#white #red).
 	self assert: gradient printString equals: 'radial-gradient(5em 3em ellipse at 5px 30px, white, red)'
 ]
 
