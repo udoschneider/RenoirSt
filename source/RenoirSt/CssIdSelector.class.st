@@ -32,7 +32,7 @@ CssIdSelector >> cssContentOn: aStream [
 	selector cssContentOn: aStream.
 	aStream
 		nextPut: $#;
-		nextPutAll: id greaseString
+		nextPutAll: id asString
 ]
 
 { #category : #'initialize-release' }
