@@ -53,7 +53,7 @@ BaselineOfRenoirSt >> baselineSeasideExtensions: spec [
 	spec
 		package: 'RenoirSt-Seaside'
 			with: [ spec
-				requires: 'Deployment';
+				requires: 'RenoirSt-HTML';
 				requires: 'Seaside3-Javascript'
 			];
 		group: 'Deployment-Seaside-Extensions' with: 'RenoirSt-Seaside';
