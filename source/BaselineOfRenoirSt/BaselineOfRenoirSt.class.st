@@ -51,17 +51,9 @@ BaselineOfRenoirSt >> baselineRenoirSt: spec [
 BaselineOfRenoirSt >> baselineSeasideExtensions: spec [
 
 	spec
-		package: 'RenoirSt-Seaside'
-			with: [ spec
-				requires: 'Deployment';
-				requires: 'Seaside3-Javascript'
-			];
+		package: 'RenoirSt-Seaside' with: [ spec requires: #('Deployment' 'Seaside3-Javascript') ];
 		group: 'Deployment-Seaside-Extensions' with: 'RenoirSt-Seaside';
-		package: 'RenoirSt-Seaside-Tests'
-			with: [ spec
-				requires: 'RenoirSt-Seaside';
-				requires: 'Tests'
-			];
+		package: 'RenoirSt-Seaside-Tests' with: [ spec requires: #('RenoirSt-Seaside' 'Tests') ];
 		group: 'Development-Seaside-Extensions'
 			with: #('Development' 'Deployment-Seaside-Extensions' 'RenoirSt-Seaside-Tests')
 ]
