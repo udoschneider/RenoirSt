@@ -1,47 +1,35 @@
-How to contribute
-=================
+Contributing  
+============
 
-There's several ways to contribute to the project: reporting bugs, sending feedback, proposing ideas for new features, fixing or adding documentation, promoting the project, or even contributing code changes.
+There's several ways to contribute to the project: reporting bugs, sending feedback, proposing ideas for new features, fixing or adding documentation, promoting the project, or even contributing code.
 
-## How to report issues
+## Reporting issues
 
-The issue tracker is this GitHub repository. Please use the labels to categorize the issue.
+You can report issues [here](https://github.com/ba-st/RenoirSt/issues/new)
 
-## How to contribute code
-
-Remember:
-- This project is MIT licensed, so any code contribution must be under the same license.
-- This project uses [semantic versioning](http://semver.org/), so keep it in mind when you make backwards-incompatible changes. If some backwards incompatible change is made the major version MUST be increased.
-- The source code is hosted in this GitHub repository using the tonel format in the `source` folder. The master branch contains the latest changes, feel free to send pull requests or fork the project.
+## Contributing Code
+- This project is MIT licensed, so any code contribution MUST be under the same license.
+- This project uses [Semantic Versioning](http://semver.org/), so keep it in mind when you make backwards-incompatible changes. If some backwards incompatible change is made the major version MUST be increased.
+- The source code is hosted in this repository using the Tonel format in the `source` folder.
+- The master branch contains the latest changes and should always be in a releasable state.
+- Feel free to send pull requests or fork the project.
 - Code contributions without test cases have a lower probability of being merged into the main branch.
 
+### Using Iceberg
+1. Download a [Pharo Image and VM](https://get.pharo.org/64)
+2. Clone the project or your fork using Iceberg
+3. Open the Working Copy and using the contextual menu select `Metacello -> Install baseline...`
+4. Input `Development-Seaside-Extensions`
+5. This will load the base code and the test cases
+6. Create a new branch to host your code changes
+7. Do the changes
+8. Run the test cases
+9. Commit and push your changes to the branch using the Iceberg UI
+10. Create a Pull Request against the `release-candidate` branch
 
-- Clone this repository or fork it
-- Load the corresponding development version with:
-The development version can be loaded in a Pharo 4/5 image evaluating the following code snippet:
-```smalltalk
-Metacello new
-  baseline: 'RenoirSt';
-  repository: 'tonel://REPO_LOCATION/source';
-  load: 'Development'.
-```
+## Contributing documentation
 
-or
-```smalltalk
-Metacello new
-  baseline: 'RenoirSt';
-  repository: 'tonel://REPO_LOCATION/source';
-  load: 'Development-Seaside-Extensions'.
-```
-if you want the Seaside extensions, where `REPO_LOCATION` is the location of the cloned repo in the local file system.
-- Do the changes and save it from Pharo (don't forget to add some test cases)
-- Create a branch, commit using the usual Git tooling and open a Pull Request
-
-## How to contribute documentation
-
-The project documentation is mantained in this GitHub repository in the `docs` folder. To contribute some documentation or improve the existing, feel free to create a branch or fork this repository, make your changes and send a pull request.
-
-Remember the docs are licensed under a CC Attribution-ShareAlike license.
+The project documentation is maintained in this repository in the `docs` folder and licensed under CC BY-SA 4.0. To contribute some documentation or improve the existing, feel free to create a branch or fork this repository, make your changes and send a pull request.
 
 ### Useful References:
 

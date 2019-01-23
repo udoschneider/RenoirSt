@@ -1,86 +1,38 @@
-Renoir.St
-=========
-![GitHub release](https://img.shields.io/github/release/ba-st/RenoirSt.svg)
-[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=master)](https://travis-ci.org/ba-st/RenoirSt)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=master)](https://coveralls.io/github/ba-st/RenoirSt?branch=master)
+<p align="center"><img src="assets/logos/128x128.png">
+ <h1 align="center">RenoirSt</h1>
+  <p align="center">
+    A DSL enabling programmatic cascading style sheet generation for Pharo Smalltalk
+    <br>
+    <a href="docs/"><strong>Explore the docs »</strong></a>
+    <br>
+    <br>
+    <a href="https://github.com/ba-st/RenoirSt/issues/new?labels=Type%3A+Defect">Report a defect</a>
+    |
+    <a href="https://github.com/ba-st/RenoirSt/issues/new?labels=Type%3A+Feature">Request feature</a>
+  </p>
+</p>
 
-*A DSL enabling programmatic cascading style sheet generation for Pharo Smalltalk*
+![GitHub release](https://img.shields.io/github/release/ba-st/RenoirSt.svg)
+[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=release-candidate)](https://travis-ci.org/ba-st/RenoirSt)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/RenoirSt?branch=release-candidate)
 
 ## Goals
 - Improve CSS integration with existing Web Frameworks
 - Write & refactor in Smalltalk, deploy to CSS
 
-### License:
-The project source code is [MIT](LICENSE) licensed. Any contribution submitted to the code repository is considered to be under the same license.
-
-The documentation is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/)
-
 ### Benefits:
 - Keep in sync your code changes with the changes in the CSS
 - Use your favorite browsing and refactoring tools inside the same Pharo image to handle CSS  
 
-### Highlights:
-- **Supported Platforms**: [Pharo 3 / Pharo 4 / Pharo 5 / Pharo 6 / Pharo 7](http://www.pharo.org/)
-- **Source Code Repository** and **Issue Tracking**: In this GitHub repository.
+## License
+- The code is licensed under [MIT](LICENSE).
+- The documentation is licensed under [CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/).
 
-### Get started!
+## Quick Start
 
-#### Pharo 6/7
-
-- Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'RenoirSt';
-  repository: 'github://ba-st/RenoirSt:master/source';
-  load
-```
-
-
-#### Pharo 5
-
-- Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'RenoirSt';
-  repository: 'github://ba-st/RenoirSt:stable-pharo-50/source';
-  load
-```
-
-or
-
-- Load it using the Catalog Browser
-
-#### Pharo 4
-
-- Open a Playground and evaluate:
-
-```smalltalk
-Metacello new
-  baseline: 'RenoirSt';
-  repository: 'github://ba-st/RenoirSt:stable-pharo-40/source';
-  load
-```
-
-or
-
-- Load it using the Configuration Browser
-
-#### Pharo 3 (this version is stalled at 1.4.0)
-
-- Load it using the Configuration Browser
-
-or
-
-- Open a workspace and evaluate:
-
-```smalltalk
-Gofer it    
-    url: 'http://smalltalkhub.com/mc/gcotelli/RenoirSt/main';
-    configurationOf: 'RenoirSt';
-    loadStable
-```
+- Download the latest [Pharo 32](https://get.pharo.org/) or [64 bits VM](https://get.pharo.org/64/).
+- Download a ready to use image from the [release page](https://github.com/ba-st/RenoirSt/releases/latest)
+- Explore the [documentation](docs/)
 
 ***********************************************
 
@@ -100,5 +52,11 @@ body::before
 	content: "Hello World";
 }
 ```
-### Contributing
-If you want to help check the ["How to contribute" doc](CONTRIBUTING.md)
+
+## Installation
+
+To load the project in a Pharo image, or declare it as a dependency of your own project follow this [instructions](docs/Installation.md).
+
+## Contributing
+
+Check the [Contribution Guidelines](CONTRIBUTING.md)

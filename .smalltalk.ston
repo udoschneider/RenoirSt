@@ -3,18 +3,13 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'RenoirSt',
       #directory : 'source',
-      #load : [ 'Development' ],
+      #load : [ 'CI' ],
       #platforms : [  #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-      #categories : [ 'RenoirSt*' ]
-    },
-    #include : { 
-      #categories : [ 'RenoirSt-Tests*' ]
+       #packages : [ 'RenoirSt*' ]
     }
-   
   }
-} 
-
+}
