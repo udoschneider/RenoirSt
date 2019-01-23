@@ -2,10 +2,10 @@ Tutorial
 ========
 
 ### Table Of Contents
-- [Part I](Tutorial - Part I.md)
+- [Part I](Tutorial-Part-I.md)
   - Introduction
   - Basics
-- [Part II](Tutorial - Part II.md)
+- [Part II](Tutorial-Part-II.md)
   - Selectors
     - Type Selectors
     - Combinators
@@ -14,7 +14,7 @@ Tutorial
     - Pseudo-Classes
     - Pseudo-Elements
 	- Selector Groups
-- [Part III](Tutorial - Part III.md )
+- [Part III](Tutorial-Part-III.md )
   - Important Rules
   - Media Queries
   - Vendor specific extensions
