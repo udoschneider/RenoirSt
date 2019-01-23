@@ -33,7 +33,7 @@ BaselineOfRenoirSt >> baselineRenoirSt: spec [
 		group: 'Deployment' with: 'RenoirSt';
 		package: 'RenoirSt-HTML' with: [ spec requires: 'RenoirSt' ];
 		group: 'Deployment' with: 'RenoirSt-HTML';
-		package: 'RenoirSt-Tests' with: [ spec requires: #('Deployment' 'Buoy-SUnit') ];
+		package: 'RenoirSt-Tests' with: [ spec requires: #('RenoirSt' 'Buoy-SUnit') ];
 		group: 'Tests' with: 'RenoirSt-Tests';
 		package: 'RenoirSt-HTML-Tests' with: [ spec requires: #('RenoirSt-HTML' 'RenoirSt-Tests') ];
 		group: 'Tests' with: 'RenoirSt-HTML-Tests'.
