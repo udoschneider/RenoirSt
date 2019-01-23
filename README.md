@@ -13,8 +13,8 @@
 </p>
 
 ![GitHub release](https://img.shields.io/github/release/ba-st/RenoirSt.svg)
-[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=release-candidate)](https://travis-ci.org/ba-st/RenoirSt)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=release-candidate)](https://coveralls.io/github/ba-st/RenoirSt?branch=release-candidate)
+[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=release_candidate)](https://travis-ci.org/ba-st/RenoirSt)
+[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=release_candidate)](https://coveralls.io/github/ba-st/RenoirSt?branch=release_candidate)
 
 ## Goals
 - Improve CSS integration with existing Web Frameworks
