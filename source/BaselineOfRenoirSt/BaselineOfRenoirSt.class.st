@@ -33,7 +33,7 @@ BaselineOfRenoirSt >> baselineRenoirSt: spec [
 		group: 'Deployment' with: 'RenoirSt';
 		package: 'RenoirSt-HTML' with: [ spec requires: 'RenoirSt' ];
 		group: 'Deployment' with: 'RenoirSt-HTML';
-		package: 'RenoirSt-Tests' with: [ spec requires: #('RenoirSt' 'Buoy-SUnit') ];
+		package: 'RenoirSt-Tests' with: [ spec requires: #('Deployment' 'Buoy-SUnit') ];
 		group: 'Tests' with: 'RenoirSt-Tests';
 		package: 'RenoirSt-HTML-Tests' with: [ spec requires: #('RenoirSt-HTML' 'RenoirSt-Tests') ];
 		group: 'Tests' with: 'RenoirSt-HTML-Tests'.
@@ -51,7 +51,7 @@ BaselineOfRenoirSt >> baselineRenoirSt: spec [
 BaselineOfRenoirSt >> baselineSeasideExtensions: spec [
 
 	spec
-		package: 'RenoirSt-Seaside' with: [ spec requires: #('RenoirSt-HTML' 'Seaside3-Javascript') ];
+		package: 'RenoirSt-Seaside' with: [ spec requires: #('Deployment' 'Seaside3-Javascript') ];
 		group: 'Deployment-Seaside-Extensions' with: 'RenoirSt-Seaside';
 		package: 'RenoirSt-Seaside-Tests' with: [ spec requires: #('RenoirSt-Seaside' 'Tests') ];
 		group: 'Development-Seaside-Extensions'
