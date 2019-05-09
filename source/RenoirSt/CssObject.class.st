@@ -25,8 +25,8 @@ CssObject class >> lookupValue: aNamedConstantOrValue [
 	"Lookup the CSS namespace and the SVG colors namespace, if no named constant is found returns the argument"
 
 	^ (aNamedConstantOrValue isCollection and: [ aNamedConstantOrValue isString not ])
-		ifTrue: [ aNamedConstantOrValue collect: [ :each | self lookupValue: each ] ]
-		ifFalse: [ CssConstants at: aNamedConstantOrValue ifAbsent: [ self lookupColor: aNamedConstantOrValue ] ]
+		then: [ aNamedConstantOrValue collect: [ :each | self lookupValue: each ] ]
+		otherwise: [ CssConstants at: aNamedConstantOrValue ifAbsent: [ self lookupColor: aNamedConstantOrValue ] ]
 ]
 
 { #category : #Printing }

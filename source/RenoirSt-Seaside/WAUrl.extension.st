@@ -4,10 +4,11 @@ Extension { #name : #WAUrl }
 WAUrl >> cssContentOn: aStream [
 
 	aStream nextPutAll: 'url("'.
-	host isNil
-		ifTrue: [ aStream nextPut: $/.
-			self path do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ] ]
-		ifFalse: [ self printOn: aStream ].
+	host
+		ifNil: [ aStream nextPut: $/.
+			self path do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ]
+			]
+		ifNotNil: [ self printOn: aStream ].
 	aStream nextPutAll: '")'
 ]
 
@@ -15,9 +16,9 @@ WAUrl >> cssContentOn: aStream [
 WAUrl >> cssContentRelativeToStyleSheetOn: aStream [
 
 	aStream nextPutAll: 'url("'.
-	host isNil
-		ifTrue: [ self path do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ] ]
-		ifFalse: [ self printOn: aStream ].
+	host
+		ifNil: [ self path do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ] ]
+		ifNotNil: [ self printOn: aStream ].
 	aStream nextPutAll: '")'
 ]
 

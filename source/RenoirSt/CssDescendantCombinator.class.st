@@ -14,9 +14,9 @@ Class {
 { #category : #'Instance Creation' }
 CssDescendantCombinator class >> between: anAncestorSelector and: aDescendantSelector [
 
-	^ anAncestorSelector isImplicitUniversal
-		ifTrue: [ aDescendantSelector ]
-		ifFalse: [ self new initializeBetween: anAncestorSelector and: aDescendantSelector ]
+	^ [ self new initializeBetween: anAncestorSelector and: aDescendantSelector ]
+		unless: anAncestorSelector isImplicitUniversal
+		inWhichCase: [ aDescendantSelector ]
 ]
 
 { #category : #Printing }

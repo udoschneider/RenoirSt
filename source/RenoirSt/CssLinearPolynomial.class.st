@@ -47,19 +47,17 @@ CssLinearPolynomial >> cssContentOn: aWriteStream [
 CssLinearPolynomial >> cssDependentCoefficientContentOn: aWriteStream [
 
 	dependentCoefficient abs = 1
-		ifTrue: [ 
-			dependentCoefficient negative
-				ifTrue: [ aWriteStream nextPut: $- ] ]
-		ifFalse: [ dependentCoefficient cssContentOn: aWriteStream ]
+		then: [ dependentCoefficient negative then: [ aWriteStream nextPut: $- ] ]
+		otherwise: [ dependentCoefficient cssContentOn: aWriteStream ]
 ]
 
 { #category : #private }
 CssLinearPolynomial >> cssIndependentCoefficientContentOn: aWriteStream [
-	independentCoefficient isZero
-		ifTrue: [ ^ self ].
-	independentCoefficient positive
-		ifTrue: [ aWriteStream nextPut: $+ ].
-	independentCoefficient cssContentOn: aWriteStream
+
+	[ 
+		independentCoefficient positive then: [ aWriteStream nextPut: $+ ].
+		independentCoefficient cssContentOn: aWriteStream
+	] unless: independentCoefficient isZero
 ]
 
 { #category : #'initialize-release' }
