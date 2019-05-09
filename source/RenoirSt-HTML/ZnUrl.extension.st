@@ -10,11 +10,11 @@ ZnUrl >> cssContentOn: aStream [
 
 { #category : #'*RenoirSt-HTML' }
 ZnUrl >> cssContentRelativeToStyleSheetOn: aStream [
-	
+
 	aStream nextPutAll: 'url("'.
 	self isAbsolute
-		ifTrue: [ self printOn: aStream ]
-		ifFalse: [ segments do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ] ].
+		then: [ self printOn: aStream ]
+		otherwise: [ segments do: [ :segment | aStream nextPutAll: segment ] separatedBy: [ aStream nextPut: $/ ] ].
 	aStream nextPutAll: '")'
 ]
 

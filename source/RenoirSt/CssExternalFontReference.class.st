@@ -33,15 +33,16 @@ CssExternalFontReference class >> svgFontLocatedAt: aUrl withId: aString [
 CssExternalFontReference >> cssContentOn: aStream [
 
 	url cssContentOn: aStream.
-	format notEmpty
-		ifTrue: [ aStream
+	format
+		ifNotEmpty: [ aStream
 				space;
 				nextPutAll: 'format(';
 				nextPut: $".
 			format cssContentOn: aStream.
 			aStream
 				nextPut: $";
-				nextPut: $) ]
+				nextPut: $)
+			]
 ]
 
 { #category : #'initialize-release' }

@@ -18,13 +18,13 @@ CssComment class >> for: aCommentText [
 
 { #category : #Printing }
 CssComment >> cssContentOn: aStream [
-	comment notEmpty
-		ifFalse: [ ^ self ].
-	aStream nextPutAll: '/*'.
+
+	[ aStream nextPutAll: '/*'.
 	comment cssContentOn: aStream.
 	aStream
 		nextPutAll: '*/';
 		newLine
+	] unless: comment isEmpty
 ]
 
 { #category : #'initialize-release' }
