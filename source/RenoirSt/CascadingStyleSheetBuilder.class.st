@@ -29,6 +29,21 @@ CascadingStyleSheetBuilder >> comment: aCommentText [
 ]
 
 { #category : #Configuring }
+CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forKeyframesMatching: aKeyframesBlock [ 
+
+	| styleSheetBuilder keyframesBuilder |
+	
+	styleSheetBuilder := self class new.
+	aSubStyleSheetBlock value: styleSheetBuilder.
+	
+	keyframesBuilder := CssKeyframesRuleBuilder new.
+	aKeyframesBlock cull: keyframesBuilder.
+	
+	keyframesBuilder useStyleSheet: styleSheetBuilder build.
+	self addStatement: keyframesBuilder build.
+]
+
+{ #category : #Configuring }
 CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forMediaMatching: aMediaQueryBlock [
 
 	| styleSheetBuilder mediaQueryBuilder |
