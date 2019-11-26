@@ -36,6 +36,139 @@ Note that the important properties must be created by sending the messages to th
 ##### References:
 - http://www.w3.org/TR/CSS2/cascade.html#important-rules
 
+## Keyframes
+
+The `@keyframes` rule specifies the animation code.
+The animation is created by gradually changing from one set of CSS styles to another.
+During the animation, you can change the set of CSS styles many times.
+Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
+
+A basic keyframe rule consists of specifying just a keyframe with some style rule:
+```smalltalk
+CascadingStyleSheetBuilder new 
+	declare: [ :cssBuilder | 
+		cssBuilder 
+            declareRuleSetFor: [ :selector | selector from ]
+			with: [ :style | style backgroundColor: '#f00' ];
+			declareRuleSetFor: [ :selector | selector to ]
+			with: [ :style | style backgroundColor: '#f99' ] ]
+	forKeyframesMatching: [ :keyframeBuilder | keyframeBuilder named: 'spin' ];
+	build.
+```
+To use keyframes in the library just send the message `declare:forKeyframesMatching:` to the builder.  The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of keyframes.
+
+The keyframes builder recieves the name of the animation you want to create, as shown in the previous example.
+The style can be built with either the `animation:` shorthand (`animation: name duration timing-function delay iteration-count direction fill-mode play-state`) or with separate animation styles, such as:
+- `animationName:`
+- `animationDuration:`
+- `animationTimingFunction:`
+- `animationIterationCount:`
+- `animationDirection:`
+- `animationPlayState:`
+- `animationDelay:`
+- `animationFillMode:`
+
+For example, a more complex animation can be written:
+
+```smalltalk
+CascadingStyleSheetBuilder
+	new
+		declareRuleSetFor: [ :selector | selector div ]
+			with: [ :style | 
+			style
+				animation: 'spin 5s linear infinite';
+				"to replace...
+				animationName: 'spin';
+				animationDuration: '5000ms';
+				animationIterationCount: 'infinite';
+				animationTimingFunction: 'linear';"
+				background: '#f00';
+				width: 100 px;
+				height: 100 px;
+				position: 'relative'];
+		declare: [ :cssBuilder | 
+			cssBuilder
+				declareRuleSetFor: [ :selector | 0 percent ]
+					with: [ :style | 
+					style
+						transform: 'rotate(0deg)';
+						background: '#f00' ];
+				declareRuleSetFor: [ :selector | 25 percent ]
+					with: [ :style | 
+					style
+						transform: 'rotate(90deg)';
+						background: '#f99' ];
+				declareRuleSetFor: [ :selector | 50 percent ]
+					with: [ :style | 
+					style
+						transform: 'rotate(180deg)';
+						background: '#b88' ];
+				declareRuleSetFor: [ :selector | 75 percent ]
+					with: [ :style | 
+					style
+						transform: 'rotate(270deg)';
+						background: '#a66' ];
+				declareRuleSetFor: [ :selector | 100 percent ]
+					with: [ :style | 
+					style
+						transform: 'rotate(360deg)';
+						background: '#f00' ] ]
+			forKeyframesMatching: [ :keyframeBuilder | keyframeBuilder named: 'spin' ];
+		build
+```
+Evaluating to:
+
+```css
+div
+{
+	animation: spin 5s linear infinite;
+	background: #f00;
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+@keyframes spin
+{
+	0%
+	{
+		transform: rotate(0deg);
+		background: #f00;
+	}
+	
+	25%
+	{
+		transform: rotate(90deg);
+		background: #f99;
+	}
+	
+	50%
+	{
+		transform: rotate(180deg);
+		background: #b88;
+	}
+	
+	75%
+	{
+		transform: rotate(270deg);
+		background: #a66;
+	}
+	
+	100%
+	{
+		transform: rotate(360deg);
+		background: #f00;
+	}
+}
+```
+
+**Tip:** For best browser support, you should always define both the 0% and the 100% selectors.
+
+**Note:** The `!important` rule is ignored in a keyframe
+
+##### References:
+- https://drafts.csswg.org/css-animations/
+
 ## Media Queries
 
 A `@media` rule specifies the target media types of a set of statements. The `@media` construct allows style sheet rules that apply to various media in the same style sheet. Style rules outside of `@media` rules apply to all media types that the style sheet applies to. At-rules inside `@media` are invalid in CSS2.1.
