@@ -434,6 +434,357 @@ renders as:
 ```css
 repeating-radial-gradient(yellow, green);
 ```
+#### Transforms
+Css transforms are a collection of functions that allow you to shape elements in particular ways.
+##### Rotation: `rotate()` `rotateX()` `rotateY()` `rotateZ()` `rotate3d()`
+
+The library provides support for rotation functions, used in animations to move an element around a central point. The rotate expressions are built instantiating `CssRotate` or `CssRotate3D` for 3D rotations.
+
+Lets see a basic working rotation example:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+            animation: 'spin 5s linear infinite';
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 0 deg);
+                    background: #blue ];
+            declareKeyframeRuleSetAt: 100 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 360 deg);
+                    background: #red ] ]
+    forKeyframesNamed: 'spin';
+	build
+```
+Evaluates to:
+```css
+div
+{
+	animation: spin 5s linear infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes spin
+{
+	0%
+	{
+		transform: rotate(0deg);
+		background: blue;
+	}
+	
+	100%
+	{
+		transform: rotate(360deg);
+		background: red;
+	}
+}
+```
+
+##### Translation: `translate()` `translateX()` `translateY()` `translateZ()` `translate3d()`
+
+The library supports `translate` functions, used to mode the position of an element. To translate an element, instantiate `CssTranslate`.
+
+Lets see an example:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+			background: #blue;
+            animation: 'animation 5s linear infinite';
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+                style
+                    transform: (CssTranslate by: 100 px) ] ]
+    forKeyframesNamed: 'animation';
+	build.
+```
+Evaluates to:
+```css
+div
+{
+	background: blue;
+	animation: animation 5s linear infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes animation
+{
+	0%
+	{
+		transform: translate(100px);
+	}
+}
+```
+
+##### Scale: `scale()` `scaleX()` `scaleY()` `scaleZ()` `scale3d()`
+
+RenoirSt supports scaling functions. You can use them by building an instance of `CssScale`.
+
+An example can be:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+				background: #blue;
+            animation: 'scale 5s linear infinite';
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+	                style transform: (CssScale by: 2) ];
+				declareKeyframeRuleSetAt:  100 percent
+					with: [ :style |
+					 	style transform: (CssScale by: 4) ] ]
+    forKeyframesNamed: 'scale';
+	build.
+```
+Evaluating to:
+```css
+div
+{
+	background: blue;
+	animation: scale 5s linear infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes scale
+{
+	0%
+	{
+		transform: scale(2);
+	}
+	
+	100%
+	{
+		transform: scale(4);
+	}
+}
+```
+
+##### Skew `skew()` `skewX()` `skewY()`
+
+The library supports the `skew` function, performing a shear transformation (also known as a shear mapping or a transvection), which displaces each point of an element by a given angle in each direction. To build skew functions, instantiate `CssSkew`.
+
+An example:
+```smalltalk
+CascadingStyleSheetBuilder new
+	declareRuleSetFor: [ :selector | selector div ] 
+	with: [ :style | 
+		style
+			background: #blue;
+			animation: 'skewAnimation 5s linear infinite';
+			width: 100 px;
+			height: 100 px ];
+	declare: [ :cssBuilder | 
+		cssBuilder 
+			declareKeyframeRuleSetAt: 0 percent
+			with: [ :style | style transform: (CssSkew by: 45 deg) ] ]
+	forKeyframesNamed: 'skewAnimation';
+	build
+```
+Evaluates to:
+```css
+div
+{
+	background: blue;
+	animation: skewAnimation 5s linear infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes skewAnimation
+{
+	0%
+	{
+		transform: skew(45deg);
+	}
+}
+```
+
+##### Aditional Functions for Transformation
+###### Perspective
+
+The library supports the `perspective` function by instantiating `CssPerspective`.
+This function is used to set a perspective when doing a transformation on the Z axis.
+
+If we extend the previous example to translate in a 3D space, it would be like:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+				background: #blue;
+            animation: 'animation 5s linear infinite';
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+                style
+                    transform: 
+							{(CssPerspective of: 200 px) . 
+                            (CssTranslate 
+                                onXAxisBy: 100 px 
+                                onYAxisBy: 100 px 
+                                andZAxisBy: 100 px )} ] ]
+    forKeyframesNamed: 'animation';
+	build.
+```
+Evaluating to:
+```css
+div
+{
+	background: blue;
+	animation: animation 5s linear infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes animation
+{
+	0%
+	{
+		transform: perspective(200px) translate3d(100px, 100px, 100px);
+	}
+}
+```
+
+#### Easing Functions
+
+##### Steps
+
+The library also supports the `steps` function, used in the timing parameter of animation keyframes called `animation-timing-function`. Steps are a timing function that allows us to break an animation or transition into segments.
+
+A usage example can be:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+				background: #blue;
+            animationName: 'scale';
+				animationDuration: 5 s;
+				animationTimingFunction: (CssSteps by: 2);
+				animationIterationCount: #infinite;
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+	                style transform: (CssScale by: 2) ];
+				declareKeyframeRuleSetAt:  100 percent
+					with: [ :style |
+					 	style transform: (CssScale by: 4) ] ]
+    forKeyframesNamed: 'scale';
+	build.
+```
+Evaluating to:
+```css
+div
+{
+	background: blue;
+	animation-name: scale;
+	animation-duration: 5s;
+	animation-timing-function: steps(2);
+	animation-iteration-count: infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes scale
+{
+	0%
+	{
+		transform: scale(2);
+	}
+	
+	100%
+	{
+		transform: scale(4);
+	}
+}
+```
+
+##### Cubic Bezier
+
+Renoir supports the `cubic-bezier` function, that can be used with the `transition-timing-function` property to control how a transition will change speed over its duration. It also works with the `animation-timing-function` for keyframes. To create your own cubic bezier timing function build an instance with `CssCubicBezier`.
+
+Here's an example:
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+				background: #blue;
+            animationName: 'scale';
+				animationDuration: 5 s;
+				animationTimingFunction: (
+					CssCubicBezier 
+						firstXAxis:  0.63
+						firstYAxis:  0.05
+						secondXAxis:  0.43
+						secondYAxis: 1.7);
+				animationIterationCount: #infinite;
+            width: 100 px;
+            height: 100 px ];
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+	                style transform: (CssScale by: 2) ];
+				declareKeyframeRuleSetAt:  100 percent
+					with: [ :style |
+					 	style transform: (CssScale by: 4) ] ]
+    forKeyframesNamed: 'scale';
+	build.
+```
+Evaluating to:
+```css
+div
+{
+	background: blue;
+	animation-name: scale;
+	animation-duration: 5s;
+	animation-timing-function: cubic-bezier(0.63, 0.05, 0.43, 1.7);
+	animation-iteration-count: infinite;
+	width: 100px;
+	height: 100px;
+}
+
+@keyframes scale
+{
+	0%
+	{
+		transform: scale(2);
+	}
+	
+	100%
+	{
+		transform: scale(4);
+	}
+}
+```
 
 #### Box Shadows
 
