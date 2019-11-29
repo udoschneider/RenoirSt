@@ -43,21 +43,22 @@ The animation is created by gradually changing from one set of CSS styles to ano
 During the animation, you can change the set of CSS styles many times.
 Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
 
+**Tip:** For best browser support, you should always define both the 0% and the 100% selectors.
+
 A basic keyframe rule consists of specifying just a keyframe with some style rule:
 ```smalltalk
-CascadingStyleSheetBuilder new 
-	declare: [ :cssBuilder | 
+CascadingStyleSheetBuilder new
+	declare: [ :cssBuilder |
 		cssBuilder 
-            declareRuleSetFor: [ :selector | selector from ]
-			with: [ :style | style backgroundColor: '#f00' ];
-			declareRuleSetFor: [ :selector | selector to ]
-			with: [ :style | style backgroundColor: '#f99' ] ]
-	forKeyframesMatching: [ :keyframeBuilder | keyframeBuilder named: 'spin' ];
-	build.
+			declareKeyframeRuleSetAt: 0 percent 
+				with: [ :style | style backgroundColor: #red ];
+			declareKeyframeRuleSetAt: 100 percent
+				with: [ :style | style backgroundColor: #blue ] ] 
+    forKeyframesNamed: 'example';
+	build 
 ```
-To use keyframes in the library just send the message `declare:forKeyframesMatching:` to the builder.  The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder` and the second one with a builder of keyframes.
+To use keyframes in the library just send the message `declare:forKeyframesNamed:` to the builder.  The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder`. The second parameter is to give a name to your keyframe rule.
 
-The keyframes builder recieves the name of the animation you want to create, as shown in the previous example.
 The style can be built with either the `animation:` shorthand (`animation: name duration timing-function delay iteration-count direction fill-mode play-state`) or with separate animation styles, such as:
 - `animationName:`
 - `animationDuration:`
@@ -71,50 +72,52 @@ The style can be built with either the `animation:` shorthand (`animation: name 
 For example, a more complex animation can be written:
 
 ```smalltalk
-CascadingStyleSheetBuilder
-	new
-		declareRuleSetFor: [ :selector | selector div ]
-			with: [ :style | 
-			style
-				animation: 'spin 5s linear infinite';
-				"to replace...
-				animationName: 'spin';
-				animationDuration: '5000ms';
-				animationIterationCount: 'infinite';
-				animationTimingFunction: 'linear';"
-				background: '#f00';
-				width: 100 px;
-				height: 100 px;
-				position: 'relative'];
-		declare: [ :cssBuilder | 
-			cssBuilder
-				declareRuleSetFor: [ :selector | 0 percent ]
-					with: [ :style | 
-					style
-						transform: 'rotate(0deg)';
-						background: '#f00' ];
-				declareRuleSetFor: [ :selector | 25 percent ]
-					with: [ :style | 
-					style
-						transform: 'rotate(90deg)';
-						background: '#f99' ];
-				declareRuleSetFor: [ :selector | 50 percent ]
-					with: [ :style | 
-					style
-						transform: 'rotate(180deg)';
-						background: '#b88' ];
-				declareRuleSetFor: [ :selector | 75 percent ]
-					with: [ :style | 
-					style
-						transform: 'rotate(270deg)';
-						background: '#a66' ];
-				declareRuleSetFor: [ :selector | 100 percent ]
-					with: [ :style | 
-					style
-						transform: 'rotate(360deg)';
-						background: '#f00' ] ]
-			forKeyframesMatching: [ :keyframeBuilder | keyframeBuilder named: 'spin' ];
-		build
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+            animation: 'spin 5s linear infinite';
+            "replacing...
+            animationName: 'spin';
+            animationDuration: 5000 ms;
+            animationTimingFunction: 'linear';
+            animationIterationCount: 'infinite';"
+            
+            maxHeight: 80 vh;
+            fontSize: #larger;
+            background: '#f00';
+            width: 100 px;
+            height: 100 px;
+            position: 'relative' ];
+
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 0 deg);
+                    background: '#f00' ];
+            declareKeyframeRuleSetAt: 25 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 90 deg);
+                    background: '#f99' ];
+            declareKeyframeRuleSetAt: 50 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 180 deg);
+                    background: '#b88' ];
+            declareKeyframeRuleSetAt: 75 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 270 deg);
+                    background: '#a66' ];
+            declareKeyframeRuleSetAt: 100 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 360 deg);
+                    background: '#f00' ] ]
+    forKeyframesNamed: 'spin'
 ```
 Evaluating to:
 
@@ -122,6 +125,8 @@ Evaluating to:
 div
 {
 	animation: spin 5s linear infinite;
+	max-height: 80vh;
+	font-size: larger;
 	background: #f00;
 	width: 100px;
 	height: 100px;
@@ -161,8 +166,6 @@ div
 	}
 }
 ```
-
-**Tip:** For best browser support, you should always define both the 0% and the 100% selectors.
 
 **Note:** The `!important` rule is ignored in a keyframe
 
