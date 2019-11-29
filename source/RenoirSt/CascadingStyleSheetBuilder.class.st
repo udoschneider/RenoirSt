@@ -29,18 +29,13 @@ CascadingStyleSheetBuilder >> comment: aCommentText [
 ]
 
 { #category : #Configuring }
-CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forKeyframesMatching: aKeyframesBlock [ 
+CascadingStyleSheetBuilder >> declare: aSubStyleSheetBlock forKeyframesNamed: aName [
 
-	| styleSheetBuilder keyframesBuilder |
+	| styleSheetBuilder |
 	
 	styleSheetBuilder := self class new.
 	aSubStyleSheetBlock value: styleSheetBuilder.
-	
-	keyframesBuilder := CssKeyframesRuleBuilder new.
-	aKeyframesBlock cull: keyframesBuilder.
-	
-	keyframesBuilder useStyleSheet: styleSheetBuilder build.
-	self addStatement: keyframesBuilder build.
+	self addStatement: (CssKeyframesRule named: aName enabling: styleSheetBuilder build)
 ]
 
 { #category : #Configuring }
@@ -66,6 +61,16 @@ CascadingStyleSheetBuilder >> declareFontFaceRuleWith: aDeclarationAction [
 	declarationBlock := CssDeclarationBlock new.
 	aDeclarationAction cull: declarationBlock.
 	self addStatement: (CssRuleSet selector: '@font-face' declarations: declarationBlock)
+]
+
+{ #category : #Configuring }
+CascadingStyleSheetBuilder >> declareKeyframeRuleSetAt: aPercentage with: aStyleSheetBlock [ 
+	
+	| declarationBlock |
+	
+	declarationBlock := CssDeclarationBlock new.
+	aStyleSheetBlock cull: declarationBlock.
+	self addStatement: (CssRuleSet selector: aPercentage declarations: declarationBlock comment: '')
 ]
 
 { #category : #Configuring }

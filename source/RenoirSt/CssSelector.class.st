@@ -169,12 +169,6 @@ CssSelector >> focus [
 	^ CssPseudoClassSelector focusOn: self
 ]
 
-{ #category : #'as yet unclassified' }
-CssSelector >> from [
-	
-	^self descendantOfType: 'from'
-]
-
 { #category : #building }
 CssSelector >> havingAttribute: aString [ 
 	
@@ -263,12 +257,6 @@ CssSelector >> siblingOfTypeFromLastAt: anIndex [
 CssSelector >> target [
 
 	^ CssPseudoClassSelector targetOn: self
-]
-
-{ #category : #'as yet unclassified' }
-CssSelector >> to [
-	
-	^self descendantOfType: 'to'
 ]
 
 { #category : #'building-pseudo classes' }

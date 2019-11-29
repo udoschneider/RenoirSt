@@ -3,31 +3,21 @@ Class {
 	#superclass : #CssObject,
 	#instVars : [
 		'keyframeName',
-		'styleSheet',
-		'webkitCompatibility'
+		'styleSheet'
 	],
 	#category : #'RenoirSt-Keyframes'
 }
 
 { #category : #'Instance Creation' }
-CssKeyframesRule class >> named: aName enabling: aCascadingStyleSheet withWebkitCompatibilityEnabled: aBoolean [
+CssKeyframesRule class >> named: aName enabling: aCascadingStyleSheet [
 	
-	^ self new
-		initializeNamed: aName
-		enabling: aCascadingStyleSheet
-		withWebkitCompatibilityEnabled: aBoolean
-]
-
-{ #category : #Printing }
-CssKeyframesRule >> appropriateSelector [
-
-	^webkitCompatibility ifTrue: [ '@-webkit-keyframes' ] ifFalse: [ '@keyframes' ]
+	^ self new initializeNamed: aName enabling: aCascadingStyleSheet
 ]
 
 { #category : #Printing }
 CssKeyframesRule >> cssContentOn: aStream [
 	aStream
-		nextPutAll: self appropriateSelector;
+		nextPutAll: '@keyframes';
 		space.
 	keyframeName cssContentOn: aStream.
 	aStream
@@ -48,9 +38,8 @@ CssKeyframesRule >> cssStatementsContentOn: aStream [
 ]
 
 { #category : #initialization }
-CssKeyframesRule >> initializeNamed: aName enabling: aCascadingStyleSheet withWebkitCompatibilityEnabled: aBoolean [
+CssKeyframesRule >> initializeNamed: aName enabling: aCascadingStyleSheet [
 
 	keyframeName := aName.
-	styleSheet := aCascadingStyleSheet.
-	webkitCompatibility := aBoolean
+	styleSheet := aCascadingStyleSheet
 ]

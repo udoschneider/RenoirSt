@@ -64,12 +64,16 @@ CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithKeyframes [
 	| builder |
 
 	builder := CascadingStyleSheetBuilder new.
-	builder
+		
+	builder 
 		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
-		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #blue ] ] forKeyframesMatching: [ :keyframesBuilder |
-			keyframesBuilder named: #test ].
+		declare: [ :cssBuilder | 
+			cssBuilder 
+				declareKeyframeRuleSetAt: 0 percent 
+				with: [ :style | style color: #blue ] ] 
+		forKeyframesNamed: 'test'.
 
-	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@keyframes test<n>{<n><t>#oop<n><t>{<n><t><t>color: blue;<n><t>}<n>}' expandMacros
+	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@keyframes test<n>{<n><t>0%%<n><t>{<n><t><t>color: blue;<n><t>}<n>}' expandMacros
 ]
 
 { #category : #Tests }
@@ -96,18 +100,4 @@ CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithMediaQueryWithoutCon
 		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #red ] ] forMediaMatching: [ :queryBuilder | queryBuilder width: 600 px ].
 
 	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@media all and (width: 600px)<n>{<n><t>#oop<n><t>{<n><t><t>color: red;<n><t>}<n>}' expandMacros
-]
-
-{ #category : #Tests }
-CascadingStyleSheetBuilderTest >> testBuildingStyleSheetWithWebkitKeyframes [
-
-	| builder |
-
-	builder := CascadingStyleSheetBuilder new.
-	builder
-		declareRuleSetFor: [ :selector | selector class: 'xxx' ] with: [ :style | style margin: 12 pt ];
-		declare: [ :cssBuilder | cssBuilder declareRuleSetFor: [ :selector | selector id: #oop ] with: [ :style | style color: #blue ] ] forKeyframesMatching: 
-		[ :keyframesBuilder | keyframesBuilder named: #test; enableWebkitCompatibility ].
-
-	self assert: builder build printString equals: '.xxx<n>{<n><t>margin: 12pt;<n>}<n><n>@-webkit-keyframes test<n>{<n><t>#oop<n><t>{<n><t><t>color: blue;<n><t>}<n>}' expandMacros
 ]
