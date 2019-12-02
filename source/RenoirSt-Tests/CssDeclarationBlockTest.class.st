@@ -164,6 +164,23 @@ CssDeclarationBlockTest >> testPrintStringOfGeneratedContentProperties [
 ]
 
 { #category : #Tests }
+CssDeclarationBlockTest >> testPrintStringOfKeyframesProperties [
+
+	self
+		assert: [ :style | style animationName: 'testAnimation' ] rendersProperty: 'animation-name' withValue: 'testAnimation';
+		assert: [ :style | style animationDuration: '5s' ] rendersProperty: 'animation-duration' withValue: '5s';
+		assert: [ :style | style animationTimingFunction: 'linear' ] rendersProperty: 'animation-timing-function' withValue: 'linear';
+		assert: [ :style | style animationDelay: '5s' ] rendersProperty: 'animation-delay' withValue: '5s';
+		assert: [ :style | style animationIterationCount: 2 ] rendersProperty: 'animation-iteration-count' withValue: '2';
+		assert: [ :style | style animationDirection: 'normal' ] rendersProperty: 'animation-direction' withValue: 'normal';
+		assert: [ :style | style animationFillMode: 'forwards' ] rendersProperty: 'animation-fill-mode' withValue: 'forwards';
+		assert: [ :style | style animationPlayState: 'running' ] rendersProperty: 'animation-play-state' withValue: 'running';
+		
+		assert: [ :style | style animation: 'test 5s ease 0s infinite normal backwards running' ] rendersProperty: 'animation' withValue: 
+			'test 5s ease 0s infinite normal backwards running'
+]
+
+{ #category : #Tests }
 CssDeclarationBlockTest >> testPrintStringOfMarginProperties [
 
 	self 
@@ -297,7 +314,8 @@ CssDeclarationBlockTest >> testPrintStringOfVisualFormattingProperties [
 		assert: [ :style | style right: 4 cm ] rendersProperty: 'right' withValue: '4cm';
 		assert: [ :style | style top: 4 cm ] rendersProperty: 'top' withValue: '4cm';
 		assert: [ :style | style unicodeBidi: #normal ] rendersProperty: 'unicode-bidi' withValue: 'normal';
-		assert: [ :style | style zIndex: 4 ] rendersProperty: 'z-index' withValue: '4'
+		assert: [ :style | style zIndex: 4 ] rendersProperty: 'z-index' withValue: '4';
+		assert: [ :style | style transform: #'rotate(0deg)' ] rendersProperty: 'transform' withValue: 'rotate(0deg)'
 ]
 
 { #category : #Tests }

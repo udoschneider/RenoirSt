@@ -11,6 +11,66 @@ Class {
 	#category : #'RenoirSt-Common'
 }
 
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animation: aCssValue [
+
+	"Values must follow the guidelines specified in https://drafts.csswg.org/css-animations/#animation 
+	being like:
+		animation: name duration timing-function delay iteration-count direction fill-mode play-state
+	
+	Always specify the animation-duration property, otherwise the duration is 0, and will never be played."
+
+	self propertyAt: 'animation' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationDelay: aCssValue [
+
+	self propertyAt: 'animation-delay' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationDirection: aCssValue [
+
+	self propertyAt: 'animation-direction' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationDuration: aCssValue [
+
+	self propertyAt: 'animation-duration' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationFillMode: aCssValue [
+
+	self propertyAt: 'animation-fill-mode' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationIterationCount: aCssValue [
+
+	self propertyAt: 'animation-iteration-count' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationName: aCssValue [
+
+	self propertyAt: 'animation-name' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationPlayState: aCssValue [
+
+	self propertyAt: 'animation-play-state' put: aCssValue 
+]
+
+{ #category : #'keyframes properties' }
+CssDeclarationBlock >> animationTimingFunction: aCssValue [
+
+	self propertyAt: 'animation-timing-function' put: aCssValue 
+]
+
 { #category : #'background properties' }
 CssDeclarationBlock >> background: aCssValue [ 
 
@@ -785,6 +845,12 @@ CssDeclarationBlock >> textUnderlinePosition: aCssValue [
 CssDeclarationBlock >> top: aCssValue [
 
 	self propertyAt: 'top' put: aCssValue 
+]
+
+{ #category : #'visual formatting properties' }
+CssDeclarationBlock >> transform: aCssValue [ 
+
+	self propertyAt: 'transform' put: aCssValue 
 ]
 
 { #category : #'visual formatting properties' }

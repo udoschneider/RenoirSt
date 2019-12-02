@@ -16,6 +16,7 @@ Tutorial
 	- Selector Groups
 - [Part III](Tutorial-Part-III.md )
   - Important Rules
+  - Keyframes
   - Media Queries
   - Vendor specific extensions
   - Font Face rules

@@ -36,6 +36,142 @@ Note that the important properties must be created by sending the messages to th
 ##### References:
 - http://www.w3.org/TR/CSS2/cascade.html#important-rules
 
+## Keyframes
+
+The `@keyframes` rule specifies the animation code.
+The animation is created by gradually changing from one set of CSS styles to another.
+During the animation, you can change the set of CSS styles many times.
+Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete.
+
+**Tip:** For best browser support, you should always define both the 0% and the 100% selectors.
+
+A basic keyframe rule consists of specifying just a keyframe with some style rule:
+```smalltalk
+CascadingStyleSheetBuilder new
+	declare: [ :cssBuilder |
+		cssBuilder 
+			declareKeyframeRuleSetAt: 0 percent 
+				with: [ :style | style backgroundColor: #red ];
+			declareKeyframeRuleSetAt: 100 percent
+				with: [ :style | style backgroundColor: #blue ] ] 
+    forKeyframesNamed: 'example';
+	build 
+```
+To use keyframes in the library just send the message `declare:forKeyframesNamed:` to the builder.  The first closure is evaluated with an instance of a `CascadingStyleSheetBuilder`. The second parameter is to give a name to your keyframe rule.
+
+The style can be built with either the `animation:` shorthand (`animation: name duration timing-function delay iteration-count direction fill-mode play-state`) or with separate animation styles, such as:
+- `animationName:`
+- `animationDuration:`
+- `animationTimingFunction:`
+- `animationIterationCount:`
+- `animationDirection:`
+- `animationPlayState:`
+- `animationDelay:`
+- `animationFillMode:`
+
+For example, a more complex animation can be written:
+
+```smalltalk
+CascadingStyleSheetBuilder new
+    declareRuleSetFor: [ :selector | selector div ]
+    with: [ :style | 
+        style
+            animation: 'spin 5s linear infinite';
+            "replacing...
+            animationName: 'spin';
+            animationDuration: 5000 ms;
+            animationTimingFunction: 'linear';
+            animationIterationCount: 'infinite';"
+            
+            maxHeight: 80 vh;
+            fontSize: #larger;
+            background: '#f00';
+            width: 100 px;
+            height: 100 px;
+            position: 'relative' ];
+
+    declare: [ :cssBuilder | 
+        cssBuilder
+            declareKeyframeRuleSetAt: 0 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 0 deg);
+                    background: '#f00' ];
+            declareKeyframeRuleSetAt: 25 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 90 deg);
+                    background: '#f99' ];
+            declareKeyframeRuleSetAt: 50 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 180 deg);
+                    background: '#b88' ];
+            declareKeyframeRuleSetAt: 75 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 270 deg);
+                    background: '#a66' ];
+            declareKeyframeRuleSetAt: 100 percent
+                with: [ :style | 
+                style
+                    transform: (CssRotate by: 360 deg);
+                    background: '#f00' ] ]
+    forKeyframesNamed: 'spin'
+```
+Evaluating to:
+
+```css
+div
+{
+	animation: spin 5s linear infinite;
+	max-height: 80vh;
+	font-size: larger;
+	background: #f00;
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+
+@keyframes spin
+{
+	0%
+	{
+		transform: rotate(0deg);
+		background: #f00;
+	}
+	
+	25%
+	{
+		transform: rotate(90deg);
+		background: #f99;
+	}
+	
+	50%
+	{
+		transform: rotate(180deg);
+		background: #b88;
+	}
+	
+	75%
+	{
+		transform: rotate(270deg);
+		background: #a66;
+	}
+	
+	100%
+	{
+		transform: rotate(360deg);
+		background: #f00;
+	}
+}
+```
+
+**Note:** The `!important` rule is ignored in a keyframe
+
+##### References:
+- https://drafts.csswg.org/css-animations/
+
 ## Media Queries
 
 A `@media` rule specifies the target media types of a set of statements. The `@media` construct allows style sheet rules that apply to various media in the same style sheet. Style rules outside of `@media` rules apply to all media types that the style sheet applies to. At-rules inside `@media` are invalid in CSS2.1.
