@@ -13,8 +13,11 @@
 </p>
 
 ![GitHub release](https://img.shields.io/github/release/ba-st/RenoirSt.svg)
-[![Build Status](https://travis-ci.org/ba-st/RenoirSt.svg?branch=release_candidate)](https://travis-ci.org/ba-st/RenoirSt)
-[![Coverage Status](https://coveralls.io/repos/github/ba-st/RenoirSt/badge.svg?branch=release_candidate)](https://coveralls.io/github/ba-st/RenoirSt?branch=release_candidate)
+[![Build Status](https://github.com/ba-st/RenoirSt/workflows/Build/badge.svg?branch=release-candidate)](https://github.com/ba-st/RenoirSt/actions?query=workflow%3ABuild)
+[![Coverage Status](https://codecov.io/github/ba-st/RenoirSt/coverage.svg?branch=release-candidate)](https://codecov.io/gh/ba-st/RenoirSt/branch/release-candidate)
+[![Pharo 6.1](https://img.shields.io/badge/Pharo-6.1-informational)](https://pharo.org)
+[![Pharo 7.0](https://img.shields.io/badge/Pharo-7.0-informational)](https://pharo.org)
+[![Pharo 8.0](https://img.shields.io/badge/Pharo-8.0-informational)](https://pharo.org)
 
 ## Goals
 - Improve CSS integration with existing Web Frameworks
