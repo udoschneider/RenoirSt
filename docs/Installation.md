@@ -13,6 +13,15 @@ Metacello new
 ```
 >  Change `release-candidate` to some released version if you want a pinned version
 
+or if you want to use the Seaside extensions:
+
+```smalltalk
+Metacello new
+	baseline: 'RenoirSt';
+	repository: 'github://ba-st/RenoirSt:release-candidate/source';
+	load: 'Deployment-Seaside-Extensions'.
+```
+
 ### Pharo 5
 
 - Open a Playground and evaluate:
